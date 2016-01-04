@@ -1,0 +1,34 @@
+// *************************************
+//
+//   Hero Section
+//
+// *************************************
+
+@import "../../Utility/variables";
+@import "../../Utility/mixin";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "../Section/section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+.section {
+  height: 100%;
+  text-align: center;
+  @include inline-vertical();
+}
+
+.section-container {
+  display: inline-block;
+  width: auto;
+  max-width: inherit;
+  margin: 0 auto;
+  padding: 0;
+}

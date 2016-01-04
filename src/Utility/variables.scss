@@ -1,0 +1,65 @@
+// *************************************
+//
+//   Variables
+//
+// *************************************
+
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+$c-light:                 #fff;
+$c-dark:                  #444;
+$c-black:                 #000;
+
+$c-gray-darker:           lighten(#000, 13.5%) !default; // #222222
+$c-gray-dark:             lighten(#000, 25%) !default;   // #404040
+$c-gray:                  lighten(#000, 50%) !default;   // #808080
+$c-gray-light:            lighten(#000, 69%) !default;   // #b0b0b0
+$c-gray-lighter:          lighten(#000, 96%) !default;   // #f5f5f5
+
+$c-primary:               #4babc1;
+
+
+// -------------------------------------
+//   Sizes
+// -------------------------------------
+
+$size-radius:             5px;
+$size-header:             54px;
+$size-header-nav:         200px;
+$size-container:          960px;
+
+$size-gutter:             5px 10px 20px 30px;
+
+
+// -------------------------------------
+//   Fonts
+// -------------------------------------
+
+$font-family:             "Open Sans";
+
+$font-weight:             400;
+$font-weight-bold:        700;
+$font-weight-narrow:      200;
+
+
+$font-base:               14px;
+$font-large:              18px;
+$font-small:              11px;
+
+
+// -------------------------------------
+//   Z index
+// -------------------------------------
+
+$z-layers: (
+  "popup":                        9000,
+  "fix":                          100,
+  "top":                          99,
+  "front":                        9,
+  "default":                      1,
+  "below":                        -1,
+  "hidden":                       -9000
+);

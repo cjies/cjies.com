@@ -1,0 +1,129 @@
+// *************************************
+//
+//   Header
+//
+// *************************************
+
+@import "../../Utility/variables";
+@import "../../Utility/mixin";
+
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: z("fix");
+  transition: background 0.3s ease-out;
+
+  // Shadow
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: - nth($size-gutter, 2);
+    left: 0;
+    width: 100%;
+    height: nth($size-gutter, 2);
+    opacity: 0;
+    pointer-events: none;
+    @include linear-gradient(rgba($c-dark, 0.1), rgba($c-dark, 0));
+  }
+
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  max-width: $size-container;
+  height: $size-header * 2;
+  margin: 0 auto;
+  transition: height 0.5s ease-out;
+  > * {
+    vertical-align: middle;
+  }
+}
+
+.header-logo {
+  position: relative;
+  left: nth($size-gutter, 3);
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+  @include inline-vertical();
+  
+  // Hide 1st
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+
+  img {
+    width: $size-header * 0.6;
+    height: auto;
+    vertical-align: middle;
+  }
+}
+
+
+// -------------------------------------
+//   Sticky Header
+// -------------------------------------
+
+.sticky {
+
+  background-color: $c-light;
+  &:after {
+    opacity: 1;
+  }
+
+  .header-container {
+    height: $size-header;
+  }
+
+  .header-logo {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 1s ease-out;
+  }
+
+}
+
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(mobile) {
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  .header-container {
+    height: $size-header;
+    &.active {
+      height: $size-header + $size-header-nav;
+    }
+  }
+
+  .header-logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $size-header;
+    background-color: $c-light;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+} // END bp(mobile)

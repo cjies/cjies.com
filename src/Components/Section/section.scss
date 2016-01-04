@@ -1,0 +1,68 @@
+// *************************************
+//
+//   Sections
+//
+// *************************************
+
+@import "../../Utility/variables";
+@import "../../Utility/mixin";
+
+
+// -------------------------------------
+//   Section Base
+// -------------------------------------
+
+.section {
+  display: block;
+  width: 100%;
+  
+  &.light {
+    background-color: $c-light;
+  }
+  &.stable {
+    background-color: $c-gray-lighter;
+  }
+  &.dark {
+    background-color: $c-dark;
+    color: $c-light;
+  }
+
+}
+
+.section-container {
+  width: 100%;
+  max-width: $size-container;
+  margin: 0 auto;
+  padding: nth($size-gutter, 4) * 2 nth($size-gutter, 3);
+}
+
+.section-inner {
+  display: block;
+}
+
+
+// -------------------------------------
+//   Section Title
+// -------------------------------------
+
+.section-title {
+  display: block;
+  position: relative;
+  padding: nth($size-gutter, 4) 0;
+  margin: 0;
+  line-height: 1.5;
+
+  // Top Line
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 50px;
+    background-color: $c-gray-light;
+  }
+
+}
+

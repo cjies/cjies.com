@@ -1,0 +1,62 @@
+// *************************************
+//
+//   App
+//
+// *************************************
+
+@import "../Utility/variables";
+@import "../Utility/mixin";
+
+
+// -------------------------------------
+//   Body Base
+// -------------------------------------
+
+html, body {
+  position: relative;
+  background-color: $c-light;
+  color: $c-dark;
+  font-family: $font-family;
+  font-weight: $font-weight;  
+  font-size: $font-base;
+  line-height: 1.2;
+  width: 100%;
+  height: 100%;
+}
+
+:global * {
+  box-sizing: border-box; 
+}
+
+
+// -------------------------------------
+//   Layout
+// -------------------------------------
+
+// Wrapper 
+:global .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  // Fix React 1st div
+  > * {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+
+// -------------------------------------
+//   Link
+// -------------------------------------
+
+:global a {
+  color: inherit;
+  text-decoration: none;
+}
