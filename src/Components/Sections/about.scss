@@ -1,6 +1,6 @@
 // *************************************
 //
-//   Hero Section
+//   About
 //
 // *************************************
 
@@ -12,23 +12,23 @@
 //   Extend Section CSS
 // -------------------------------------
 
-@import "../Section/section";
+@import "./section";
 
 
 // -------------------------------------
 //   Overwrite Section
 // -------------------------------------
 
-.section {
-  height: 100%;
-  text-align: center;
-  @include inline-vertical();
+.section-inner {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.section-container {
-  display: inline-block;
-  width: auto;
-  max-width: inherit;
-  margin: 0 auto;
-  padding: 0;
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.text {
+  line-height: 1.5;
+  margin: 0;
 }

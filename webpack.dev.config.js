@@ -29,7 +29,7 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.(png|jpg|gif)$/,
-      loaders: ['url?limit=25000'],
+      loaders: ['file?limit=25000'],
       include: path.join(__dirname, 'static/img')
     }, {
       test: /\.css$/,
@@ -46,11 +46,12 @@ module.exports = {
       require('postcss-import')({
         glob: true,
         onImport: function (files) {
-            files.forEach(this.addDependency);
+          files.forEach(this.addDependency);
         }.bind(this)
       }),
       require('postcss-simple-vars')(),
       require('postcss-nested')(),
+      require('lost')(),
       require('autoprefixer')({
         browsers: ['last 2 versions', 'IE > 8']
       }),

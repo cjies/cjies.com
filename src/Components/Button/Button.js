@@ -51,10 +51,15 @@ class Button extends React.Component {
         break;
     }
 
+    // Active
+    let buttonActive = '';
+    if (this.props.active) {
+      buttonActive = 'active';
+    }
 
     return (
       <button
-        styleName={classNames(buttonStyle, buttonColor, buttonSize)}
+        styleName={classNames(buttonStyle, buttonColor, buttonSize, buttonActive)}
         onClick={this.props.onClick}>
         {this.props.children}
       </button>

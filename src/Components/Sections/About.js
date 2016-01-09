@@ -2,7 +2,7 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 
 import styles from './about.scss';
-import Section from '../Section/Section';
+import Section from './Section';
 
 
 class About extends React.Component {

@@ -30,14 +30,15 @@
 }
 
 .section-container {
-  width: 100%;
-  max-width: $size-container;
-  margin: 0 auto;
-  padding: nth($size-gutter, 4) * 2 nth($size-gutter, 3);
+  lost-center: $size-container nth($size-gutter, 3) flex;
+  padding-top: nth($size-gutter, 4) * 4;
+  padding-bottom: nth($size-gutter, 4) * 4;
+  overflow: hidden;
 }
 
 .section-inner {
   display: block;
+  width: 100%;
 }
 
 
@@ -50,6 +51,7 @@
   position: relative;
   padding: nth($size-gutter, 4) 0;
   margin: 0;
+  font-size: $font-base * 1.5;
   line-height: 1.5;
 
   // Top Line

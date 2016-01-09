@@ -6,8 +6,9 @@ import styles from './app.scss';
 
 // Components
 import Header from './Header/Header';
-import Hero from './Hero/Hero';
-import About from './About/About';
+import Hero from './Sections/Hero';
+import About from './Sections/About';
+import Portfolio from './Sections/Portfolio';
 
 class App extends React.Component {
   static propTypes = {
@@ -24,6 +25,7 @@ class App extends React.Component {
         <Header />
         <Hero />
         <About />
+        <Portfolio />
       </div>
     );
   }

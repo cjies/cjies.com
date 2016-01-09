@@ -2,9 +2,8 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 
 import styles from './hero.scss';
-import Section from '../Section/Section';
+import Section from './Section';
 import Button from '../Button/Button';
-
 
 class Hero extends React.Component {
   static propTypes = {
@@ -24,12 +23,12 @@ class Hero extends React.Component {
     return (
       <Section
         name="HOME"
-        background="stable"
+        background="dark"
         styles={styles}>
         <h1>MAKE SIMPLE.</h1>
         <Button
           type="ghost"
-          color="dark"
+          color="light"
           onClick={this.goDown}>
           BUT MORE
         </Button>

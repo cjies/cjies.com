@@ -5,7 +5,7 @@ import classNames from 'classnames';
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as CounterActions from '../../redux/actions';
+import * as CounterActions from '../../Redux/actions';
 
 // Components
 import Navigation from './Navigation';

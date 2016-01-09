@@ -17,8 +17,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: z("fix");
+  z-index: z("fix") !important;
   transition: background 0.3s ease-out;
+  color: $c-light;
 
   // Shadow
   &:after {
@@ -74,6 +75,7 @@
 
 .sticky {
 
+  color: $c-dark;
   background-color: $c-light;
   &:after {
     opacity: 1;

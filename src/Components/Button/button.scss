@@ -41,6 +41,7 @@
 @mixin button-color-palette($buttonStyle) {
   @include button-color('dark', $c-dark, $c-light, $buttonStyle);
   @include button-color('light', $c-light, $c-dark, $buttonStyle);
+  @include button-color('gray', $c-gray, $c-light, $buttonStyle);
   @include button-color('primary', $c-primary, $c-light, $buttonStyle);
 }
 
@@ -75,6 +76,8 @@
   border-radius: 0;
   border: 0;
   outline: 0;
+  margin-left: nth($size-gutter, 1);
+  margin-right: nth($size-gutter, 1);
   font-weight: $font-weight-bold;
   transition: background 0.3s ease-out,
               color 0.1s ease-out;
