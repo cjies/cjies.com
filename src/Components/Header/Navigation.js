@@ -2,28 +2,14 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 
-// CSS
 import styles from './navigation.scss';
+import { Link, Events } from 'react-scroll';
 
-const navList = [
-  {
-    id: 0,
-    name: 'ABOUT'
-  },
-  {
-    id: 1,
-    name: 'PORTFOLIO'
-  },
-  {
-    id: 2,
-    name: 'SKILLS'
-  },
-  {
-    id: 3,
-    name: 'CONTACT'
-  },
-];
 
+// Section Navi
+import { navigation } from '../../../static/data/sections.json';
+
+// @Events
 
 export default class Navigation extends React.Component {
   static propTypes = {
@@ -32,27 +18,38 @@ export default class Navigation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.goAnchor = this.goAnchor.bind(this);
   }
 
-  goAnchor(name) {
-    console.log(name);
+  componentDidMount() {
+    // this.scrollEvent.register('begin', (arg) => {
+    //   // console.log('begin', arg);
+    // });
+
+    // this.scrollEvent.register('end', (arg) => {
+    //   // console.log('end', arg);
+    // });
+  }
+
+  componentWillUnmount() {
+    // this.scrollEvent.remove('begin');
+    // this.scrollEvent.remove('end');
   }
 
   render() {
+    const scrollSmooth = true;
+    const scrollSpy = false; // Waiting Refactor - 1/10
     return (
       <nav styleName={classNames('nav', { 'active': this.props.active })} >
-       {navList.map(navItem =>
-          <a
-            href="#"
-            styleName="nav-item"
-            key={navItem.id}
-            onClick={(e) => {
-              e.preventDefault();
-              this.goAnchor(navItem.name);
-            }}>
-            <span>{navItem.name}</span>
-          </a>
+       {navigation.map((item, i) =>
+          <Link
+            key={i}
+            to={item.id}
+            smooth={scrollSmooth}
+            spy={scrollSpy}
+            duration={500}
+            className={styles['nav-item']} >
+            <span>{item.name}</span>
+          </Link>
        )}
       </nav>
     );

@@ -6,6 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
+    'font-awesome-webpack!./src/Utility/font-awesome.config',
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client',
     './src/index'
@@ -27,18 +28,36 @@ module.exports = {
       test: /\.jsx?/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
-    }, {
+    }, 
+    {
       test: /\.(png|jpg|gif)$/,
-      loaders: ['file?limit=25000'],
+      loaders: ['url?limit=10240&name=img/img-[hash:6].[ext]'],
       include: path.join(__dirname, 'static/img')
-    }, {
+    }, 
+    {
       test: /\.css$/,
       // loader: 'style-loader!css-loader!postcss-loader'
       loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss')
-    }, {
+    }, 
+    {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
-    }]
+    }, 
+    {
+      test: /\.less$/,
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!less')
+    }, 
+    { 
+      test: /\.json$/, 
+      loader: 'json'
+    },
+    // Icon Font
+    { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+    { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+    { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+    { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+    { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },    
+    ]
   },
   // PostCSS
   postcss: function() {

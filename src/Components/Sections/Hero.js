@@ -23,15 +23,19 @@ class Hero extends React.Component {
     return (
       <Section
         name="HOME"
-        background="dark"
+        background="secondary"
         styles={styles}>
         <h1>MAKE SIMPLE.</h1>
-        <Button
+        <p>Front End Developer</p>
+        {/* <Button
           type="ghost"
-          color="light"
+          color="dark"
           onClick={this.goDown}>
           BUT MORE
-        </Button>
+        </Button> */}
+        <a styleName="scroll-more">
+          <i className="fa fa-angle-down fa-2x" />
+        </a>
       </Section>
     );
   }

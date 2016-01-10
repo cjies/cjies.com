@@ -6,6 +6,7 @@
 
 @import "../../Utility/variables";
 @import "../../Utility/mixin";
+@import "../../Utility/animation";
 
 
 // -------------------------------------
@@ -22,6 +23,7 @@
 .section {
   height: 100%;
   text-align: center;
+  background-color: rgba($c-gray, 0.1);
   @include inline-vertical();
 }
 
@@ -31,4 +33,49 @@
   max-width: inherit;
   margin: 0 auto;
   padding: 0;
+}
+
+.section-inner {
+  position: inherit;
+  width: auto;
+  margin: inherit;
+}
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+h1 {
+  margin-bottom: nth($size-gutter, 2);
+}
+
+
+// -------------------------------------
+//   Scroll More
+// -------------------------------------
+
+.scroll-more {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: nth($size-gutter, 4);
+  text-align: center;
+  cursor: pointer;
+
+  &, &:hover {
+    i {
+      animation: arrow-bounce 2s 2 ease-out;
+      animation-delay: 2s;
+    }
+  }
+  &:hover {
+    i {
+      animation-iteration-count: infinite;
+      animation-delay: 0s;
+      animation-play-state: running;
+    }
+  }
+
+
 }

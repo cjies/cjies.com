@@ -1,0 +1,24 @@
+{
+  "navigation": [
+    {
+      "name": "About",
+      "id": "ABOUT"
+    },
+    {
+      "name": "Resume",
+      "id": "RESUME"
+    },
+    {
+      "name": "Portfolio",
+      "id": "PORTFOLIO"
+    },
+    {
+      "name": "Services",
+      "id": "SERVICES"
+    },
+    {
+      "name": "Contact",
+      "id": "CONTACT"
+    }
+  ]
+}

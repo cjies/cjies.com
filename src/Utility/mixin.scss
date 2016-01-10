@@ -63,6 +63,19 @@
 
 
 // -------------------------------------
+//   Hide Scrollbar
+// -------------------------------------
+
+@mixin hide-scrollbar {
+  overflow: auto;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+
+
+// -------------------------------------
 //   Breakpoint - media queries 
 // -------------------------------------
 

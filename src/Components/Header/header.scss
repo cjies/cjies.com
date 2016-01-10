@@ -17,21 +17,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: z("fix") !important;
-  transition: background 0.3s ease-out;
   color: $c-light;
-
+  font-size: $font-small;
+  opacity: 0;
+  pointer-events: none;
+  z-index: z("fix") !important;
+  transition: opacity 0.3s ease-out,
+              background 0.3s ease-out;
+  
   // Shadow
   &:after {
     content: "";
     position: absolute;
-    bottom: - nth($size-gutter, 2);
-    left: 0;
     width: 100%;
-    height: nth($size-gutter, 2);
+    left: 0;
+    // bottom: - nth($size-gutter, 2);
+    // height: nth($size-gutter, 2);
+    bottom: - 1px;
+    height: 1px;
     opacity: 0;
     pointer-events: none;
-    @include linear-gradient(rgba($c-dark, 0.1), rgba($c-dark, 0));
+    background-color: darken($c-gray-lighter, 3%);
+    // @include linear-gradient(rgba($c-dark, 0.05), rgba($c-dark, 0));
   }
 
 }
@@ -43,6 +50,7 @@
   height: $size-header * 2;
   margin: 0 auto;
   transition: height 0.5s ease-out;
+  transition-delay: 0.3s;
   > * {
     vertical-align: middle;
   }
@@ -77,12 +85,15 @@
 
   color: $c-dark;
   background-color: $c-light;
+  opacity: 1;
+  pointer-events: auto;
   &:after {
     opacity: 1;
   }
 
   .header-container {
     height: $size-header;
+    transition-delay: 0s;
   }
 
   .header-logo {
@@ -124,8 +135,6 @@
     width: 100%;
     height: $size-header;
     background-color: $c-light;
-    opacity: 1;
-    pointer-events: auto;
   }
 
 } // END bp(mobile)

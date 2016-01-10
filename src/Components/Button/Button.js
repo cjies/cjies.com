@@ -4,12 +4,16 @@ import classNames from 'classnames';
 
 import styles from './button.scss';
 
+const defaultTag = ['button', 'submit', 'reset', 'link', 'a'];
+
 class Button extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
     type: React.PropTypes.string,
     color: React.PropTypes.string,
-    size: React.PropTypes.string
+    size: React.PropTypes.string,
+    tag: React.PropTypes.oneOf(defaultTag),
+    href: React.PropTypes.string,
   };
 
   constructor(props) {
@@ -51,6 +55,31 @@ class Button extends React.Component {
         break;
     }
 
+    // TagName
+    let ButtonTag = 'button';
+    let buttonType = '';
+    switch (this.props.tag) {
+      case 'submit':
+        ButtonTag = 'input';
+        buttonType = 'submit';
+        break;
+      case 'reset':
+        ButtonTag = 'input';
+        buttonType = 'reset';
+        break;
+      case 'link':
+      case 'a':
+        ButtonTag = 'a';
+        buttonType = null;
+        break;
+      default:
+        ButtonTag = 'button';
+        buttonType = null;
+        break;
+    }
+
+    console.log(buttonType);
+
     // Active
     let buttonActive = '';
     if (this.props.active) {
@@ -58,11 +87,14 @@ class Button extends React.Component {
     }
 
     return (
-      <button
+      <ButtonTag
+        {...this.props}
+        type={buttonType}
+        href={this.props.href}
         styleName={classNames(buttonStyle, buttonColor, buttonSize, buttonActive)}
         onClick={this.props.onClick}>
         {this.props.children}
-      </button>
+      </ButtonTag>
     );
   }
 }

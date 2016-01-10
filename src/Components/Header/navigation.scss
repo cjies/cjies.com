@@ -17,15 +17,18 @@
   right: nth($size-gutter, 3);
   top: 0;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
+  @include hide-scrollbar;
 }
 
 .nav-item {
   display: inline-block;
-  padding: 0 nth($size-gutter, 3);
   height: 100%;
+  padding: 0 nth($size-gutter, 3);
+  cursor: pointer;
+  transition: color 0.3s ease-out;
   @include inline-vertical();
-  &:hover {
+  &:hover, .active {
     color: $c-primary;
   }
   &:first-child {

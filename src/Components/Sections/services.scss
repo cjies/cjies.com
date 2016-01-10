@@ -1,0 +1,113 @@
+// *************************************
+//
+//   Services
+//
+// *************************************
+
+@import "../../Utility/variables";
+@import "../../Utility/mixin";
+@import "../../Utility/animation";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "./section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+
+// -------------------------------------
+//   Services List & Item
+// -------------------------------------
+
+.services-list {
+  lost-flex-container: row;
+  lost-align: center flex;
+}
+
+.services-item {
+  position: relative;
+  lost-column: 1/4 4 10px flex;
+  text-align: center;
+  padding: nth($size-gutter, 2);
+}
+
+
+// -------------------------------------
+//   Services Icon
+// -------------------------------------
+
+.services-icon {
+  transition: color 0.5s ease-out;
+
+  i {
+    display: inline-block;
+    font-size: $font-base * 2;
+    background-color: $c-light;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba($c-black, 0.2);
+    @include same-whl($size-services-icon);
+    &:before {
+      vertical-align: middle;
+    }
+    &:hover {
+      animation: flip-coin 1s forwards ease-in-out;
+    }
+  }
+  
+}
+
+.services-item:hover .services-icon {
+  color: $c-primary;
+
+}
+
+
+// -------------------------------------
+//   Title & Description
+// -------------------------------------
+
+.services-title {
+  padding-top: nth($size-gutter, 4);
+}
+
+.services-description {
+  padding: nth($size-gutter, 4);
+  padding-bottom: 0;
+  color: $c-gray-light;
+}
+
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(padL) {
+
+  .services-item {
+    lost-column: 1/2 0 0 flex;
+    &:nth-child(1), 
+    &:nth-child(2) {
+      padding-bottom: nth($size-gutter, 4);
+    }
+  }
+
+} // END bp(padL)
+
+
+@include bp(mobile) {
+
+  .services-item {
+    lost-column: 1/1 0 0 flex;
+    padding-bottom: nth($size-gutter, 4);
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+} // END bp(mobile)

@@ -8,7 +8,13 @@ import styles from './app.scss';
 import Header from './Header/Header';
 import Hero from './Sections/Hero';
 import About from './Sections/About';
+import Resume from './Sections/Resume';
 import Portfolio from './Sections/Portfolio';
+import Services from './Sections/Services';
+import Intersection from './Sections/Intersection';
+import Contact from './Sections/Contact';
+import Footer from './Sections/Footer';
+
 
 class App extends React.Component {
   static propTypes = {
@@ -25,7 +31,12 @@ class App extends React.Component {
         <Header />
         <Hero />
         <About />
+        <Resume />
         <Portfolio />
+        <Services />
+        <Intersection />
+        <Contact />
+        <Footer />
       </div>
     );
   }

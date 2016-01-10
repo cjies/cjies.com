@@ -1,0 +1,72 @@
+// *************************************
+//
+//   Footer
+//
+// *************************************
+
+@import "../../Utility/variables";
+@import "../../Utility/mixin";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "./section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+.section {
+  border-top: 1px solid darken($c-gray-lighter, 3%);
+}
+
+
+.section-container {
+  padding-top: nth($size-gutter, 4);
+  padding-bottom: nth($size-gutter, 4);
+}
+
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+.footer-copyright,
+.footer-social {
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+}
+
+.footer-copyright {
+  position: relative;
+}
+
+.footer-social {
+  text-align: right;
+}
+
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(mobile) {
+
+  .footer-copyright,
+  .footer-social {
+    display: block;
+    width: auto;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    padding-bottom: nth($size-gutter, 3);
+  }
+
+
+} // END bp(mobile)
+
