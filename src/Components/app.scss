@@ -115,3 +115,12 @@ html, body {
     margin: 0;
   }
 }
+
+:global {
+  
+  ::selection {
+    background: rgba($c-primary, 0.1);
+    color: $c-primary;
+  }
+
+}

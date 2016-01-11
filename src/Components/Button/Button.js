@@ -78,8 +78,6 @@ class Button extends React.Component {
         break;
     }
 
-    console.log(buttonType);
-
     // Active
     let buttonActive = '';
     if (this.props.active) {

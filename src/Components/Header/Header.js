@@ -10,6 +10,7 @@ import * as CounterActions from '../../Redux/actions';
 // Components
 import Navigation from './Navigation';
 import Sticky from 'react-sticky';
+import { Link } from 'react-scroll';
 
 // CSS
 import styles from './header.scss';
@@ -28,6 +29,7 @@ class Header extends React.Component {
   }
 
   render() {
+    const scrollSmooth = true;
     return (
       <Sticky
         topOffset={5}
@@ -37,10 +39,13 @@ class Header extends React.Component {
         <div styleName={classNames('header-container', { 'active': this.props.active })}>
           <Navigation
             active={this.props.active} />
-          <a styleName="header-logo"
-            onClick={this.props.onNavToggle}>
+          <Link
+            to="HOME"
+            smooth={scrollSmooth}
+            duration={500}
+            className={styles['header-logo']} >
             <img src={Logo} alt="cjies"/>
-          </a>
+          </Link>
         </div>
       </Sticky>
     );
