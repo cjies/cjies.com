@@ -4,9 +4,9 @@
 //
 // *************************************
 
-@import "../../Utility/variables";
-@import "../../Utility/mixin";
-@import "../../Utility/animation";
+@import "../../utils/variables";
+@import "../../utils/mixin";
+@import "../../utils/animation";
 
 
 // -------------------------------------
@@ -60,11 +60,6 @@
     }
   }
   
-}
-
-.services-item:hover .services-icon {
-  color: $c-primary;
-
 }
 
 

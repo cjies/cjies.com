@@ -4,9 +4,9 @@
 //
 // *************************************
 
-@import "../../Utility/variables";
-@import "../../Utility/mixin";
-@import "../../Utility/animation";
+@import "../../utils/variables";
+@import "../../utils/mixin";
+@import "../../utils/animation";
 
 
 // -------------------------------------
@@ -23,7 +23,6 @@
 .section {
   height: 100%;
   text-align: center;
-  background-color: rgba($c-gray, 0.1);
   @include inline-vertical();
 }
 
@@ -90,4 +89,5 @@ h1 {
   left: 0;
   width: 100%;
   pointer-events: none;
+  user-select: none;
 }

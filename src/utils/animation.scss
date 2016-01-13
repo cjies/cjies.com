@@ -42,3 +42,19 @@
     transform: rotateY(-360deg * 2) translateY(0);
   }
 }
+
+
+// -------------------------------------
+//   Slides Up
+// -------------------------------------
+
+@keyframes slides-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

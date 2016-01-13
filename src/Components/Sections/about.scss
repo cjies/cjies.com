@@ -4,9 +4,9 @@
 //
 // *************************************
 
-@import "../../Utility/variables";
-@import "../../Utility/mixin";
-@import "../../Utility/animation";
+@import "../../utils/variables";
+@import "../../utils/mixin";
+@import "../../utils/animation";
 
 
 // -------------------------------------
@@ -44,6 +44,11 @@
 
 .about-text {
   padding-right: nth($size-gutter, 4);
+  width: 100%;
+}
+
+.about-avatar {
+  width: $size-avatar + 20px;
 }
 
 
@@ -70,6 +75,7 @@
   display: inline-block;
   border-radius: 50%;
   overflow: hidden;
+  user-select: none;
   box-shadow: 0 1px 10px rgba($c-black, 0.2);
   @include same-whl($size-avatar);
   
@@ -94,6 +100,7 @@
   .about-avatar {
     display: block;
     text-align: center;
+    width: auto;
     padding: nth($size-gutter, 2) 0;
   }
 

@@ -3,13 +3,13 @@ import CSSModules from 'react-css-modules';
 
 import styles from './about.scss';
 import Section from './Section';
-import Social from '../Social/Social';
+import Social from '../button/Social';
 
+import { about } from '../../../static/data/secret-agents.json';
 
-// Avatar from LinkedIn
+// Avatar from LinkedIn & set size
 const avatarSize = 300;
-const avatar = 'https://media.licdn.com/mpr/mpr/shrinknp_' + avatarSize + '_' + avatarSize + '/' +
-               'AAEAAQAAAAAAAAcAAAAAJDRmMzllMTI3LTA2NjUtNDM1Mi04MjgwLWJmMTIxMzMyNTY0OQ.jpg';
+const avatar = about.avatar.replace(/{size}/g, avatarSize);
 
 
 class About extends React.Component {
@@ -33,12 +33,7 @@ class About extends React.Component {
             <img src={avatar} styleName="avatar" />
           </li>
           <li styleName="about-text">
-            <p styleName="text">
-              Hello. My name is CJies Tan. I am the front-end developer from
-              Malaysia and staying in Taipei now. And I also the Web Designer and EDM lover 📻💛
-              I love to make things simple. All I require is a mac, a book, and a pencil to occupy me
-              all day. Ya! Of course, and a coffee too. Nice to meet you.
-            </p>
+            <p styleName="text" dangerouslySetInnerHTML={{ __html: about.description }} />
           </li>
         </ul>
         <div styleName="about-link">

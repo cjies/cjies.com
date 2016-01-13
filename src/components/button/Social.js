@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import styles from './social.scss';
 
 // Data
-import { social } from '../../../static/data/social.json';
+import { socialButton } from '../../../static/data/secret-agents.json';
 
 
 export default class Social extends React.Component {
@@ -21,7 +21,7 @@ export default class Social extends React.Component {
   render() {
     return (
       <div styleName="social-list">
-        {social.map((item, i) =>
+        {socialButton.map((item, i) =>
           <a
             key={i}
             href={item.href}

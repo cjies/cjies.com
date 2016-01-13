@@ -4,8 +4,8 @@
 //
 // *************************************
 
-@import "../Utility/variables";
-@import "../Utility/mixin";
+@import "../utils/variables";
+@import "../utils/mixin";
 
 
 // -------------------------------------
@@ -22,6 +22,11 @@ html, body {
   line-height: 1.2;
   width: 100%;
   height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 :global * {
@@ -119,8 +124,8 @@ html, body {
 :global {
   
   ::selection {
-    background: rgba($c-primary, 0.1);
-    color: $c-primary;
+    background-color: rgba($c-compl, 0.8);
+    color: $c-light;
   }
 
 }

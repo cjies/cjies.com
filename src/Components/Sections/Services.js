@@ -6,7 +6,7 @@ import styles from './services.scss';
 import Section from './Section';
 
 // Data
-import { services } from '../../../static/data/services.json';
+import { services } from '../../../static/data/secret-agents.json';
 
 
 class Services extends React.Component {

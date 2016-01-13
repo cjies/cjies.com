@@ -5,7 +5,7 @@ import styles from './resume.scss';
 import Section from './Section';
 
 // data
-import { experience } from '../../../static/data/resume.json';
+import { resumes } from '../../../static/data/secret-agents.json';
 
 
 class Resume extends React.Component {
@@ -25,7 +25,7 @@ class Resume extends React.Component {
         title="Resume"
         styles={styles}>
         <ul styleName="resume-list">
-          {experience.map((item, i) =>
+          {resumes.map((item, i) =>
             <li
               key={i}
               styleName="resume-item">

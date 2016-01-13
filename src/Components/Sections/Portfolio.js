@@ -3,10 +3,10 @@ import CSSModules from 'react-css-modules';
 
 import styles from './portfolio.scss';
 import Section from './Section';
-import Button from '../Button/Button';
+import Button from '../button/Button';
 
 // Data
-import { portfolioData } from '../../../static/data/portfolio.json';
+import { portfolios } from '../../../static/data/secret-agents.json';
 
 class Portfolio extends React.Component {
   static propTypes = {
@@ -16,7 +16,7 @@ class Portfolio extends React.Component {
   constructor(props) {
     super(props);
   }
-
+npm
   render() {
     return (
       <Section
@@ -26,14 +26,14 @@ class Portfolio extends React.Component {
         styles={styles}>
 
         <div styleName="portfolio-filter">
-          <Button type="ghost" size="small" color="gray" active="true">ALL</Button>
-          <Button type="ghost" size="small" color="gray">WEB</Button>
-          <Button type="ghost" size="small" color="gray">DESIGN</Button>
-          <Button type="ghost" size="small" color="gray">PHOTOGRAPHY</Button>
+          <Button type="ghost" size="small" color="secondary" active="true">ALL</Button>
+          <Button type="ghost" size="small" color="secondary">WEB</Button>
+          <Button type="ghost" size="small" color="secondary">DESIGN</Button>
+          <Button type="ghost" size="small" color="secondary">PHOTOGRAPHY</Button>
         </div>
 
         <ul styleName="portfolio-list">
-        {portfolioData.map((item, i) => (
+        {portfolios.map((item, i) => (
           <li
             key={i}
             styleName="portfolio-item">

@@ -2,9 +2,18 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 
+// Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actionCreators from '../../redux/modules/sections';
+
 import styles from './section.scss';
 import { Parallax } from 'react-parallax';
 import { Element } from 'react-scroll';
+
+// Mobile Detect
+import mobileDetect from 'mobile-detect';
+const md = new mobileDetect(window.navigator.userAgent);
 
 export default class Section extends React.Component {
   static propTypes = {
@@ -19,12 +28,34 @@ export default class Section extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleParallax = this.handleParallax.bind(this);
+  }
+
+  componentWillMount() {
+    // Disable Parallax in mobile
+    this.handleParallax();
+
+    // Window Resize Listener
+    window.addEventListener('resize', this.handleParallax);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleParallax);
   }
 
   getSafetyTitle(title) {
     return {
       __html: title
     };
+  }
+
+  handleParallax() {
+    // Disable parallax under bp(mobile)
+    if (window.innerWidth <= 640 || md.mobile()) {
+      this.props.disableParallax();
+    } else {
+      this.props.enableParallax();
+    }
   }
 
   render() {
@@ -34,6 +65,7 @@ export default class Section extends React.Component {
     let sectionBackground = '';
     let backgroundOverlay = '';
     const sectionBackgroundImage = {};
+    const parallaxEffect = this.props.sections.parallax;
 
     // Section Title
     if (this.props.title) {
@@ -60,7 +92,7 @@ export default class Section extends React.Component {
     }
 
     // Parallax & Background Image
-    if (this.props.parallax && this.props.backgroundImage) {
+    if (this.props.parallax && parallaxEffect && this.props.backgroundImage) {
       inlineStyles.backgroundImage = '';
       // Parallax Container
       sectionContainer = (
@@ -68,7 +100,8 @@ export default class Section extends React.Component {
           strength={400}
           bgImage={this.props.backgroundImage}
           blur={this.props.backgroundBlur || 0}
-          className={styles['section-background']}>
+          className={styles['section-background']}
+          disabled={!parallaxEffect} >
           {backgroundOverlay}
           {defaultSectionContainer}
         </Parallax>
@@ -101,6 +134,21 @@ export default class Section extends React.Component {
   }
 }
 
-export default CSSModules(Section, styles, {
+// Map Redux state to component props
+function mapStateToProps(state) {
+  return {
+    sections: state.sections
+  };
+}
+
+// Map Redux actions to component props
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CSSModules(Section, styles, {
   allowMultiple: true
-});
+}));

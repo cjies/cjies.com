@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 
 import styles from './footer.scss';
 import Section from './Section';
-import Social from '../Social/Social';
+import Social from '../button/Social';
 
 // This Year
 const currentYear = new Date().getFullYear();

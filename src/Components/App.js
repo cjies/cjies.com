@@ -5,15 +5,15 @@ import 'normalize.css';
 import styles from './app.scss';
 
 // Components
-import Header from './Header/Header';
-import Hero from './Sections/Hero';
-import About from './Sections/About';
-import Resume from './Sections/Resume';
-import Portfolio from './Sections/Portfolio';
-import Services from './Sections/Services';
-import Intersection from './Sections/Intersection';
-import Contact from './Sections/Contact';
-import Footer from './Sections/Footer';
+import Header from './header/Header';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Resume from './sections/Resume';
+import Portfolio from './sections/Portfolio';
+import Services from './sections/Services';
+import Intersection from './sections/Intersection';
+import Contact from './sections/Contact';
+import Footer from './sections/Footer';
 
 
 class App extends React.Component {

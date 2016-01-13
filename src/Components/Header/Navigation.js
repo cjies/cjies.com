@@ -5,15 +5,15 @@ import classNames from 'classnames';
 import styles from './navigation.scss';
 import { Link, Events } from 'react-scroll';
 
-
 // Section Navi
-import { navigation } from '../../../static/data/sections.json';
+import { sections } from '../../../static/data/secret-agents.json';
 
 // @Events
 
 export default class Navigation extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
+    onNavClick: React.PropTypes.func
   };
 
   constructor(props) {
@@ -38,20 +38,34 @@ export default class Navigation extends React.Component {
   render() {
     const scrollSmooth = true;
     const scrollSpy = false; // Waiting Refactor - 1/10
+    const transitionTime = 0.1;
+    let transitionDelay = 0.02;
     return (
-      <nav styleName={classNames('nav', { 'active': this.props.active })} >
-       {navigation.map((item, i) =>
-          <Link
-            key={i}
-            to={item.id}
-            smooth={scrollSmooth}
-            spy={scrollSpy}
-            duration={500}
-            className={styles['nav-item']} >
-            <span>{item.name}</span>
-          </Link>
-       )}
-      </nav>
+      <div styleName={classNames('nav', { 'active': this.props.active })} >
+        <nav>
+          {sections.map((item, i) => {
+            if (i > 0) {
+              transitionDelay += transitionTime;
+            }
+            return (
+              <Link
+                key={i}
+                to={item.id}
+                smooth={scrollSmooth}
+                spy={scrollSpy}
+                duration={500}
+                className={styles['nav-item']}
+                onClick={this.props.onNavClick}
+                style={{ animationDelay: transitionDelay + 's' }} >
+                <span>{item.name}</span>
+              </Link>
+            );
+          })}
+        </nav>
+        <a styleName="nav-close" onClick={this.props.onNavClick}>
+          <i className="fa fa-close fa-2x" />
+        </a>
+      </div>
     );
   }
 }

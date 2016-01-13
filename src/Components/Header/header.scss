@@ -4,8 +4,8 @@
 //
 // *************************************
 
-@import "../../Utility/variables";
-@import "../../Utility/mixin";
+@import "../../utils/variables";
+@import "../../utils/mixin";
 
 
 // -------------------------------------
@@ -21,6 +21,7 @@
   font-size: $font-small;
   opacity: 0;
   pointer-events: none;
+  user-select: none;
   z-index: z("fix") !important;
   transition: opacity 0.3s ease-out,
               background 0.3s ease-out;
@@ -75,6 +76,15 @@
     height: auto;
     vertical-align: middle;
   }
+
+  // Mobile & Desktop
+  &.mobile {
+    display: none;
+  }
+  &.desktop {
+    display: inline-block;
+  }
+
 }
 
 
@@ -125,7 +135,8 @@
   .header-container {
     height: $size-header;
     &.active {
-      height: $size-header + $size-header-nav;
+      height: $size-header;
+      // height: $size-header + $size-header-nav;
     }
   }
 
@@ -136,6 +147,14 @@
     width: 100%;
     height: $size-header;
     background-color: $c-light;
+    // Mobile & Desktop
+    &.mobile {
+      display: inline-block;
+    }
+    &.desktop {
+      display: none;
+    }
+
   }
 
 } // END bp(mobile)

@@ -3,7 +3,6 @@ import CSSModules from 'react-css-modules';
 
 import styles from './hero.scss';
 import Section from './Section';
-import Button from '../Button/Button';
 
 import SineWaves from 'sine-waves';
 import { Link } from 'react-scroll';
@@ -85,18 +84,12 @@ class Hero extends React.Component {
     const scrollSmooth = true;
     return (
       <Section
-        name="HOME"
-        background="secondary"
+        name="HERO"
+        background="primary"
         styles={styles}>
         <canvas id="waves" styleName="hero-waves"></canvas>
         <h1>MAKE SIMPLE.</h1>
         <p>Front End Developer</p>
-        {/* <Button
-          type="ghost"
-          color="dark"
-          onClick={this.goDown}>
-          BUT MORE
-        </Button> */}
         <Link
           to="ABOUT"
           smooth={scrollSmooth}

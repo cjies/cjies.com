@@ -4,8 +4,8 @@
 //
 // *************************************
 
-@import "../../Utility/variables";
-@import "../../Utility/mixin";
+@import "../../utils/variables";
+@import "../../utils/mixin";
 
 
 // -------------------------------------
@@ -64,6 +64,8 @@
   // padding: nth($size-gutter, 1);
   overflow: hidden;
   cursor: pointer;
+  outline: 0;
+  user-select: none;
   transition: transform 0.3s ease-out,
               background 0.5s ease-out;
 

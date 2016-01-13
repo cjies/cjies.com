@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from './contact.scss';
 import Section from './Section';
-import Button from '../Button/Button';
+import Button from '../button/Button';
 
 import CoverBackground from '../../../static/img/intersection-bg.jpg';
 
@@ -50,7 +50,7 @@ class Contact extends React.Component {
           <div styleName="contact-fields" style={buttonPosition}>
             <Button
               tag="submit"
-              color="secondary"
+              color="primary"
               value="Send Message"
               onClick={this.onSubmitForm} />
           </div>
