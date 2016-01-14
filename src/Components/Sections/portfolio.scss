@@ -179,6 +179,41 @@
 
 
 // -------------------------------------
+//   Portfolio Detail
+// -------------------------------------
+
+.portfolio-detail-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  user-select: none;
+  pointer-events:none;
+  z-index: z("fix");
+  background-color: $c-light;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease-out,
+              height 0.5s ease-out,
+              opacity 0.55s ease-out;
+  
+  &.active {
+    opacity: 1;
+    width: 400vw;
+    height: 400vw;
+    pointer-events: auto;
+    transition: width 0.5s ease-in,
+                height 0.5s ease-in,
+                opacity 0.3s ease-in
+  }
+
+}
+
+
+
+// -------------------------------------
 //   RWD
 // -------------------------------------
 

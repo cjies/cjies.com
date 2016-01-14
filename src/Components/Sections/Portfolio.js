@@ -1,5 +1,11 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
+import classNames from 'classnames';
+
+// Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actionCreators from '../../redux/modules/portfolio';
 
 import styles from './portfolio.scss';
 import Section from './Section';
@@ -15,9 +21,26 @@ class Portfolio extends React.Component {
 
   constructor(props) {
     super(props);
+    // this.expandItem = this.expandItem.bind(this);
   }
-npm
+
+  showDetail(item, event) {
+    event.persist();
+    this.props.showDetail(item, event.clientX, event.clientY);
+    document.body.style.overflow = 'hidden';
+  }
+
+  hideDetail() {
+    this.props.hideDetail();
+    document.body.style.overflow = '';
+  }
+
   render() {
+    // Portfolio Detail Style
+    const detailStyle = {
+      left: this.props.detail.clientX,
+      top: this.props.detail.clientY
+    };
     return (
       <Section
         name="PORTFOLIO"
@@ -36,7 +59,8 @@ npm
         {portfolios.map((item, i) => (
           <li
             key={i}
-            styleName="portfolio-item">
+            styleName="portfolio-item"
+            onClick={this.showDetail.bind(this, item)}>
             <img styleName="portfolio-cover-image"
               src={require('../../../static/' + item.image.cover)} />
             <div styleName="portfolio-title">
@@ -50,9 +74,31 @@ npm
         ))}
         </ul>
 
+        <div
+          styleName={classNames('portfolio-detail-backdrop', { 'active': this.props.detail.show })}
+          onClick={this.hideDetail.bind(this)}
+          style={detailStyle} />
+
       </Section>
     );
   }
 }
 
-export default CSSModules(Portfolio, styles);
+// Map Redux state to component props
+function mapStateToProps(state) {
+  return {
+    detail: state.portfolio
+  };
+}
+
+// Map Redux actions to component props
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CSSModules(Portfolio, styles, {
+  allowMultiple: true
+}));
