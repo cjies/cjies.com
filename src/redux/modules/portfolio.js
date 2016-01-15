@@ -8,18 +8,19 @@
 //   Action Types
 // -------------------------------------
 
-  const SHOW_DETAIL = 'SHOW_DETAIL';
-  const HIDE_DETAIL = 'HIDE_DETAIL';
+  const SHOW_MODAL = 'SHOW_MODAL';
+  const HIDE_MODAL = 'HIDE_MODAL';
+
 
 // -------------------------------------
 //   Initial State
 // -------------------------------------
 
   const initialState = {
-    clientX: 0,
-    clientY: 0,
-    show: false,
-    data: {}
+    backdropStartX: 0,
+    backdropStartY: 0,
+    modalData: {},
+    modalShow: false
   };
 
 
@@ -29,18 +30,19 @@
 
   export default function reducer(state = initialState, action = {}) {
     switch (action.type) {
-      case SHOW_DETAIL:
+      case SHOW_MODAL:
         return {
           ...state,
-          clientX: action.clientX,
-          clientY: action.clientY,
-          data: action.data,
-          show: true
+          backdropStartX: action.backdropStartX,
+          backdropStartY: action.backdropStartY,
+          modalData: action.modalData,
+          modalShow: true
         };
-      case HIDE_DETAIL:
+      case HIDE_MODAL:
         return {
           ...state,
-          show: false
+          modalData: {},
+          modalShow: false
         };
       default:
         return state;
@@ -53,16 +55,16 @@
 // -------------------------------------
 
   // Show Portfolio Detail
-  export function showDetail(data, clientX, clientY) {
+  export function showModal(modalData, backdropStartX, backdropStartY) {
     return {
-      type: SHOW_DETAIL,
-      data, clientX, clientY
+      type: SHOW_MODAL,
+      modalData, backdropStartX, backdropStartY
     };
   }
 
   // Hide Portfolio Detail
-  export function hideDetail() {
+  export function hideModal() {
     return {
-      type: HIDE_DETAIL,
+      type: HIDE_MODAL,
     };
   }

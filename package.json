@@ -6,11 +6,16 @@
     "start": "node server.dev.js",
     "build": "NODE_ENV=production webpack --verbose --colors --display-error-details --config webpack.prod.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cjies/cjies-v2.git"
+  },
   "author": "cijies@gmail.com",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.1",
     "font-awesome": "^4.5.0",
+    "lory.js": "^2.0.0",
     "mobile-detect": "^1.3.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.5",
