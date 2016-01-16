@@ -10,8 +10,8 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
+mkdir deploy
 cd deploy
-
 
 git init
 git config user.name "cjies"
