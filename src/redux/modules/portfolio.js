@@ -15,6 +15,9 @@
   const SHOW_MORE = 'SHOW_MORE';
   const SET_LIMIT = 'SET_LIMIT';
 
+  const ENABLE_HOVER = 'ENABLE_HOVER';
+  const DISABLE_HOVER = 'DISABLE_HOVER';
+
 
 // -------------------------------------
 //   Initial State
@@ -27,7 +30,8 @@
     modalShow: false,
     filterType: 'ALL',
     showMore: false,
-    itemLimit: 6
+    itemLimit: 6,
+    hover: true
   };
 
 
@@ -65,6 +69,16 @@
         return {
           ...state,
           itemLimit: action.itemLimit
+        };
+      case ENABLE_HOVER:
+        return {
+          ...state,
+          hover: true
+        };
+      case DISABLE_HOVER:
+        return {
+          ...state,
+          hover: false
         };
       default:
         return state;
@@ -111,5 +125,19 @@
     return {
       type: SET_LIMIT,
       itemLimit
+    };
+  }
+
+  // Enable hover transition
+  export function enableHover() {
+    return {
+      type: ENABLE_HOVER
+    };
+  }
+
+  // Disable hover transition
+  export function disableHover() {
+    return {
+      type: DISABLE_HOVER
     };
   }

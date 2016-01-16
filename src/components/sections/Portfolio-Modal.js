@@ -44,7 +44,7 @@ class PortfolioModal extends React.Component {
         classNamePrevCtrl: styles.prev,
         classNameNextCtrl: styles.next
       });
-    });
+    }, 100);
   }
 
   render() {

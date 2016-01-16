@@ -12,6 +12,10 @@ import Section from './Section';
 import Button from '../button/Button';
 import PortfolioModal from './Portfolio-Modal';
 
+// Mobile Detect
+import mobileDetect from 'mobile-detect';
+const md = new mobileDetect(window.navigator.userAgent);
+
 // Data
 import { portfolios, portfolioTypes } from '../../../static/data/secret-agents.json';
 
@@ -43,6 +47,13 @@ class Portfolio extends React.Component {
     } else {
       this.props.setLimit(6);
     }
+
+    // Disable transition in mobile
+    if (md.mobile()) {
+      this.props.disableHover();
+    } else {
+      this.props.enableHover();
+    }
   }
 
   setFilter(filterType) {
@@ -61,7 +72,7 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    const { filterType, showMore, itemLimit } = this.props.portfolio;
+    const { filterType, showMore, itemLimit, hover } = this.props.portfolio;
     // Filter out the type
     const visiblePortfolios = () => {
       switch (filterType) {
@@ -111,7 +122,7 @@ class Portfolio extends React.Component {
           {visiblePortfolios().map((item, i) => (
             <li
               key={i}
-              styleName="portfolio-item"
+              styleName={classNames('portfolio-item', { 'hover': hover })}
               onClick={this.showModal.bind(this, item)}>
               <img styleName="portfolio-cover-image"
                 src={require('../../../static/' + item.image.cover)} />

@@ -14,7 +14,7 @@ rev=$(git rev-parse --short HEAD)
 rm -rf deploy || exit 0;
 mkdir deploy
 
-# Run Build
+# Run Build & Copy Files
 npm run build
 cp -r ./public ./deploy/public
 cp -r ./static/deploy/. ./deploy
