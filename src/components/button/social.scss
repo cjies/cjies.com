@@ -1,0 +1,36 @@
+// *************************************
+//
+//   Social List
+//
+// *************************************
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+
+// -------------------------------------
+//   List & Item
+// -------------------------------------
+
+.social-list {
+  position: relative;
+  
+}
+
+.social-item {
+  display: inline-block;
+  outline: 0;
+  color: $c-gray-light;
+  user-select: none;
+  margin-right: nth($size-gutter, 3);
+  transition: color 0.5s ease-out,
+              transform 0.3s ease-out;
+
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    color: $c-compl;
+    transform: scale(1.1, 1.1) translateY(-3px);
+  }
+}

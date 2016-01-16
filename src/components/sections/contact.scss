@@ -1,0 +1,141 @@
+// *************************************
+//
+//   Contact
+//
+// *************************************
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "./section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+
+// -------------------------------------
+//   Contact Form
+// -------------------------------------
+
+.contact-form {
+  position: relative;
+}
+
+.contact-fields {
+  display: block;
+  padding: nth($size-gutter, 1) 0;
+
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"], 
+  input[type="number"], 
+  textarea {
+    position: relative;
+    appearance: none;
+    background-color: $c-gray-lighter;
+    resize: none;
+    width: 100%;
+    border: 0px solid transparent;
+    outline: 0;
+    padding: nth($size-gutter, 2);
+    transition: box-shadow 0.3s ease-out;
+
+    // Focus
+    &:focus {
+      // border-color: darken($c-gray-lighter, 3%);
+      box-shadow: 0 1px 5px rgba($c-black, 0.3);
+    }
+
+    // Error State
+    &.error {
+      transition: background 0.2s ease-out;
+      background-color: rgba($c-assertive, 0.1);
+    }
+
+  } // END input, textarea
+
+  textarea {
+    height: 150px;
+    line-height: 1.5;
+  }
+
+}
+
+.contact-fields-half {
+  display: inline-block;
+  width: 50%;
+  padding-right: nth($size-gutter, 2);
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+// -------------------------------------
+//   Contact Send Button
+// -------------------------------------
+
+.contact-send {
+  button, 
+  input[type="submit"],
+  input[type="reset"] {
+    margin: 0;
+  }
+}
+
+.contact-send-response {
+  display: none;
+  position: relative;
+  margin-right: nth($size-gutter, 2);
+  &.success {
+    display: inline-block;
+    color: $c-balanced;
+  }
+  &.error {
+    display: inline-block;
+    color: $c-assertive;
+  }
+}
+
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(mobile) {
+
+  .contact-fields-half {
+    display: block;
+    width: auto;
+    padding: 0;
+    padding-bottom: nth($size-gutter, 2);
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .contact-send {
+    button, 
+    input[type="submit"],
+    input[type="reset"] {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .contact-send-response {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: nth($size-gutter, 2);
+  }
+
+} // END bp(mobile)

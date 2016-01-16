@@ -1,0 +1,103 @@
+// *************************************
+//
+//   Resume
+//
+// *************************************
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "./section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+
+// -------------------------------------
+//   Resume List & Item
+// -------------------------------------
+
+.resume-list {
+  lost-flex-container: row;
+  lost-align: left flex;
+}
+
+.resume-item {
+  display: flex;
+  lost-column: 1/2 0 nth($size-gutter, 2) flex;
+  // lost-align: center flex;
+  margin-bottom: nth($size-gutter, 3);
+}
+
+
+// -------------------------------------
+//   Label
+// -------------------------------------
+
+.resume-label {
+  lost-align: center flex;
+  width: $size-resume-label;
+  min-width: $size-resume-label;
+  text-align: center;
+  padding: 0 nth($size-gutter, 3);
+}
+
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.resume-text {
+  padding-left: nth($size-gutter, 3);
+  border-left: 1px solid $c-border;
+
+  h2, h4 {
+    font-weight: normal;
+  }
+
+  p {
+    padding-top: nth($size-gutter, 2);
+    color: $c-gray-light;
+  }
+
+}
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(padL) {
+
+  // .resume-label {
+  //   padding: 0 nth($size-gutter, 2);
+  // }
+  // .resume-text {
+  //   padding-left: nth($size-gutter, 2);
+  // }
+
+} // END bp(padL)
+
+
+@include bp(mobile) {
+
+  .resume-item {
+    lost-column: 1/1 0 0 flex;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .resume-label {
+    text-align: left;
+    width: $size-resume-label * 0.85;
+    min-width: $size-resume-label * 0.85;
+  }
+
+} // END bp(mobile)
