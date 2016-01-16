@@ -14,6 +14,7 @@ import Services from './sections/Services';
 import Intersection from './sections/Intersection';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
+import GoogleAnalytics from './analytics/Google-Analytics';
 
 import { repository, author } from '../../package.json';
 
@@ -49,6 +50,7 @@ class App extends React.Component {
         <Intersection />
         <Contact />
         <Footer />
+        <GoogleAnalytics />
       </div>
     );
   }

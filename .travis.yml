@@ -1,0 +1,15 @@
+# .travis.yml
+
+language: node_js
+node_js:
+  - '4.1'
+install:
+  - npm install
+script:
+  - npm run build
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy-ghpages.sh
+env:
+  global:
+    - GH_REF: github.com/cjies/cjies-v2.git
+    - secure: Rdrw2eh7j2N7QkFy2CZq+uGnATOcRX6kkJqS6aj1Bgk1HLWfe1pHvloIj7HkDCSMYlzntb0u+847Yzt1NYf3aa3V0fUxLeP1TTmIK9shjLHRU3Uwn3ZhcRO/Se7u8qV7uiTihCyQmgDyrDHjILyHfhGts0ojMVOjJDEAklanKMdd0y7Sv6EUAeoofv7W6KhwRBmWmEcGM0Vxfmo18C8O4SIMYmU+Z/BE2yEibE7LRFkr3oSbE0w/fJ+QHM+GdZSGx46kQcV/0LM7FAwuCvc4a0hkvT6xNGAn04N7URhLJsZe9L4tmoa1aWE3SR4y4OJj2+/l01rB8o18gHacR0vxsyb7BhdWQufgBiJibDA+fI/oW2C6Asm7bPVt9o0wDjhQi0oJPKnNQvdrVUnsi2/ppToiZmk19v8+rNv0KdhyKrfasXvfPow0tzpLoX2oy33tGa6k0ELb20svUAn4FWAO6kLpcnyDlhXuGsj0Nj3BVnilxqLRCiryIy1ldfN+2UWcnnBsuFyCON9niSR/lTwSOpGqsM2rOVPPjbEVClne7F/zT+PEQVwfcKNusyHw8nI9zosiGcG2mT8eG0k2FHGYfI+R0FSUCQ3P8S0ZgY/6VXhCx8UxxV75uyX/RfKP1wYdNJ+zdL3QJNv63XtqbRyuk6Szn7r7IiEpIjNaB1Zippw=
