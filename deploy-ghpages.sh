@@ -11,6 +11,9 @@ fi
 rev=$(git rev-parse --short HEAD)
 
 mkdir deploy
+cp ./public ./deploy/public
+cp ./index.html ./deploy/index.html
+cp ./static/deploy ./deploy
 cd deploy
 
 git init
@@ -20,10 +23,6 @@ git config user.email "cijies@gmail.com"
 git remote add upstream "https://$GH_TOKEN@github.com/cjies/cjies-v2.git"
 git fetch upstream
 git reset upstream/gh-pages
-
-cp ../public ./public
-cp ../index.html ./index.html
-cp ../static/deploy ./
 
 touch .
 
