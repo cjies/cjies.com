@@ -1,0 +1,132 @@
+// *************************************
+//
+//   Sections
+//
+// *************************************
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+
+
+// -------------------------------------
+//   Section Base
+// -------------------------------------
+
+.section {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  
+  // Color Themes
+  &.light {
+    background-color: $c-light;
+  }
+  &.stable {
+    background-color: $c-stable;
+  }
+  &.dark {
+    background-color: $c-dark;
+    color: $c-light;
+  }
+  &.primary {
+    background-color: $c-primary;
+    color: $c-light;
+  }
+  &.secondary {
+    background-color: $c-secondary;
+    color: $c-light;
+  }
+}
+
+.section-container {
+  lost-center: $size-container nth($size-gutter, 4) flex;
+  padding-top: nth($size-gutter, 4) * 4;
+  padding-bottom: nth($size-gutter, 4) * 4;
+  // overflow: hidden;
+}
+
+.section-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+
+// -------------------------------------
+//   Section Background Image
+// -------------------------------------
+
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  // Background Image
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: rgba($c-primary, 0.7);
+}
+
+// -------------------------------------
+//   Section Title
+// -------------------------------------
+
+.section-title {
+  display: block;
+  position: relative;
+  padding: nth($size-gutter, 4) 0;
+  margin-bottom: nth($size-gutter, 2);
+  font-size: $font-base * 1.5;
+  color: $c-secondary;
+  line-height: 1.5;
+
+  // Top Line
+  &:before {
+    content: "";
+    position: absolute;
+    top: nth($size-gutter, 2);
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 50px;
+    background-color: $c-border;
+  }
+
+}
+
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(mobile) {
+
+  .section-container {
+    padding-top: nth($size-gutter, 4) * 3;
+    padding-bottom: nth($size-gutter, 4) * 3;
+  }
+
+  .section-title {
+    text-align: center;
+    &:before { 
+      left: 50%;
+      margin-left: -25px;
+    }
+  }
+
+  
+} // END bp(mobile)
