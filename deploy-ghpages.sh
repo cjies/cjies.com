@@ -10,22 +10,26 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
+# Clear and re-create the deploy directory
+rm -rf deploy || exit 0;
 mkdir deploy
+
+# Run Build
+npm run build
+ls -a
 cp ./public ./deploy/public
 cp ./index.html ./deploy/index.html
 cp ./static/deploy ./deploy
-cd deploy
 
+# Git Init
+cd deploy
 git init
 git config user.name "cjies"
 git config user.email "cijies@gmail.com"
 
-git remote add upstream "https://$GH_TOKEN@github.com/cjies/cjies-v2.git"
-git fetch upstream
-git reset upstream/gh-pages
-
-touch .
-
-git add -A .
+# Git Commit
+git add .
 git commit -m "rebuild pages at ${rev}"
-git push -q upstream HEAD:gh-pages
+
+# Git Push
+git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
