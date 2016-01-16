@@ -17,7 +17,7 @@ mkdir deploy
 # Run Build
 npm run build
 cp -r ./public ./deploy/public
-cp ./static/deploy ./deploy
+cp -r ./static/deploy/. ./deploy
 cp ./index.html ./deploy/index.html
 
 # Git Init
