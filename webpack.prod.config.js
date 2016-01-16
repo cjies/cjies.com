@@ -11,15 +11,19 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'public'),
     filename: 'app.js',
-    publicPath: '/build/'
+    publicPath: '/public/'
   },
   plugins: [
 
     // CSS
     new ExtractTextPlugin('css/app.css', {
       allChunks: true
+    }),
+    // Fetch API
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     }),
     new webpack.DefinePlugin({
       __CLIENT__: true,
@@ -59,15 +63,15 @@ module.exports = {
     {
       test: /\.css$/,
       // loader: 'style-loader!css-loader!postcss-loader'
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]_[hash:base64:5]!postcss')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[hash:base64:6]!postcss')
     }, 
     {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]_[hash:base64:5]!postcss!sass')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[hash:base64:6]!postcss!sass')
     }, 
     {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]_[hash:base64:5]!less')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[hash:base64:6]!less')
     }, 
     { 
       test: /\.json$/, 

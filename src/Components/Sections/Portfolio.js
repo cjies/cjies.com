@@ -13,7 +13,7 @@ import Button from '../button/Button';
 import PortfolioModal from './Portfolio-Modal';
 
 // Data
-import { portfolios } from '../../../static/data/secret-agents.json';
+import { portfolios, portfolioTypes } from '../../../static/data/secret-agents.json';
 
 class Portfolio extends React.Component {
   static propTypes = {
@@ -22,6 +22,36 @@ class Portfolio extends React.Component {
 
   constructor(props) {
     super(props);
+    this.showMore = this.showMore.bind(this);
+    this.setItemLimit = this.setItemLimit.bind(this);
+  }
+
+  componentWillMount() {
+    // Set Item Limit
+    this.setItemLimit();
+    window.addEventListener('resize', this.setItemLimit);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setItemLimit);
+  }
+
+  setItemLimit() {
+    // If mobile show less
+    if (window.innerWidth <= 640) {
+      this.props.setLimit(3);
+    } else {
+      this.props.setLimit(6);
+    }
+  }
+
+  setFilter(filterType) {
+    this.showMore();
+    this.props.setFilter(filterType);
+  }
+
+  showMore() {
+    this.props.showMore();
   }
 
   showModal(item, event) {
@@ -31,6 +61,31 @@ class Portfolio extends React.Component {
   }
 
   render() {
+    const { filterType, showMore, itemLimit } = this.props.portfolio;
+    // Filter out the type
+    const visiblePortfolios = () => {
+      switch (filterType) {
+        // Show all
+        case 'ALL':
+          // If have limitation
+          if (!showMore) {
+            return portfolios.filter((item, i) => {
+              return i < itemLimit;
+            });
+          }
+          return portfolios;
+        // Show filtered item
+        default:
+          return portfolios.filter((item, i) => {
+            // If have limitation
+            if (!showMore) {
+              return i < itemLimit && item.type === filterType;
+            }
+            return item.type === filterType;
+          });
+      }
+    };
+
     return (
       <Section
         name="PORTFOLIO"
@@ -38,15 +93,22 @@ class Portfolio extends React.Component {
         title="My Portfolio"
         styles={styles}>
 
-        {/* <div styleName="portfolio-filter">
-          <Button type="ghost" size="small" color="secondary" active="true">ALL</Button>
-          <Button type="ghost" size="small" color="secondary">WEB</Button>
-          <Button type="ghost" size="small" color="secondary">DESIGN</Button>
-          <Button type="ghost" size="small" color="secondary">PHOTOGRAPHY</Button>
-        </div> */}
+        <div styleName="portfolio-filter">
+          {portfolioTypes.map((item, i) => (
+            <Button
+              key={i}
+              type="ghost"
+              size="small"
+              color="secondary"
+              active={filterType === item.type ? true : false}
+              onClick={this.setFilter.bind(this, item.type)}>
+              {item.name}
+            </Button>
+          ))}
+        </div>
 
         <ul styleName="portfolio-list">
-          {portfolios.map((item, i) => (
+          {visiblePortfolios().map((item, i) => (
             <li
               key={i}
               styleName="portfolio-item"
@@ -64,6 +126,22 @@ class Portfolio extends React.Component {
           ))}
         </ul>
 
+        {(() => {
+          // Show More Button
+          if (!showMore) {
+            return (
+              <div styleName="portfolio-show-more">
+                <Button
+                  type="ghost"
+                  color="gray"
+                  onClick={this.showMore}>
+                  Show More
+                </Button>
+              </div>
+            );
+          }
+        })()}
+
         <PortfolioModal />
 
       </Section>
@@ -72,8 +150,10 @@ class Portfolio extends React.Component {
 }
 
 // Map Redux state to component props
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    portfolio: state.portfolio
+  };
 }
 
 // Map Redux actions to component props

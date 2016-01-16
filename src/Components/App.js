@@ -15,6 +15,7 @@ import Intersection from './sections/Intersection';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
+import { repository, author } from '../../package.json';
 
 class App extends React.Component {
   static propTypes = {
@@ -23,6 +24,17 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    // Console Information
+    console.info(
+      ' \n' +
+      'Behind the scenes: ' + repository.url + ' \n' +
+      'I <3 React~~~ Ｏ(≧▽≦)Ｏ \n' +
+      ' \n' +
+      'Hiring me? ' + author.email
+    );
   }
 
   render() {

@@ -40,7 +40,9 @@ class PortfolioModal extends React.Component {
         slidesToScroll: 1,
         enableMouseEvents: true,
         classNameFrame: styles.frame,
-        classNameSlideContainer: styles.slides
+        classNameSlideContainer: styles.slides,
+        classNamePrevCtrl: styles.prev,
+        classNameNextCtrl: styles.next
       });
     });
   }
@@ -51,7 +53,7 @@ class PortfolioModal extends React.Component {
     const modalBackdropStyle = {
       left: backdropStartX,
       top: backdropStartY,
-      // backgroundColor: modalData.modalBackdropColor
+      backgroundColor: modalData.modalBackdropColor
     };
     return (
       <div>
@@ -86,6 +88,12 @@ class PortfolioModal extends React.Component {
                               ))}
                             </ul>
                         </div>
+                        <span styleName="prev">
+                          <i className="fa fa-angle-left fa-2x" />
+                        </span>
+                        <span styleName="next">
+                          <i className="fa fa-angle-right fa-2x" />
+                        </span>
                     </div>
                   );
                 }
@@ -94,8 +102,10 @@ class PortfolioModal extends React.Component {
 
             <div styleName="portfolio-modal-desc">
               <div styleName="portfolio-modal-text">
-                <h1>{modalData.title}</h1>
-                <p>{modalData.description}</p>
+                <h1>
+                  {modalData.title}
+                </h1>
+                <p>{modalData.type} | {modalData.description}</p>
               </div>
 
               {(() => {

@@ -50,8 +50,15 @@
     // Focus
     &:focus {
       // border-color: darken($c-gray-lighter, 3%);
-      box-shadow: 0 1px 5px rgba($c-black, 0.2);
+      box-shadow: 0 1px 5px rgba($c-black, 0.3);
     }
+
+    // Error State
+    &.error {
+      transition: background 0.2s ease-out;
+      background-color: rgba($c-assertive, 0.1);
+    }
+
   } // END input, textarea
 
   textarea {
@@ -70,6 +77,32 @@
   }
 }
 
+// -------------------------------------
+//   Contact Send Button
+// -------------------------------------
+
+.contact-send {
+  button, 
+  input[type="submit"],
+  input[type="reset"] {
+    margin: 0;
+  }
+}
+
+.contact-send-response {
+  display: none;
+  position: relative;
+  margin-right: nth($size-gutter, 2);
+  &.success {
+    display: inline-block;
+    color: $c-balanced;
+  }
+  &.error {
+    display: inline-block;
+    color: $c-assertive;
+  }
+}
+
 
 // -------------------------------------
 //   RWD
@@ -85,6 +118,24 @@
     &:last-child {
       padding-bottom: 0;
     }
+  }
+
+  .contact-send {
+    button, 
+    input[type="submit"],
+    input[type="reset"] {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .contact-send-response {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: nth($size-gutter, 2);
   }
 
 } // END bp(mobile)

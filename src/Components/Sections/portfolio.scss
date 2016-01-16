@@ -66,6 +66,7 @@
   cursor: pointer;
   outline: 0;
   user-select: none;
+  text-align: center;
   transition: transform 0.3s ease-out,
               background 0.5s ease-out;
 
@@ -108,6 +109,7 @@
   padding: nth($size-gutter, 2) nth($size-gutter, 2) * 1.5;
   color: $c-light;
   pointer-events: none;
+  text-align: left;
 
   > * {
     z-index: z("front");
@@ -179,40 +181,12 @@
 
 
 // -------------------------------------
-//   Portfolio Modal
+//   Portfolio Show More
 // -------------------------------------
 
-.portfolio-modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  opacity: 0;
-  user-select: none;
-  pointer-events:none;
-  z-index: z("fix") - 1;
-  background-color: $c-light;
-  border-radius: 100%;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease-in-out,
-              height 0.3s ease-in-out,
-              opacity 0.2s ease-in-out 0.1s;
-  
-  &.active {
-    opacity: 1;
-    width: 400vw;
-    height: 400vw;
-    pointer-events: auto;
-    transition: width 0.4s ease-in,
-                height 0.4s ease-in,
-                opacity 0.3s ease-in
-  }
-
-}
-
-.portfolio-modal {
-  position: fixed;
+.portfolio-show-more {
+  padding-top: nth($size-gutter, 3);
+  text-align: center;
 }
 
 

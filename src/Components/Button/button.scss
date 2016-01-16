@@ -47,7 +47,7 @@
 @mixin button-color-palette($buttonStyle) {
   @include button-color('dark', $c-dark, $c-light, $buttonStyle);
   @include button-color('light', $c-light, $c-dark, $buttonStyle);
-  @include button-color('gray', $c-gray, $c-light, $buttonStyle);
+  @include button-color('gray', $c-gray-light, $c-light, $buttonStyle);
   @include button-color('stable', $c-stable, $c-light, $buttonStyle);
   @include button-color('primary', $c-primary, $c-light, $buttonStyle);
   @include button-color('secondary', $c-secondary, $c-light, $buttonStyle);
@@ -100,6 +100,11 @@
     margin-right: 0;
   }
 
+  &[disabled] {
+    opacity: 0.3;
+    cursor: default;
+  }
+
   // Size
   @include button-size-palette();
 }
@@ -118,6 +123,3 @@
   @extend %button-base;
   @include button-color-palette('ghost');
 }
-
-
-

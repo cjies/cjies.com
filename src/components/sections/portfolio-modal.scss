@@ -66,6 +66,12 @@
 
 .portfolio-modal-text {
   width: 100%;
+  h1 {
+    margin-bottom: nth($size-gutter, 1);
+  }
+  p {
+    color: $c-gray;
+  }
 }
 
 .portfolio-modal-link {
@@ -73,7 +79,7 @@
 }
 
 .portfolio-modal-slider {
-  padding-bottom: nth($size-gutter, 2);
+  margin-bottom: nth($size-gutter, 2);
 }
 
 
@@ -124,7 +130,7 @@
               opacity 0.2s ease-in-out 0.1s;
   
   &.active {
-    opacity: 1;
+    opacity: 0.98;
     width: 400vw;
     height: 400vw;
     pointer-events: auto;
@@ -168,6 +174,20 @@
   }
 }
 
+.prev, .next {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 0 nth($size-gutter, 2) * 1.5;
+  color: $c-light;
+  text-shadow: 0 0 2px rgba($c-black, 0.8);
+  user-select: none;
+  cursor: pointer;
+  @include inline-vertical();
+}
+.prev { left: 0; }
+.next { right: 0; }
 
 
 // -------------------------------------

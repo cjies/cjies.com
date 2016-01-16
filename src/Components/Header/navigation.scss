@@ -66,10 +66,10 @@
     height: 100%;
     text-align: center;
     font-size: $font-large;
-    background-color: rgba($c-light, 0.95);
+    background-color: $c-light;
     @include inline-vertical();
     &.active {
-      opacity: 1;
+      opacity: 0.98;
       visibility: visible;
       pointer-events: auto;
       transition: opacity 0.2s ease-out;
