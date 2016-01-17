@@ -17,6 +17,7 @@ mkdir deploy
 # Run Build & Copy Files
 npm run build
 cp -r ./public ./deploy/public
+cp -r ./doc ./deploy/doc
 cp -r ./static/deploy/. ./deploy
 cp ./index.html ./deploy/index.html
 
