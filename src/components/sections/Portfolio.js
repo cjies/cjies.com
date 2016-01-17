@@ -16,8 +16,9 @@ import PortfolioModal from './Portfolio-Modal';
 import mobileDetect from 'mobile-detect';
 const md = new mobileDetect(window.navigator.userAgent);
 
-// Data
+// Portfolio Data
 import { portfolios, portfolioTypes } from '../../../static/data/secret-agents.json';
+const reversedPortfolios = portfolios.reverse();
 
 class Portfolio extends React.Component {
   static propTypes = {
@@ -80,14 +81,14 @@ class Portfolio extends React.Component {
         case 'ALL':
           // If have limitation
           if (!showMore) {
-            return portfolios.filter((item, i) => {
+            return reversedPortfolios.filter((item, i) => {
               return i < itemLimit;
             });
           }
-          return portfolios;
+          return reversedPortfolios;
         // Show filtered item
         default:
-          return portfolios.filter((item, i) => {
+          return reversedPortfolios.filter((item, i) => {
             // If have limitation
             if (!showMore) {
               return i < itemLimit && item.type === filterType;
@@ -122,7 +123,7 @@ class Portfolio extends React.Component {
           {visiblePortfolios().map((item, i) => (
             <li
               key={i}
-              styleName={classNames('portfolio-item', { 'hover': hover })}
+              styleName={classNames('portfolio-item', { hover })}
               onClick={this.showModal.bind(this, item)}>
               <img styleName="portfolio-cover-image"
                 src={require('../../../static/' + item.image.cover)} />

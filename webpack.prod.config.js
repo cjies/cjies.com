@@ -2,6 +2,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var fs = require('fs');
+var banner = path.resolve(__dirname, 'static/data/banner.txt');
 
 module.exports = {
   devtool: 'source-map',
@@ -16,7 +18,6 @@ module.exports = {
     publicPath: '/public/'
   },
   plugins: [
-
     // CSS
     new ExtractTextPlugin('css/app.css', {
       allChunks: true
@@ -46,7 +47,14 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
+      },
+      output: {
+        comments: false
       }
+    }),
+    // Add Banner
+    new webpack.BannerPlugin(fs.readFileSync(banner, { encoding: 'utf8' }), {
+      entryOnly: true
     })
   ],
   module: {
@@ -56,7 +64,7 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, 
     {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|gif|ico)$/,
       loaders: ['url?limit=10240&name=img/img-[hash:6].[ext]'],
       include: path.join(__dirname, 'static/img')
     }, 
@@ -76,6 +84,10 @@ module.exports = {
     { 
       test: /\.json$/, 
       loader: 'json'
+    },
+    {
+      test: /\.txt$/, 
+      loader: 'raw'
     },
     // Icon Font
     { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&name=fonts/font-[hash:6].[ext]&mimetype=application/font-woff" },

@@ -34,9 +34,9 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, 
     {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|gif|ico)$/,
       loaders: ['url?limit=10240&name=img/img-[hash:6].[ext]'],
-      include: path.join(__dirname, 'static/img')
+      include: path.join(__dirname, 'static')
     }, 
     {
       test: /\.css$/,
@@ -54,6 +54,10 @@ module.exports = {
     { 
       test: /\.json$/, 
       loader: 'json'
+    },
+    {
+      test: /\.txt$/, 
+      loader: 'raw'
     },
     // Icon Font
     { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&name=fonts/font-[hash:6].[ext]&mimetype=application/font-woff" },

@@ -11,11 +11,13 @@ const store = createStore(reducers);
 
 // Behind the Scenes
 import { repository, author } from '../package.json';
+import banner from '../static/data/banner.txt';
 console.info(
   ' \n' +
-  'Behind the scenes: ' + repository.url + ' \n' +
-  'I <3 React~~~ Ｏ(≧▽≦)Ｏ \n' +
+  banner +
   ' \n' +
+  'I <3 React~~~ Ｏ(≧▽≦)Ｏ \n' +
+  'Behind the scenes: ' + repository.url + ' \n' +
   'Hiring me? ' + author.email
 );
 
