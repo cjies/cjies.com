@@ -81,6 +81,9 @@
 
 .portfolio-modal-slider {
   margin-bottom: nth($size-gutter, 2);
+  img {
+    pointer-events: none;
+  }
 }
 
 
@@ -163,7 +166,6 @@
 
 .slides {
   display: inline-block;
-
   li {
     position: relative;
     display: inline-block;
@@ -173,11 +175,6 @@
     curdor: -moz-grab;
     cursor: -webkit-grab;
   }
-
-  img {
-    pointer-events: none;
-  }
-
 }
 
 .prev, .next {

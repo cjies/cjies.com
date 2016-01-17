@@ -75,7 +75,8 @@ class PortfolioModal extends React.Component {
             {(() => {
               // Lory Slider
               if (Object.keys(modalData).length) {
-                if (modalData.image.details.length > 0) {
+                // length > 1
+                if (modalData.image.details.length > 1) {
                   this.initialSlider();
                   return (
                     <div id="portfolio-slider" styleName="slider portfolio-modal-slider">
@@ -94,6 +95,14 @@ class PortfolioModal extends React.Component {
                         <span styleName="next">
                           <i className="fa fa-angle-right fa-2x" />
                         </span>
+                    </div>
+                  );
+                }
+                // length == 1
+                if (modalData.image.details.length === 1) {
+                  return (
+                    <div id="portfolio-slider" styleName="slider portfolio-modal-slider">
+                      <img src={require('../../../static/' + modalData.image.details[0])} />
                     </div>
                   );
                 }

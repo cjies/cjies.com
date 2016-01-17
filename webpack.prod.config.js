@@ -64,8 +64,11 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, 
     {
-      test: /\.(png|jpg|gif|ico)$/,
-      loaders: ['url?limit=10240&name=img/img-[hash:6].[ext]'],
+      test: /\.(jpe?g|png|gif|ico)$/i,
+      loaders: [
+        'file?hash=sha512&digest=hex&name=img/img-[hash:6].[ext]',
+        'image-webpack?bypassOnDebug&optimizationLevel=4&interlaced=false'
+      ],
       include: path.join(__dirname, 'static/img')
     }, 
     {

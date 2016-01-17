@@ -1,9 +1,15 @@
+# NPM #
 node_modules
+npm-debug.log
+
+# Mac #
 .DS_Store
-js/bundle.js
-js/bundle.min.js
+
+# Build #
 build
 public
-npm-debug.log
+resources
+
+# Sublime #
 *.sublime-project
 *.sublime-workspace

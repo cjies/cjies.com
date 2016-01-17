@@ -26,6 +26,17 @@ Please visit: [http://www.cjies.com](http://cjies.com)
 - ***[Font Awesome Webpack](https://github.com/gowravshekar/font-awesome-webpack)*** - Font awesome configuration for webpack
 
 
+## Mockups
+
+- [FREE-6-MacBooks-Phones-Mockups](https://www.behance.net/gallery/26949691/FREE-6-MacBooks-Phones-Mockups) by Mahmoud Wally
+- [Free-Macbook-Pro-Mockup-2](https://www.behance.net/gallery/31543983/Free-Macbook-Pro-Mockup-2) by Hazem Tawfik
+- [3-in-1-Mockup](http://www.leapwisemedia.com/resources/) by leapwisemedia
+- [Free-Photographic-iPhone-6-Mockup](https://dribbble.com/shots/2427413-Free-Photographic-iPhone-6-Mockup) by Irina Medyantseva
+- [TV-Mockup](https://dribbble.com/shots/2254739-TV-Mockups-PSD-Download) by Oliur
+- [5k-iMac-Mockup](http://www.mockupdeals.com/free-container-5k-imac-mockup/) by mockupdeals
+- [iPhone-6-Scalable-Mockups](https://dribbble.com/shots/1717398-iPhone-6-Scalable-Mockups-4-7) by JustD
+
+
 ## Install
 
 Just in case you wanna clone it... ~ヾ(＾∇＾)
