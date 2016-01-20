@@ -37,22 +37,22 @@ module.exports = {
       test: /\.(jpe?g|png|gif|ico)$/i,
       loaders: [
         'file?hash=sha512&digest=hex&name=img/img-[hash:6].[ext]',
-        // 'image-webpack?bypassOnDebug&optimizationLevel=4&interlaced=false'
+        // 'image-webpack?bypassOnDebug&optimizationLevel=5&interlaced=false'
       ],
       include: path.join(__dirname, 'static')
     }, 
     {
       test: /\.css$/,
       // loader: 'style-loader!css-loader!postcss-loader'
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]__[hash:5]!postcss')
     }, 
     {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss!sass')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]__[hash:5]!postcss!sass')
     }, 
     {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!less')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]__[hash:5]!less')
     }, 
     { 
       test: /\.json$/, 

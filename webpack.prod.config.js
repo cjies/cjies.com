@@ -67,22 +67,22 @@ module.exports = {
       test: /\.(jpe?g|png|gif|ico)$/i,
       loaders: [
         'file?hash=sha512&digest=hex&name=img/img-[hash:6].[ext]',
-        'image-webpack?bypassOnDebug&optimizationLevel=4&interlaced=false'
+        'image-webpack?bypassOnDebug&optimizationLevel=5&interlaced=false'
       ],
       include: path.join(__dirname, 'static/img')
     }, 
     {
       test: /\.css$/,
       // loader: 'style-loader!css-loader!postcss-loader'
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[hash:base64:6]!postcss')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=cj-[hash:6]!postcss')
     }, 
     {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[hash:base64:6]!postcss!sass')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=cj-[hash:6]!postcss!sass')
     }, 
     {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[hash:base64:6]!less')
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=cj-[hash:6]!less')
     }, 
     { 
       test: /\.json$/, 
