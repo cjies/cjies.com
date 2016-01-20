@@ -69,7 +69,7 @@ export default class Section extends React.Component {
 
     // Section Title
     if (this.props.title) {
-      sectionTitle = <h2 styleName="section-title" dangerouslySetInnerHTML={this.getSafetyTitle(this.props.title)}></h2>;
+      sectionTitle = <h1 styleName="section-title" dangerouslySetInnerHTML={this.getSafetyTitle(this.props.title)}></h1>;
     }
 
     // Default Container

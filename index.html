@@ -26,17 +26,26 @@
   <meta name="author" content="CJies Tan">
   <meta property="og:title" content="CJ - MAKE SIMPLE" />
   <meta property="og:description" content="Hello. I am CJies Tan. I am a front-end developer..." />
-  <meta property="og:image" content="http://www.cjies.com/apple-touch-icon.png" />
-  <meta property="og:url" content="http://www.cjies.com/" />
+  <meta property="og:image" content="//www.cjies.com/apple-touch-icon.png" />
+  <meta property="og:url" content="//www.cjies.com/" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/> 
 
   <!-- Link -->
-  <link href="http://www.cjies.com/humans.txt" rel="author" type="text/plain"></link>
+  <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+  <link href="//www.cjies.com/humans.txt" rel="author" type="text/plain"></link>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans" />
   <link rel='stylesheet' href='./public/css/app.css'>
+
+  <!-- Redirect to HTTPS -->
+  <script type="text/javascript">
+    var host = 'cjies.com';
+    if ((host === window.location.host) && (window.location.protocol !== 'https:')) {
+      window.location.protocol = 'https';
+    }
+  </script>
 
 </head>
 <body>

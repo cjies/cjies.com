@@ -49,7 +49,7 @@ class Contact extends React.Component {
   submitForm(values) {
     return new Promise((resolve, reject) => {
       // Send Email by Formspree
-      fetch('http://formspree.io/' + about.email, {
+      fetch('//formspree.io/' + about.email, {
         method: 'post',
         headers: {
           'Accept': 'application/json',
