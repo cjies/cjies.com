@@ -4,9 +4,8 @@ Please visit: [http://www.cjies.com](http://cjies.com)
 > 2016 CJies website created in React. 
 
 [![Build Status](https://travis-ci.org/cjies/cjies-v2.svg?branch=master)](https://travis-ci.org/cjies/cjies-v2)
-[![GitHub version](https://badge.fury.io/gh/cjies%2Fcjies-v2.svg)](https://badge.fury.io/gh/cjies%2Fcjies-v2)
 [![Dependency Status](https://david-dm.org/cjies/cjies-v2.svg)](https://david-dm.org/cjies/cjies-v2)
-
+[![devDependency Status](https://david-dm.org/cjies/cjies-v2/dev-status.svg)](https://david-dm.org/cjies/cjies-v2#info=devDependencies)
 
 ## All I used
 
