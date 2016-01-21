@@ -112,7 +112,7 @@ module.exports = {
       require('postcss-nested')(),
       require('lost')(),
       require('autoprefixer')({
-        browsers: ['last 2 versions', 'IE > 8']
+        browsers: ['> 5%', 'last 2 versions', 'IE > 8']
       }),
       require('postcss-reporter')({
         clearMessages: true
