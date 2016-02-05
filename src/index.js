@@ -10,16 +10,15 @@ import reducers from './redux/reducer';
 const store = createStore(reducers);
 
 // Behind the Scenes
-import { repository, author } from '../package.json';
+import { repository, author, version } from '../package.json';
 import banner from '../static/data/banner.txt';
-console.info(
-  ' \n' +
-  banner +
-  ' \n' +
-  'I <3 React~~~ Ｏ(≧▽≦)Ｏ \n' +
-  'Behind the scenes: ' + repository.url + ' \n' +
-  'Hiring me? ' + author.email
-);
+console.info(`
+  ${banner}
+  I <3 React~~~ Ｏ(≧▽≦)Ｏ
+  Page version: v${version}
+  Behind the scenes: ${repository.url}
+  Hiring me? ${author.email}
+`);
 
 ReactDOM.render(
   <Provider store={store}>
