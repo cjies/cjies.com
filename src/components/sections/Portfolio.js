@@ -1,6 +1,5 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
 // Redux
 import { connect } from 'react-redux';
@@ -8,6 +7,8 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../redux/modules/portfolio';
 
 import styles from './portfolio.scss';
+const cx = classNames.bind(styles);
+
 import Section from './Section';
 import Button from '../button/Button';
 import PortfolioModal from './Portfolio-Modal';
@@ -105,7 +106,7 @@ class Portfolio extends React.Component {
         title="My Portfolio"
         styles={styles}>
 
-        <div styleName="portfolio-filter">
+        <div className={styles['portfolio-filter']}>
           {portfolioTypes.map((item, i) => (
             <Button
               key={i}
@@ -119,19 +120,19 @@ class Portfolio extends React.Component {
           ))}
         </div>
 
-        <ul styleName="portfolio-list">
+        <ul className={styles['portfolio-list']}>
           {visiblePortfolios().map((item, i) => (
             <li
               key={i}
-              styleName={classNames('portfolio-item', { hover })}
+              className={cx('portfolio-item', { hover })}
               onClick={this.showModal.bind(this, item)}>
-              <img styleName="portfolio-cover-image"
-                src={require('../../../static/' + item.image.cover)} />
-              <div styleName="portfolio-title">
+              <img className={styles['portfolio-cover-image']}
+                src={require(`../../../static/${item.image.cover}`)} />
+              <div className={styles['portfolio-title']}>
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
               </div>
-              <span styleName="portfolio-expand">
+              <span className={styles['portfolio-expand']}>
                 <i className="fa fa-expand fa-lg" />
               </span>
             </li>
@@ -142,7 +143,7 @@ class Portfolio extends React.Component {
           // Show More Button
           if (!showMore) {
             return (
-              <div styleName="portfolio-show-more">
+              <div className={styles['portfolio-show-more']}>
                 <Button
                   type="ghost"
                   color="gray"
@@ -176,6 +177,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CSSModules(Portfolio, styles, {
-  allowMultiple: true
-}));
+)(Portfolio);

@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './footer.scss';
 import Section from './Section';
@@ -23,8 +22,8 @@ class Footer extends React.Component {
         name="FOOTER"
         background="stable"
         styles={styles}>
-        <p styleName="footer-copyright">© {currentYear} Jies Design.</p>
-        <div styleName="footer-social">
+        <p className={styles['footer-copyright']}>© {currentYear} Jies Design.</p>
+        <div className={styles['footer-social']}>
           <Social />
         </div>
       </Section>
@@ -32,4 +31,4 @@ class Footer extends React.Component {
   }
 }
 
-export default CSSModules(Footer, styles);
+export default Footer;

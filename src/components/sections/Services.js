@@ -1,6 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
 
 import styles from './services.scss';
 import Section from './Section';
@@ -25,14 +23,14 @@ class Services extends React.Component {
         background="stable"
         title="Services Provided"
         styles={styles}>
-        <ul styleName="services-list">
+        <ul className={styles['services-list']}>
           {services.map((item, i) =>
-            <li key={i} styleName="services-item" >
-              <div styleName="services-icon">
+            <li key={i} className={styles['services-item']}>
+              <div className={styles['services-icon']}>
                 <i className={item.icon} />
               </div>
-              <h2 styleName="services-title">{item.title}</h2>
-              <p styleName="services-description">{item.description}</p>
+              <h2 className={styles['services-title']}>{item.title}</h2>
+              <p className={styles['services-description']}>{item.description}</p>
             </li>
           )}
         </ul>
@@ -42,4 +40,4 @@ class Services extends React.Component {
   }
 }
 
-export default CSSModules(Services, styles);
+export default Services;

@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval-source-map',
   entry: [
     'font-awesome-webpack!./src/utils/font-awesome.config',
     'eventsource-polyfill', // necessary for hot reloading with IE
@@ -61,6 +61,10 @@ module.exports = {
     {
       test: /\.txt$/, 
       loader: 'raw'
+    },
+    { 
+      test: /\.xml$/, 
+      loader: 'xml' 
     },
     // Icon Font
     { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&name=fonts/font-[hash:6].[ext]&mimetype=application/font-woff" },

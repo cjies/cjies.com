@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './intersection.scss';
 import Section from './Section';
@@ -27,10 +26,10 @@ class Intersection extends React.Component {
         backgroundOverlay={backgroundOverlay}
         parallax={parralaxEffect}
         styles={styles}>
-        <h1 styleName="text">Hello Taipei.</h1>
+        <h1 className={styles.text}>Hello Taipei.</h1>
       </Section>
     );
   }
 }
 
-export default CSSModules(Intersection, styles);
+export default Intersection;

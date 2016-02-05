@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './hero.scss';
 import Section from './Section';
@@ -87,7 +86,7 @@ class Hero extends React.Component {
         name="HERO"
         background="primary"
         styles={styles}>
-        <canvas id="waves" styleName="hero-waves"></canvas>
+        <canvas id="waves" className={styles['hero-waves']}></canvas>
         <h1>MAKE SIMPLE.</h1>
         <p>Front End Developer</p>
         <Link
@@ -102,4 +101,4 @@ class Hero extends React.Component {
   }
 }
 
-export default CSSModules(Hero, styles);
+export default Hero;

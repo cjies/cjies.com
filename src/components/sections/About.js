@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './about.scss';
 import Section from './Section';
@@ -28,15 +27,15 @@ class About extends React.Component {
         background="light"
         title="Introduce Myself"
         styles={styles}>
-        <ul styleName="about-list">
-          <li styleName="about-avatar">
-            <img src={avatar} styleName="avatar" />
+        <ul className={styles['about-list']}>
+          <li className={styles['about-avatar']}>
+            <img src={avatar} className={styles.avatar} />
           </li>
-          <li styleName="about-text">
-            <p styleName="text" dangerouslySetInnerHTML={{ __html: about.description }} />
+          <li className={styles['about-text']}>
+            <p className={styles.text} dangerouslySetInnerHTML={{ __html: about.description }} />
           </li>
         </ul>
-        <div styleName="about-link">
+        <div className={styles['about-link']}>
           <Social/>
         </div>
       </Section>
@@ -44,4 +43,5 @@ class About extends React.Component {
   }
 }
 
-export default CSSModules(About, styles);
+// export default CSSModules(About, styles);
+export default About;

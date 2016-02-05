@@ -1,9 +1,9 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
+import { Link } from 'react-scroll';
 
 import styles from './navigation.scss';
-import { Link, Events } from 'react-scroll';
+const cx = classNames.bind(styles);
 
 // Section Navi
 import { sections } from '../../../static/data/secret-agents.json';
@@ -41,7 +41,7 @@ export default class Navigation extends React.Component {
     const transitionTime = 0.1;
     let transitionDelay = 0.02;
     return (
-      <div styleName={classNames('nav', { 'active': this.props.active })} >
+      <div className={cx('nav', { active: this.props.active })} >
         <nav>
           {sections.map((item, i) => {
             if (i > 0) {
@@ -56,13 +56,13 @@ export default class Navigation extends React.Component {
                 duration={500}
                 className={styles['nav-item']}
                 onClick={this.props.onNavClick}
-                style={{ animationDelay: transitionDelay + 's' }} >
+                style={{ animationDelay: `${transitionDelay}s` }} >
                 <span>{item.name}</span>
               </Link>
             );
           })}
         </nav>
-        <a styleName="nav-close" onClick={this.props.onNavClick}>
+        <a className={styles['nav-close']} onClick={this.props.onNavClick}>
           <i className="fa fa-close fa-2x" />
         </a>
       </div>
@@ -70,6 +70,4 @@ export default class Navigation extends React.Component {
   }
 }
 
-export default CSSModules(Navigation, styles, {
-  allowMultiple: true
-});
+export default Navigation;

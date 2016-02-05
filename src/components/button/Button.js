@@ -1,8 +1,8 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
 import styles from './button.scss';
+const cx = classNames.bind(styles);
 
 const defaultTag = ['button', 'submit', 'reset', 'link', 'a'];
 
@@ -89,7 +89,7 @@ class Button extends React.Component {
         {...this.props}
         type={buttonType}
         href={this.props.href}
-        styleName={classNames(buttonStyle, buttonColor, buttonSize, buttonActive)}
+        className={cx(buttonStyle, buttonColor, buttonSize, buttonActive)}
         onClick={this.props.onClick}>
         {this.props.children}
       </ButtonTag>
@@ -97,6 +97,4 @@ class Button extends React.Component {
   }
 }
 
-export default CSSModules(Button, styles, {
-  allowMultiple: true
-});
+export default Button;

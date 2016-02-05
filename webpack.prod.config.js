@@ -69,7 +69,7 @@ module.exports = {
         'file?hash=sha512&digest=hex&name=img/img-[hash:6].[ext]',
         'image-webpack?bypassOnDebug&optimizationLevel=5&interlaced=false'
       ],
-      include: path.join(__dirname, 'static/img')
+      include: path.join(__dirname, 'static')
     }, 
     {
       test: /\.css$/,
@@ -91,6 +91,10 @@ module.exports = {
     {
       test: /\.txt$/, 
       loader: 'raw'
+    },
+    { 
+      test: /\.xml$/, 
+      loader: 'xml' 
     },
     // Icon Font
     { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&name=fonts/font-[hash:6].[ext]&mimetype=application/font-woff" },

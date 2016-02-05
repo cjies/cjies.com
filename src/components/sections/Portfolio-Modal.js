@@ -1,6 +1,5 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
 // Redux
 import { connect } from 'react-redux';
@@ -8,6 +7,8 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../redux/modules/portfolio';
 
 import styles from './portfolio-modal.scss';
+const cx = classNames.bind(styles);
+
 import Button from '../button/Button';
 import { lory } from 'lory.js';
 
@@ -20,6 +21,7 @@ class PortfolioModal extends React.Component {
 
   constructor(props) {
     super(props);
+    this.hideModal = this.hideModal.bind(this);
   }
 
   hideModal() {
@@ -59,18 +61,18 @@ class PortfolioModal extends React.Component {
       <div>
 
         <div
-          styleName={classNames('portfolio-modal-backdrop', { 'active': modalShow })}
-          onClick={this.hideModal.bind(this)}
+          className={cx('portfolio-modal-backdrop', { active: modalShow })}
+          onClick={this.hideModal}
           style={modalBackdropStyle} />
 
         <a
-          styleName={classNames('portfolio-modal-close', { 'active': modalShow })}
-          onClick={this.hideModal.bind(this)}>
+          className={cx('portfolio-modal-close', { active: modalShow })}
+          onClick={this.hideModal}>
           <i className="fa fa-close fa-2x" />
         </a>
 
-        <div styleName="portfolio-modal-wrapper">
-          <div styleName={classNames('portfolio-modal', { 'active': modalShow })}>
+        <div className={styles['portfolio-modal-wrapper']}>
+          <div className={cx('portfolio-modal', { active: modalShow })}>
 
             {(() => {
               // Lory Slider
@@ -79,20 +81,20 @@ class PortfolioModal extends React.Component {
                 if (modalData.image.details.length > 1) {
                   this.initialSlider();
                   return (
-                    <div id="portfolio-slider" styleName="slider portfolio-modal-slider">
-                        <div styleName="frame">
-                            <ul styleName="slides">
+                    <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
+                        <div className={styles.frame}>
+                            <ul className={styles.slides}>
                               {modalData.image.details.map((item, i) => (
                                 <li key={i}>
-                                  <img src={require('../../../static/' + item)} />
+                                  <img src={require(`../../../static/${item}`)} />
                                 </li>
                               ))}
                             </ul>
                         </div>
-                        <span styleName="prev">
+                        <span className={styles.prev}>
                           <i className="fa fa-angle-left fa-2x" />
                         </span>
-                        <span styleName="next">
+                        <span className={styles.next}>
                           <i className="fa fa-angle-right fa-2x" />
                         </span>
                     </div>
@@ -101,16 +103,16 @@ class PortfolioModal extends React.Component {
                 // length == 1
                 if (modalData.image.details.length === 1) {
                   return (
-                    <div id="portfolio-slider" styleName="slider portfolio-modal-slider">
-                      <img src={require('../../../static/' + modalData.image.details[0])} />
+                    <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
+                      <img src={require(`../../../static/${modalData.image.details[0]}`)} />
                     </div>
                   );
                 }
               }
             })()}
 
-            <div styleName="portfolio-modal-desc">
-              <div styleName="portfolio-modal-text">
+            <div className={styles['portfolio-modal-desc']}>
+              <div className={styles['portfolio-modal-text']}>
                 <h1>
                   {modalData.title}
                 </h1>
@@ -122,7 +124,7 @@ class PortfolioModal extends React.Component {
                 if (Object.keys(modalData).length) {
                   if (modalData.link) {
                     return (
-                      <div styleName="portfolio-modal-link">
+                      <div className={styles['portfolio-modal-link']}>
                         <Button
                           tag="link"
                           href={modalData.link}
@@ -162,6 +164,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CSSModules(PortfolioModal, styles, {
-  allowMultiple: true
-}));
+)(PortfolioModal);

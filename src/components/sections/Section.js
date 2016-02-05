@@ -1,15 +1,16 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
+import { Parallax } from 'react-parallax';
+import { Element } from 'react-scroll';
 
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../redux/modules/sections';
 
-import styles from './section.scss';
-import { Parallax } from 'react-parallax';
-import { Element } from 'react-scroll';
+//  Inherited from props
+// import styles from './section.scss';
+// const cx = classNames.bind(styles);
 
 // Mobile Detect
 import mobileDetect from 'mobile-detect';
@@ -19,6 +20,7 @@ export default class Section extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
     title: React.PropTypes.string,
+    styles: React.PropTypes.object.isRequired,
     background: React.PropTypes.string,
     backgroundImage: React.PropTypes.string,
     backgroundBlur: React.PropTypes.number,
@@ -67,15 +69,19 @@ export default class Section extends React.Component {
     const sectionBackgroundImage = {};
     const parallaxEffect = this.props.sections.parallax;
 
+    // Inherited styles
+    const styles = this.props.styles;
+    const cx = classNames.bind(styles);
+
     // Section Title
     if (this.props.title) {
-      sectionTitle = <h1 styleName="section-title" dangerouslySetInnerHTML={this.getSafetyTitle(this.props.title)}></h1>;
+      sectionTitle = <h1 className={styles['section-title']} dangerouslySetInnerHTML={this.getSafetyTitle(this.props.title)} />;
     }
 
     // Default Container
     const defaultSectionContainer = (
-      <div styleName="section-container">
-        <div styleName="section-inner">
+      <div className={styles['section-container']}>
+        <div className={styles['section-inner']}>
           {sectionTitle}
           {this.props.children}
         </div>
@@ -88,7 +94,7 @@ export default class Section extends React.Component {
     }
 
     if (this.props.backgroundOverlay) {
-      backgroundOverlay = <div styleName="section-background-overlay"></div>;
+      backgroundOverlay = <div className={styles['section-background-overlay']}></div>;
     }
 
     // Parallax & Background Image
@@ -109,11 +115,11 @@ export default class Section extends React.Component {
     } else
     // Background Imge
     if (this.props.backgroundImage) {
-      sectionBackgroundImage.backgroundImage = 'url(' + this.props.backgroundImage + ')';
+      sectionBackgroundImage.backgroundImage = `url(${this.props.backgroundImage})`;
       sectionContainer = (
         <div>
           <div
-            styleName="section-background"
+            className={styles['section-background']}
             style={sectionBackgroundImage} />
           {backgroundOverlay}
           {defaultSectionContainer}
@@ -127,7 +133,7 @@ export default class Section extends React.Component {
     return (
       <Element
         name={this.props.name}
-        styleName={classNames('section', sectionBackground)} >
+        className={cx('section', sectionBackground)} >
         {sectionContainer}
       </Element>
     );
@@ -149,6 +155,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CSSModules(Section, styles, {
-  allowMultiple: true
-}));
+)(Section);

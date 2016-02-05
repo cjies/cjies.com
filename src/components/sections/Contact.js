@@ -1,6 +1,5 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
 // Redux
 import { connect } from 'react-redux';
@@ -12,6 +11,8 @@ import { reduxForm } from 'redux-form';
 import { createValidator, required, email } from '../../utils/validation';
 
 import styles from './contact.scss';
+const cx = classNames.bind(styles);
+
 import Section from './Section';
 import Button from '../button/Button';
 
@@ -49,10 +50,10 @@ class Contact extends React.Component {
   submitForm(values) {
     return new Promise((resolve, reject) => {
       // Send Email by Formspree
-      fetch('//formspree.io/' + about.email, {
+      fetch(`//formspree.io/${about.email}`, {
         method: 'post',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: serializeParam({
@@ -92,32 +93,32 @@ class Contact extends React.Component {
         background="light"
         title="Contact Me"
         styles={styles}>
-        <form styleName="contact-form" onSubmit={handleSubmit(this.submitForm)}>
-          <div styleName="contact-fields">
-            <div styleName="contact-fields-half">
+        <form className={styles['contact-form']} onSubmit={handleSubmit(this.submitForm)}>
+          <div className={styles['contact-fields']}>
+            <div className={styles['contact-fields-half']}>
               <input
                 {...name}
                 type="text"
                 placeholder="Name"
-                styleName={classNames({ 'error': name.touched && name.error })} />
+                className={cx({ error: name.touched && name.error })} />
             </div>
-            <div styleName="contact-fields-half">
+            <div className={styles['contact-fields-half']}>
               <input
                 {...mail}
                 type="email"
                 placeholder="Email"
-                styleName={classNames({ 'error': mail.touched && mail.error })} />
+                className={cx({ error: mail.touched && mail.error })} />
             </div>
           </div>
-          <div styleName="contact-fields">
+          <div className={styles['contact-fields']}>
             <textarea
               {...message}
               placeholder="The person you call is unavailable, please leave down the message I will reply you later :D"
               value={message.value || ''}
-              styleName={classNames({ 'error': message.touched && message.error })} />
+              className={cx({ error: message.touched && message.error })} />
           </div>
-          <div styleName="contact-fields contact-send" style={buttonPosition}>
-            <span styleName={classNames('contact-send-response', sentResponse.responseType)}>
+          <div className={cx('contact-fields', 'contact-send')} style={buttonPosition}>
+            <span className={cx('contact-send-response', sentResponse.responseType)}>
               {sentResponse.responseMsg}
             </span>
             <Button
@@ -156,6 +157,4 @@ export default connect(
     mail: [required, email],
     message: required
   })
-})(CSSModules(Contact, styles, {
-  allowMultiple: true
-})));
+})(Contact));

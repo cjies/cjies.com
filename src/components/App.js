@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import 'normalize.css';
 import styles from './app.scss';
@@ -26,7 +25,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div styleName="container">
+      <div className={styles.container}>
         <Header />
         <Hero />
         <About />
@@ -41,4 +40,4 @@ class App extends React.Component {
   }
 }
 
-export default CSSModules(App, styles);
+export default App;

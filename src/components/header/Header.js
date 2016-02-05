@@ -1,6 +1,5 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
 // Redux
 import { connect } from 'react-redux';
@@ -14,6 +13,7 @@ import { Link } from 'react-scroll';
 
 // CSS
 import styles from './header.scss';
+const cx = classNames.bind(styles);
 
 // Images
 import Logo from '../../../static/img/logo.png';
@@ -46,13 +46,13 @@ class Header extends React.Component {
       <Sticky
         topOffset={5}
         stickyClass={styles.sticky}
-        styleName="header"
+        className={styles.header}
         type={React.DOM.header}>
-        <div styleName={classNames('header-container', { 'active': activated })}>
+        <div className={cx('header-container', { active: activated })}>
           <Navigation
             active={activated}
             onNavClick={this.onNavClick.bind(this, !activated)} />
-          <a styleName="header-logo mobile"
+          <a className={cx('header-logo', 'mobile')}
             onClick={this.onNavClick.bind(this, !activated)}>
             <img src={Logo} alt="cjies"/>
           </a>
@@ -60,7 +60,7 @@ class Header extends React.Component {
             to="HERO"
             smooth={scrollSmooth}
             duration={500}
-            className={classNames(styles['header-logo'], styles['desktop'])} >
+            className={cx('header-logo', 'desktop')} >
             <img src={Logo} alt="cjies"/>
           </Link>
         </div>
@@ -84,6 +84,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CSSModules(Header, styles, {
-  allowMultiple: true
-}));
+)(Header);

@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 
 // CSS
@@ -9,7 +8,7 @@ import styles from './social.scss';
 import { socialButton } from '../../../static/data/secret-agents.json';
 
 
-export default class Social extends React.Component {
+class Social extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
   };
@@ -20,13 +19,13 @@ export default class Social extends React.Component {
 
   render() {
     return (
-      <div styleName="social-list">
+      <div className={styles['social-list']}>
         {socialButton.map((item, i) =>
           <a
             key={i}
             href={item.href}
             title={item.name}
-            styleName="social-item"
+            className={styles['social-item']}
             target="_blank" >
             <i className={classNames(item.icon, 'fa-lg')} />
           </a>
@@ -36,4 +35,4 @@ export default class Social extends React.Component {
   }
 }
 
-export default CSSModules(Social, styles);
+export default Social;
