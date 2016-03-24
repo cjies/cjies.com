@@ -31,7 +31,7 @@
 
 .resume-item {
   display: flex;
-  lost-column: 1/2 0 nth($size-gutter, 2) flex;
+  lost-column: 1/2 2 nth($size-gutter, 2) flex;
   // lost-align: center flex;
   margin-bottom: nth($size-gutter, 3);
 }
