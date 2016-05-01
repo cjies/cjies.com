@@ -3,8 +3,11 @@ node_js:
 - '4.1'
 install:
 - npm install
+branches:
+  only:
+    - master
 script:
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy-ghpages.sh
+- test $TRAVIS_PULL_REQUEST == "false" && bash deploy-ghpages.sh
 env:
   global:
   - GH_REF: github.com/cjies/cjies-v2.git
