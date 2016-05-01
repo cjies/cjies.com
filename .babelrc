@@ -4,5 +4,15 @@
       "presets": ["react-hmre"]
     }
   },
-  "presets": ["es2015", "react", "stage-0"]
+  "presets": ["es2015", "react", "stage-0"],
+    "plugins": [
+      "transform-runtime",
+      ["module-alias", [
+        { "src": "./src/components", "expose": "components" },
+        { "src": "./src/scenes", "expose": "scenes" },
+        { "src": "./src/utils", "expose": "utils" },
+        { "src": "./src/reduxs", "expose": "reduxs" },
+        { "src": "./static", "expose": "static" }
+      ]]
+    ]
 }
