@@ -1,0 +1,93 @@
+// *************************************
+//
+//   Hero Section
+//
+// *************************************
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+@import "../../utils/animation";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "../../components/Section/section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+.section {
+  height: 100%;
+  text-align: center;
+  @include inline-vertical();
+}
+
+.section-container {
+  display: inline-block;
+  width: auto;
+  max-width: inherit;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section-inner {
+  position: inherit;
+  width: auto;
+  margin: inherit;
+}
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+h1 {
+  margin-bottom: nth($size-gutter, 2);
+}
+
+
+// -------------------------------------
+//   Scroll More
+// -------------------------------------
+
+.scroll-more {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: nth($size-gutter, 4);
+  text-align: center;
+  cursor: pointer;
+
+  &, &:hover {
+    i {
+      animation: arrow-bounce 2s 2 ease-out;
+      animation-delay: 2s;
+    }
+  }
+  &:hover {
+    i {
+      animation-iteration-count: infinite;
+      animation-delay: 0s;
+      animation-play-state: running;
+    }
+  }
+
+}
+
+
+// -------------------------------------
+//   Hero Waves
+// -------------------------------------
+
+.hero-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}

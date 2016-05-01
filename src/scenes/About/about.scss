@@ -1,0 +1,112 @@
+// *************************************
+//
+//   About
+//
+// *************************************
+
+@import "../../utils/variables";
+@import "../../utils/mixin";
+@import "../../utils/animation";
+
+
+// -------------------------------------
+//   Extend Section CSS
+// -------------------------------------
+
+@import "../../components/Section/section";
+
+
+// -------------------------------------
+//   Overwrite Section
+// -------------------------------------
+
+.section-inner {
+  // width: 90%;
+  // margin: 0 auto;
+}
+
+
+// -------------------------------------
+//   About List 
+// -------------------------------------
+
+.about-list {
+  position: relative;
+  display: flex;
+  lost-align: center flex;
+  flex-direction: row-reverse;
+}
+
+.about-text,
+.about-avatar {
+  display: flex;
+}
+
+.about-text {
+  padding-right: nth($size-gutter, 4);
+  width: 100%;
+}
+
+.about-avatar {
+  width: $size-avatar + 20px;
+}
+
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.text {
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-link {
+  display: block;
+  padding-top: nth($size-gutter, 2);
+}
+
+
+// -------------------------------------
+//   Avatar
+// -------------------------------------
+
+.avatar {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: 0 1px 10px rgba($c-black, 0.2);
+  @include same-whl($size-avatar);
+  
+  &:hover {
+    animation: flip-coin 1s forwards ease-in-out;
+  }
+
+}
+
+
+// -------------------------------------
+//   RWD
+// -------------------------------------
+
+@include bp(mobile) {
+
+  .about-list {
+    display: block;
+  }
+
+  .about-text,
+  .about-avatar {
+    display: block;
+    text-align: center;
+    width: auto;
+    padding: nth($size-gutter, 2) 0;
+  }
+
+  .about-link {
+    text-align: center;
+    padding-top: nth($size-gutter, 3);
+  }
+
+} // END bp(mobile)

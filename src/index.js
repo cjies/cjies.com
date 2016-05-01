@@ -1,17 +1,20 @@
+/* eslint no-console: 0 */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from 'scenes/App';
 
 // Redux
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from './redux/reducer';
+import reducers from 'reduxs/reducer';
 
 const store = createStore(reducers);
 
 // Behind the Scenes
 import { repository, author, version } from '../package.json';
-import banner from '../static/data/banner.txt';
+import banner from 'static/data/banner.txt';
+
 console.info(`
   ${banner}
   I <3 React~~~ Ｏ(≧▽≦)Ｏ
