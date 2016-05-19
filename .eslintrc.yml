@@ -22,7 +22,7 @@ rules:
     new-cap: [0, {capIsNew: true, newIsCap: true}]
     prefer-const: 2
     indent: [2, 2, {"SwitchCase": 1}]
-    import/no-unresolved: [2, { "ignore": ["^(components|scenes|utils|reduxs|static)"] }]
+    import/no-unresolved: [2, { "ignore": ["^(components|containers|utils|reducers|static)"] }]
 
     # React
     react/jsx-closing-bracket-location: [1, "after-props"]

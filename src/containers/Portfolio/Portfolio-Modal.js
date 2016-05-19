@@ -1,10 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames/bind';
 
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actionCreators from 'reduxs/modules/portfolio';
+import * as actionCreators from 'reducers/modules/portfolio';
 
 import styles from './portfolio-modal.scss';
 const cx = classNames.bind(styles);
@@ -21,13 +22,16 @@ class PortfolioModal extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
     this.hideModal = this.hideModal.bind(this);
   }
 
   hideModal() {
     this.props.hideModal();
     document.body.style.overflow = '';
-    // 砍掉之前的記錄
+    // Destroy previous slider
     if (portfolioSlider) {
       portfolioSlider.destroy();
     }
@@ -82,21 +86,23 @@ class PortfolioModal extends React.Component {
                   this.initialSlider();
                   return (
                     <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
-                        <div className={styles.frame}>
-                            <ul className={styles.slides}>
-                              {modalData.image.details.map((item, i) => (
-                                <li key={i}>
-                                  <img src={require(`../../../static/${item}`)} />
-                                </li>
-                              ))}
-                            </ul>
-                        </div>
-                        <span className={styles.prev}>
-                          <i className="fa fa-angle-left fa-2x" />
-                        </span>
-                        <span className={styles.next}>
-                          <i className="fa fa-angle-right fa-2x" />
-                        </span>
+                      <div className={styles.frame}>
+                        <ul className={styles.slides}>
+                          {modalData.image.details.map((item, i) => (
+                            <li key={i}>
+                              <img
+                                role="presentation"
+                                src={require(`../../../static/${item}`)} />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <span className={styles.prev}>
+                        <i className="fa fa-angle-left fa-2x" />
+                      </span>
+                      <span className={styles.next}>
+                        <i className="fa fa-angle-right fa-2x" />
+                      </span>
                     </div>
                   );
                 }
@@ -104,11 +110,14 @@ class PortfolioModal extends React.Component {
                 if (modalData.image.details.length === 1) {
                   return (
                     <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
-                      <img src={require(`../../../static/${modalData.image.details[0]}`)} />
+                      <img
+                        role="presentation"
+                        src={require(`../../../static/${modalData.image.details[0]}`)} />
                     </div>
                   );
                 }
               }
+              return null;
             })()}
 
             <div className={styles['portfolio-modal-desc']}>
@@ -137,6 +146,7 @@ class PortfolioModal extends React.Component {
                     );
                   }
                 }
+                return null;
               })()}
             </div>
 

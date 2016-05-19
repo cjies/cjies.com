@@ -9,9 +9,9 @@
       "transform-runtime",
       ["module-alias", [
         { "src": "./src/components", "expose": "components" },
-        { "src": "./src/scenes", "expose": "scenes" },
+        { "src": "./src/containers", "expose": "containers" },
         { "src": "./src/utils", "expose": "utils" },
-        { "src": "./src/reduxs", "expose": "reduxs" },
+        { "src": "./src/reducers", "expose": "reducers" },
         { "src": "./static", "expose": "static" }
       ]]
     ]

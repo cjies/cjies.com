@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actionCreators from 'reduxs/modules/portfolio';
+import * as actionCreators from 'reducers/modules/portfolio';
 
 import styles from './portfolio.scss';
 const cx = classNames.bind(styles);

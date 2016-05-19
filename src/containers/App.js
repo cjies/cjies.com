@@ -3,13 +3,13 @@ import React from 'react';
 import 'normalize.css/normalize.css';
 import styles from './app.scss';
 
-// Scenes
+// Each Containers
 import Header from './Header/Header';
 import Hero from './Hero/Hero';
 import About from './About/About';
 import Resume from './Resume/Resume';
 import Portfolio from './Portfolio/Portfolio';
-import Services from './Services/Services';
+import Skills from './Skills/Skills';
 import Intersection from './Intersection/Intersection';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
@@ -27,7 +27,7 @@ class App extends React.Component {
         <About />
         <Resume />
         <Portfolio />
-        <Services />
+        <Skills />
         <Intersection />
         <Contact />
         <Footer />

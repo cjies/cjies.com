@@ -1,6 +1,6 @@
 // *************************************
 //
-//   Services
+//   Skills
 //
 // *************************************
 
@@ -22,15 +22,15 @@
 
 
 // -------------------------------------
-//   Services List & Item
+//   Skills List & Item
 // -------------------------------------
 
-.services-list {
+.skills-list {
   lost-flex-container: row;
   lost-align: center flex;
 }
 
-.services-item {
+.skills-item {
   position: relative;
   lost-column: 1/4 4 10px flex;
   text-align: center;
@@ -39,10 +39,10 @@
 
 
 // -------------------------------------
-//   Services Icon
+//   Skills Icon
 // -------------------------------------
 
-.services-icon {
+.skills-icon {
   transition: color 0.5s ease-out;
 
   i {
@@ -51,7 +51,7 @@
     background-color: $c-light;
     border-radius: 50%;
     box-shadow: 0px 1px 10px rgba($c-black, 0.2);
-    @include same-whl($size-services-icon);
+    @include same-whl($size-skills-icon);
     &:before {
       vertical-align: middle;
     }
@@ -67,11 +67,11 @@
 //   Title & Description
 // -------------------------------------
 
-.services-title {
+.skills-title {
   padding-top: nth($size-gutter, 4);
 }
 
-.services-description {
+.skills-description {
   padding: nth($size-gutter, 4);
   padding-bottom: 0;
   color: $c-gray-light;
@@ -85,7 +85,7 @@
 
 @include bp(padL) {
 
-  .services-item {
+  .skills-item {
     lost-column: 1/2 0 0 flex;
     &:nth-child(1), 
     &:nth-child(2) {
@@ -98,7 +98,7 @@
 
 @include bp(mobile) {
 
-  .services-item {
+  .skills-item {
     lost-column: 1/1 0 0 flex;
     padding-bottom: nth($size-gutter, 4);
     &:last-child {
