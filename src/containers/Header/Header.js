@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actionCreators from 'reduxs/modules/navigation';
+import * as actionCreators from 'reducers/modules/navigation';
 
 // Components
 import { Navigation } from 'components';

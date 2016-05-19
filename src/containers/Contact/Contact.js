@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actionCreators from 'reduxs/modules/contact';
+import * as actionCreators from 'reducers/modules/contact';
 
 // Redux Form
 import { reduxForm } from 'redux-form';

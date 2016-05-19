@@ -6,7 +6,7 @@ import { Element } from 'react-scroll';
 // Redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actionCreators from 'reduxs/modules/sections';
+import * as actionCreators from 'reducers/modules/sections';
 
 //  Inherited from props
 // import styles from './section.scss';
