@@ -5,7 +5,6 @@ import { Section } from 'components';
 
 import SineWaves from 'sine-waves';
 import { Link } from 'react-scroll';
-import ViewportMetrics from 'react/lib/ViewportMetrics';
 
 let heroWaves = {};
 
@@ -26,7 +25,7 @@ class Hero extends React.Component {
 
   handleScroll() {
     // Paused when start scrolling
-    if (ViewportMetrics.currentScrollTop > 10) {
+    if (window.scrollY > 10) {
       heroWaves.running = false;
     } else {
       heroWaves.running = true;
