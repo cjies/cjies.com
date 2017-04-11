@@ -1,11 +1,11 @@
-# CJies Website v2 
+# CJies Website 
 
 Please visit: [http://www.cjies.com](http://cjies.com)
 > 2016 CJies website created in React. 
 
-[![Build Status](https://travis-ci.org/cjies/cjies-v2.svg?branch=master)](https://travis-ci.org/cjies/cjies-v2)
-[![Dependency Status](https://david-dm.org/cjies/cjies-v2.svg)](https://david-dm.org/cjies/cjies-v2)
-[![devDependency Status](https://david-dm.org/cjies/cjies-v2/dev-status.svg)](https://david-dm.org/cjies/cjies-v2#info=devDependencies)
+[![Build Status](https://travis-ci.org/cjies/cjies.com.svg?branch=master)](https://travis-ci.org/cjies/cjies.com)
+[![Dependency Status](https://david-dm.org/cjies/cjies.com.svg)](https://david-dm.org/cjies/cjies.com)
+[![devDependency Status](https://david-dm.org/cjies/cjies.com/dev-status.svg)](https://david-dm.org/cjies/cjies.com#info=devDependencies)
 
 ## All I used
 
