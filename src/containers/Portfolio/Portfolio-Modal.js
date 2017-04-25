@@ -14,6 +14,8 @@ import { lory } from 'lory.js';
 
 let portfolioSlider = null;
 
+const PRESENTATION_TYPE = 'PRESENTATION';
+
 class PortfolioModal extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
@@ -100,6 +102,20 @@ class PortfolioModal extends React.Component {
     }
   }
 
+  createIframeDOM(iframeData) {
+    return {
+      __html: iframeData
+    };
+  }
+
+  renderPresentationIframe(modalData) {
+    return (
+      <div
+        className={cx('slider', 'portfolio-modal-iframe')}
+        dangerouslySetInnerHTML={this.createIframeDOM(modalData.iframe)} />
+    );
+  }
+
   render() {
     // Portfolio Modal Style
     const { backdropStartX, backdropStartY, modalShow, modalData } = this.props.portfolio;
@@ -125,7 +141,9 @@ class PortfolioModal extends React.Component {
         <div className={styles['portfolio-modal-wrapper']}>
           <div className={cx('portfolio-modal', { active: modalShow })}>
 
-            {this.renderImageSlider(modalData)}
+            {modalData.type === PRESENTATION_TYPE
+              ? this.renderPresentationIframe(modalData)
+              : this.renderImageSlider(modalData)}
 
             <div className={styles['portfolio-modal-desc']}>
               <div className={styles['portfolio-modal-text']}>
