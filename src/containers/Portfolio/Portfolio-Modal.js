@@ -52,6 +52,54 @@ class PortfolioModal extends React.Component {
     }, 100);
   }
 
+  /**
+   * lory slider
+   *
+   * @param {Object} modalData 
+   */
+  renderImageSlider(modalData) {
+    if (!Object.keys(modalData).length) {
+      return null;
+    }
+
+    // length > 1
+    if (modalData.image.details.length > 1) {
+      this.initialSlider();
+      return (
+        <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
+          <div className={styles.frame}>
+            <ul className={styles.slides}>
+              {modalData.image.details.map((item, i) => (
+                <li key={i}>
+                  <img
+                    role="presentation"
+                    src={require(`../../../static/${item}`)} />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <span className={styles.prev}>
+            <i className="fa fa-angle-left fa-2x" />
+          </span>
+          <span className={styles.next}>
+            <i className="fa fa-angle-right fa-2x" />
+          </span>
+        </div>
+      );
+    }
+  
+    // length == 1
+    if (modalData.image.details.length === 1) {
+      return (
+        <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
+          <img
+            role="presentation"
+            src={require(`../../../static/${modalData.image.details[0]}`)} />
+        </div>
+      );
+    }
+  }
+
   render() {
     // Portfolio Modal Style
     const { backdropStartX, backdropStartY, modalShow, modalData } = this.props.portfolio;
@@ -77,47 +125,7 @@ class PortfolioModal extends React.Component {
         <div className={styles['portfolio-modal-wrapper']}>
           <div className={cx('portfolio-modal', { active: modalShow })}>
 
-            {(() => {
-              // Lory Slider
-              if (Object.keys(modalData).length) {
-                // length > 1
-                if (modalData.image.details.length > 1) {
-                  this.initialSlider();
-                  return (
-                    <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
-                      <div className={styles.frame}>
-                        <ul className={styles.slides}>
-                          {modalData.image.details.map((item, i) => (
-                            <li key={i}>
-                              <img
-                                role="presentation"
-                                src={require(`../../../static/${item}`)} />
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <span className={styles.prev}>
-                        <i className="fa fa-angle-left fa-2x" />
-                      </span>
-                      <span className={styles.next}>
-                        <i className="fa fa-angle-right fa-2x" />
-                      </span>
-                    </div>
-                  );
-                }
-                // length == 1
-                if (modalData.image.details.length === 1) {
-                  return (
-                    <div id="portfolio-slider" className={cx('slider', 'portfolio-modal-slider')}>
-                      <img
-                        role="presentation"
-                        src={require(`../../../static/${modalData.image.details[0]}`)} />
-                    </div>
-                  );
-                }
-              }
-              return null;
-            })()}
+            {this.renderImageSlider(modalData)}
 
             <div className={styles['portfolio-modal-desc']}>
               <div className={styles['portfolio-modal-text']}>
