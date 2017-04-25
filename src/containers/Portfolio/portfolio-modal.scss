@@ -86,6 +86,14 @@
   }
 }
 
+.portfolio-modal-iframe {
+  margin-bottom: nth($size-gutter, 2);
+  iframe {
+    width: 100%;
+    border: 0;
+  }
+}
+
 
 // -------------------------------------
 //   Portfolio Modal Close
