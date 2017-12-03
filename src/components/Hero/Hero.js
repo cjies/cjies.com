@@ -30,12 +30,12 @@ class Hero extends Component {
     const { isWavesPaused } = this.state;
 
     return (
-      <div className={className}>
+      <div className={className} id="home">
         <h1>MAKE SIMPLE.</h1>
         <p>Front End Developer</p>
 
         <HeroWaves isWavesPaused={isWavesPaused} />
-        <ScrollMore href="#ABOUT" />
+        <ScrollMore href="#about" />
       </div>
     );
   }

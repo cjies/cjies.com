@@ -65,7 +65,7 @@ class AppHeader extends Component {
     return (
       <Header isSticky={isSticky}>
         <HeaderContainer>
-          <HeaderLogoLink imgSrc={Logo} />
+          <HeaderLogoLink imgSrc={Logo} href="#home" />
           <HeaderNav />
         </HeaderContainer>
       </Header>
