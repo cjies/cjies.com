@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { injectGlobal } from 'styled-components';
 
 import AppHeader from './AppHeader';
+import AppFooter from './AppFooter';
 import Hero from './Hero';
 
 // Normalize default stylesheets
@@ -55,7 +56,8 @@ function App() {
     <Fragment>
       <AppHeader />
       <Hero />
-      <div style={{ height: 2000 }}>hello World!</div>
+      <div style={{ height: 200 }}>hello World!</div>
+      <AppFooter />
     </Fragment>
   );
 }
