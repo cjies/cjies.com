@@ -51,10 +51,8 @@ class AppHeader extends Component {
     window.removeEventListener('scroll', this.handleWindowScroll);
   }
 
-  handleWindowScroll = ({ target }) => {
-    const scrollTop = target.scrollingElement.scrollTop;
-
-    if (scrollTop > 30) {
+  handleWindowScroll = () => {
+    if (window.scrollY > 30) {
       this.setState({ isSticky: true });
     } else {
       this.setState({ isSticky: false });
