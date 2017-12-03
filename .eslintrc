@@ -6,11 +6,25 @@
     "prettier",
     "prettier/react"
   ],
+
   "plugins": [
     "prettier"
   ],
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      }
+    }    
+  },
+
   "rules": {
     "prettier/prettier": ["error", {
+      "trailingComma": true,
       "singleQuote": true
     }]
   }
