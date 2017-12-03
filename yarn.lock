@@ -5732,6 +5732,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
+sine-waves@cjies/sine-waves.git:
+  version "0.3.0-modified"
+  resolved "https://codeload.github.com/cjies/sine-waves/tar.gz/6e6195f9270bdfce123363d261f22f12fa8f9a38"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"

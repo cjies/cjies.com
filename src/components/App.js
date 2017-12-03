@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { injectGlobal } from 'styled-components';
 
 import AppHeader from './AppHeader';
+import Hero from './Hero';
 
+// Normalize default stylesheets
 import 'normalize.css/normalize.css';
 
-/**
- * Export global css
- */
+// Export global css
 injectGlobal`
   html,
   body {
@@ -19,6 +19,7 @@ injectGlobal`
     background-color: #f5f5f5;
 
     font-family: "Open Sans", Helvetica, san-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 1.2;
   }
@@ -29,6 +30,21 @@ injectGlobal`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  ::selection {
+    color: #fff;
+    background-color: rgba(16, 49, 142, .8);
+  }
+
   * {
     box-sizing: border-box;
   }
@@ -36,10 +52,11 @@ injectGlobal`
 
 function App() {
   return (
-    <div>
+    <Fragment>
       <AppHeader />
+      <Hero />
       <div style={{ height: 2000 }}>hello World!</div>
-    </div>
+    </Fragment>
   );
 }
 export default App;

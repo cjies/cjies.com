@@ -25,6 +25,7 @@
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "sine-waves": "cjies/sine-waves.git",
     "styled-components": "^2.2.4"
   },
   "devDependencies": {
