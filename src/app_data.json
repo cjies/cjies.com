@@ -2,27 +2,27 @@
   "sections": [
     {
       "name": "Home",
-      "id": "HERO"
+      "id": "home"
     },
     {
       "name": "About",
-      "id": "ABOUT"
+      "id": "about"
     },
     {
       "name": "Resume",
-      "id": "RESUME"
+      "id": "resume"
     },
     {
       "name": "Portfolio",
-      "id": "PORTFOLIO"
+      "id": "portfolio"
     },
     {
       "name": "Skills",
-      "id": "SKILLS"
+      "id": "skills"
     },
     {
       "name": "Contact",
-      "id": "CONTACT"
+      "id": "contact"
     }
   ],
   "about": {
@@ -292,7 +292,7 @@
       "icon": "fa fa-globe"
     }
   ],
-  "socialButton": [
+  "socialLinks": [
     {
       "name": "Linkedin",
       "href": "//www.linkedin.com/in/cjies",
