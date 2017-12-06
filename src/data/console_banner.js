@@ -1,3 +1,5 @@
+const currentYear = new Date().getFullYear();
+
 export default `
     ___________       __________
    |  _______  |     |________  |
@@ -10,5 +12,5 @@ export default `
    |___________|   |___________|
 
            www.cjies.com
-         MIT © Jies Design
+        ${currentYear} © Jies Design
 `;

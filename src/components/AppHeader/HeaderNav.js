@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { sections } from 'app_data.json';
+import SECTIONS from 'data/sections';
 
 function HeaderNav({ ...props }) {
   const transitionTime = 0.1;
@@ -9,7 +9,7 @@ function HeaderNav({ ...props }) {
 
   return (
     <nav {...props}>
-      {sections.map((item, i) => {
+      {SECTIONS.map((item, i) => {
         if (i > 0) {
           animationDelay += transitionTime;
         }
@@ -23,7 +23,7 @@ function HeaderNav({ ...props }) {
               animationDelay: `${animationDelay}s`,
             }}
           >
-            {item.name}
+            {item.nav}
           </a>
         );
       })}

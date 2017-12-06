@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import HeroWaves from './HeroWaves';
 import ScrollMore from './ScrollMore';
 
+import { ABOUT_SECTION } from 'data/sections';
+
 class Hero extends Component {
   state = {
     isWavesPaused: false,
@@ -35,7 +37,7 @@ class Hero extends Component {
         <p>Front End Developer</p>
 
         <HeroWaves isWavesPaused={isWavesPaused} />
-        <ScrollMore href="#about" />
+        <ScrollMore href={`#${ABOUT_SECTION.id}`} />
       </div>
     );
   }

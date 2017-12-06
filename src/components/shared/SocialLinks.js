@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { socialLinks } from 'app_data.json';
+import SOCIAL_LINKS from 'data/social_links';
 
 const Link = styled.a`
   display: inline-block;
@@ -25,7 +25,7 @@ const Link = styled.a`
 function SocialLinks({ ...props }) {
   return (
     <div {...props}>
-      {socialLinks.map(item => (
+      {SOCIAL_LINKS.map(item => (
         <Link key={item.name} href={item.href} target="_blank">
           <i className={`${item.icon} fa-lg`} />
         </Link>

@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import HeaderLogoLink from './HeaderLogoLink';
 import HeaderNav from './HeaderNav';
 
+import { HOME_SECTION } from 'data/sections';
 import Logo from 'images/logo.png';
 
 const Header = styled.header`
@@ -65,7 +66,7 @@ class AppHeader extends Component {
     return (
       <Header isSticky={isSticky}>
         <HeaderContainer>
-          <HeaderLogoLink imgSrc={Logo} href="#home" />
+          <HeaderLogoLink imgSrc={Logo} href={`#${HOME_SECTION.id}`} />
           <HeaderNav />
         </HeaderContainer>
       </Header>
