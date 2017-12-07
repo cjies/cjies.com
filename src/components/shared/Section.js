@@ -40,7 +40,7 @@ const SectionTitle = styled.h1`
   }
 `;
 
-function Section({ id, title, isDimmedBackground, children, ...props }) {
+function Section({ id, title, children, ...props }) {
   return (
     <StyledSection id={id} {...props}>
       <SectionContainer>

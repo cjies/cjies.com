@@ -54,7 +54,7 @@ const Avatar = styled.img`
   }
 `;
 
-function About() {
+function AboutSection() {
   return (
     <Section id={ABOUT_SECTION.id} title={ABOUT_SECTION.title}>
       <AboutContainer>
@@ -66,4 +66,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutSection;

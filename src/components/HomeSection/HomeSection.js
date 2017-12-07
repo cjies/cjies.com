@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
-import HeroWaves from './HeroWaves';
+import Waves from './Waves';
 import ScrollMore from './ScrollMore';
 
 import { HOME_SECTION, ABOUT_SECTION } from 'data/sections';
@@ -24,7 +24,7 @@ const HeroTitle = styled.h1`
   margin-bottom: 10px;
 `;
 
-class Hero extends Component {
+class HomeSection extends PureComponent {
   state = {
     isWavesPaused: false,
   };
@@ -53,11 +53,11 @@ class Hero extends Component {
         <HeroTitle>MAKE SIMPLE.</HeroTitle>
         <p>Front End Developer</p>
 
-        <HeroWaves isWavesPaused={isWavesPaused} />
+        <Waves isWavesPaused={isWavesPaused} />
         <ScrollMore href={`#${ABOUT_SECTION.id}`} />
       </Section>
     );
   }
 }
 
-export default Hero;
+export default HomeSection;

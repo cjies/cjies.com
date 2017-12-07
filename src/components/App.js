@@ -3,8 +3,12 @@ import { injectGlobal } from 'styled-components';
 
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
-import Hero from './Hero';
-import About from './About';
+
+// Sections
+import HomeSection from './HomeSection';
+import AboutSection from './AboutSection';
+import ResumeSection from './ResumeSection';
+import SkillSection from './SkillSection';
 
 // Normalize default stylesheets
 import 'normalize.css/normalize.css';
@@ -56,8 +60,10 @@ function App() {
   return (
     <Fragment>
       <AppHeader />
-      <Hero />
-      <About />
+      <HomeSection />
+      <AboutSection />
+      <ResumeSection />
+      <SkillSection />
       <AppFooter />
     </Fragment>
   );

@@ -12,25 +12,25 @@ const Canvas = styled.canvas`
   user-select: none;
 `;
 
-class HeroWaves extends PureComponent {
+class Waves extends PureComponent {
   static defaultProps = {
     isWavesPaused: false,
   };
 
   componentDidMount() {
-    this.heroWaves = this.initialWaves(this.canvasNode);
+    this.wavesInst = this.initialWaves(this.canvasNode);
   }
 
   componentDidUpdate() {
-    if (this.heroWaves) {
-      this.heroWaves.running = !this.props.isWavesPaused;
+    if (this.wavesInst) {
+      this.wavesInst.running = !this.props.isWavesPaused;
     }
   }
 
   /**
    * Initial waves
    * @param   {Element}   element
-   * @returns {SineWaves}
+   * @returns {SineWaves}         - SineWaves instance
    */
   initialWaves = element => {
     return new SineWaves({
@@ -84,4 +84,4 @@ class HeroWaves extends PureComponent {
   }
 }
 
-export default HeroWaves;
+export default Waves;
