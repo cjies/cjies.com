@@ -4,6 +4,7 @@ import { injectGlobal } from 'styled-components';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import Hero from './Hero';
+import About from './About';
 
 // Normalize default stylesheets
 import 'normalize.css/normalize.css';
@@ -56,7 +57,7 @@ function App() {
     <Fragment>
       <AppHeader />
       <Hero />
-      <div style={{ height: 200 }}>hello World!</div>
+      <About />
       <AppFooter />
     </Fragment>
   );

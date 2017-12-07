@@ -29,6 +29,15 @@ const SectionTitle = styled.h1`
     height: 1px;
     background-color: #ccc;
   }
+
+  @media (max-width: 639px) {
+    text-align: center;
+
+    &::before {
+      left: 50%;
+      margin-left: -25px;
+    }
+  }
 `;
 
 function Section({ id, title, isDimmedBackground, children, ...props }) {
