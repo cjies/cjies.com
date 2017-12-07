@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Development',
-    description: 'React, ionic, Vue2, sass, PHP',
+    description: 'React, GraphQL, ionic, sass, PHP',
     icon: 'fa fa-code',
   },
   {
