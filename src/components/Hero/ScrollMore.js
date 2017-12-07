@@ -1,14 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-function ScrollMore({ ...props }) {
-  return (
-    <a {...props}>
-      <i className="icon fa fa-angle-down fa-2x" />
-    </a>
-  );
-}
-
 const arrowBounce = keyframes`
   0%, 20%, 50%, 80%, 100% {
     transform: scale(1, 1) translateY(0);
@@ -23,7 +15,12 @@ const arrowBounce = keyframes`
   }
 `;
 
-export default styled(ScrollMore)`
+const Icon = styled.i`
+  animation: 2s ${arrowBounce} 2 ease-out;
+  animation-delay: 2s;
+`;
+
+const Link = styled.a`
   position: absolute;
   left: 0;
   bottom: 0;
@@ -32,19 +29,21 @@ export default styled(ScrollMore)`
   text-align: center;
   cursor: pointer;
 
-  &,
   &:hover {
-    .icon {
-      animation: 2s ${arrowBounce} 2 ease-out;
-      animation-delay: 2s;
-    }
-  }
-
-  &:hover {
-    .icon {
+    ${Icon} {
       animation-iteration-count: infinite;
       animation-delay: 0s;
       animation-play-state: running;
     }
   }
 `;
+
+function ScrollMore({ ...props }) {
+  return (
+    <Link {...props}>
+      <Icon className="fa fa-angle-down fa-2x" />
+    </Link>
+  );
+}
+
+export default ScrollMore;

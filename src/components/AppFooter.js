@@ -6,42 +6,44 @@ import SocialLinks from './shared/SocialLinks';
 // Get current year
 const currentYear = new Date().getFullYear();
 
-function AppFooter({ ...props }) {
-  return (
-    <footer {...props}>
-      <div className="container">
-        <span>© {currentYear} Jies Design.</span>
-        <SocialLinks className="links" />
-      </div>
-    </footer>
-  );
-}
+const StyledSocialLinks = styled(SocialLinks)`
+  margin-left: auto;
+`;
 
-export default styled(AppFooter)`
+const FooterContainer = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+`;
+
+const Footer = styled.footer`
   background-color: #f5f5f5;
   border-top: 1px solid #ededed;
 
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 30px;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .links {
-    margin-left: auto;
-  }
-
   @media (max-width: 639px) {
-    .container {
+    ${StyledSocialLinks} {
+      margin-top: 20px;
+    }
+
+    ${FooterContainer} {
       display: block;
       text-align: center;
     }
-
-    .links {
-      margin-top: 20px;
-    }
   }
 `;
+
+function AppFooter({ ...props }) {
+  return (
+    <Footer {...props}>
+      <FooterContainer>
+        <span>© {currentYear} Jies Design.</span>
+        <StyledSocialLinks />
+      </FooterContainer>
+    </Footer>
+  );
+}
+
+export default AppFooter;

@@ -4,7 +4,25 @@ import styled from 'styled-components';
 import HeroWaves from './HeroWaves';
 import ScrollMore from './ScrollMore';
 
-import { ABOUT_SECTION } from 'data/sections';
+import { HOME_SECTION, ABOUT_SECTION } from 'data/sections';
+
+const Section = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background-color: #171933;
+`;
+
+const HeroTitle = styled.h1`
+  margin-bottom: 10px;
+`;
 
 class Hero extends Component {
   state = {
@@ -28,35 +46,18 @@ class Hero extends Component {
   };
 
   render() {
-    const { className } = this.props;
     const { isWavesPaused } = this.state;
 
     return (
-      <div className={className} id="home">
-        <h1>MAKE SIMPLE.</h1>
+      <Section id={HOME_SECTION.id}>
+        <HeroTitle>MAKE SIMPLE.</HeroTitle>
         <p>Front End Developer</p>
 
         <HeroWaves isWavesPaused={isWavesPaused} />
         <ScrollMore href={`#${ABOUT_SECTION.id}`} />
-      </div>
+      </Section>
     );
   }
 }
 
-export default styled(Hero)`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  color: #fff;
-  background-color: #171933;
-
-  h1 {
-    margin-bottom: 10px;
-  }
-`;
+export default Hero;

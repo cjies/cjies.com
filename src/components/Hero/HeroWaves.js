@@ -2,6 +2,16 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import SineWaves from 'sine-waves';
 
+const Canvas = styled.canvas`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  pointer-events: none;
+  user-select: none;
+`;
+
 class HeroWaves extends PureComponent {
   static defaultProps = {
     isWavesPaused: false,
@@ -64,15 +74,9 @@ class HeroWaves extends PureComponent {
   };
 
   render() {
-    const {
-      isWavesPaused, // eslint-disable-line
-      ...props
-    } = this.props;
-
     return (
-      <canvas
-        {...props}
-        ref={ref => {
+      <Canvas
+        innerRef={ref => {
           this.canvasNode = ref;
         }}
       />
@@ -80,12 +84,4 @@ class HeroWaves extends PureComponent {
   }
 }
 
-export default styled(HeroWaves)`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
-  pointer-events: none;
-  user-select: none;
-`;
+export default HeroWaves;

@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledSection = styled.section`
+  background-color: ${({ isDimmedBackground }) =>
+    isDimmedBackground ? '#f5f5f5' : '#fff'};
+`;
+
 const SectionContainer = styled.div`
   max-width: 960px;
   margin: 0 auto;
@@ -28,16 +33,13 @@ const SectionTitle = styled.h1`
 
 function Section({ id, title, isDimmedBackground, children, ...props }) {
   return (
-    <section id={id} {...props}>
+    <StyledSection id={id} {...props}>
       <SectionContainer>
         {title && <SectionTitle>{title}</SectionTitle>}
         {children}
       </SectionContainer>
-    </section>
+    </StyledSection>
   );
 }
 
-export default styled(Section)`
-  background-color: ${({ isDimmedBackground }) =>
-    isDimmedBackground ? '#f5f5f5' : '#fff'};
-`;
+export default Section;

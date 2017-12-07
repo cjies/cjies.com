@@ -1,15 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function HeaderLogoLink({ imgSrc, ...props }) {
-  return (
-    <a {...props}>
-      <img src={imgSrc} alt="logo" />
-    </a>
-  );
-}
-
-export default styled(HeaderLogoLink)`
+const LogoLink = styled.a`
   display: inline-block;
   height: 100%;
   padding: 10px;
@@ -18,9 +10,19 @@ export default styled(HeaderLogoLink)`
   &:hover {
     background-color: rgba(0, 0, 0, 0.03);
   }
-
-  img {
-    height: 100%;
-    width: auto;
-  }
 `;
+
+const LogoImg = styled.img`
+  height: 100%;
+  width: auto;
+`;
+
+function HeaderLogoLink({ imgSrc, ...props }) {
+  return (
+    <LogoLink {...props}>
+      <LogoImg src={imgSrc} alt="logo" />
+    </LogoLink>
+  );
+}
+
+export default HeaderLogoLink;
