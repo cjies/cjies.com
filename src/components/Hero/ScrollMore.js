@@ -1,22 +1,10 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const arrowBounce = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: scale(1, 1) translateY(0);
-  }
-
-  40% {
-    transform: scale(1.3, 1.3) translateY(-20px);
-  }
-
-  60% {
-    transform: scale(1.1, 1.1) translateY(-10px);
-  }
-`;
+import { animArrowBounce } from '../shared/keyframes';
 
 const Icon = styled.i`
-  animation: 2s ${arrowBounce} 2 ease-out;
+  animation: 2s ${animArrowBounce} 2 ease-out;
   animation-delay: 2s;
 `;
 

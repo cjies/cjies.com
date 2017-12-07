@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Section from './shared/Section';
 import SocialLinks from './shared/SocialLinks';
 
+import { animFlipCoin } from './shared/keyframes';
+
 import { ABOUT_SECTION } from 'data/sections';
 import { AVATAR, PARAGRAPH } from 'data/about_me';
 
@@ -46,6 +48,10 @@ const Avatar = styled.img`
   overflow: hidden;
   user-select: none;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    animation: ${animFlipCoin} 1s forwards ease-in-out;
+  }
 `;
 
 function About() {
