@@ -6,7 +6,7 @@ import SECTIONS from 'data/sections';
 const Nav = styled.nav`
   margin-left: auto;
   height: 100%;
-  font-size: 11px;
+  font-size: 0.78rem;
   display: flex;
 `;
 

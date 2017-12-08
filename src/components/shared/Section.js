@@ -16,7 +16,7 @@ const SectionTitle = styled.h1`
   position: relative;
   padding: 30px 0;
   margin-bottom: 10px;
-  font-size: 21px;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: #343442;
 
