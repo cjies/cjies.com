@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
+// Fetch API poyfill
+import 'whatwg-fetch';
+
 // Behind the Scenes
 // import { repository, author, version } from '../package.json';
 // import CONSOLE_BANNER from './data/console_banner';

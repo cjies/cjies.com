@@ -26,7 +26,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "sine-waves": "cjies/sine-waves.git",
-    "styled-components": "^2.2.4"
+    "styled-components": "^2.2.4",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
