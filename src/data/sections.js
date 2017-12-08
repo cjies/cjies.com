@@ -30,7 +30,7 @@ export const SKILL_SECTION = {
 
 export const CONTACT_SECTION = {
   id: 'contact',
-  title: 'Contact ME',
+  title: 'Contact Me',
   nav: 'Contact',
 };
 

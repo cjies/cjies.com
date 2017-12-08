@@ -9,6 +9,7 @@ import HomeSection from './HomeSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
 import SkillSection from './SkillSection';
+import ContactSection from './ContactSection';
 
 // Normalize default stylesheets
 import 'normalize.css/normalize.css';
@@ -64,6 +65,7 @@ function App() {
       <AboutSection />
       <ResumeSection />
       <SkillSection />
+      <ContactSection />
       <AppFooter />
     </Fragment>
   );
