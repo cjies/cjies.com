@@ -8,6 +8,7 @@ import AppFooter from './AppFooter';
 import HomeSection from './HomeSection';
 import AboutSection from './AboutSection';
 import ResumeSection from './ResumeSection';
+import PortfolioSection from './PortfolioSection';
 import SkillSection from './SkillSection';
 import ContactSection from './ContactSection';
 
@@ -64,6 +65,7 @@ function App() {
       <HomeSection />
       <AboutSection />
       <ResumeSection />
+      <PortfolioSection />
       <SkillSection />
       <ContactSection />
       <AppFooter />

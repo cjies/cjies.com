@@ -1,0 +1,68 @@
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+
+import PORTFOLIOS from 'data/portfolios';
+
+const List = styled.ul`
+  display: flex;
+  flex-flow: row wrap;
+`;
+
+class PortfolioList extends PureComponent {
+  static defaultProps = {
+    activatedPortfolioType: '',
+    shouldShowMore: false,
+  };
+
+  state = {
+    initialItemAmount: 3,
+  };
+
+  componentWillMount() {
+    this.calculateInitialItemAmount(); // Initialize item amount
+    window.addEventListener('resize', this.calculateInitialItemAmount);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.calculateInitialItemAmount);
+  }
+
+  /**
+   * Calculate the initial porfolio item amount,
+   * show less in small device
+   */
+  calculateInitialItemAmount = () => {
+    this.setState({
+      initialItemAmount: window.innerWidth < 640 ? 3 : 6,
+    });
+  };
+
+  render() {
+    const { activatedPortfolioType, shouldShowMore } = this.props;
+    const { initialItemAmount } = this.state;
+
+    // Reverse and filter by activated type
+    const filteredPortfolioItems = [...PORTFOLIOS]
+      .reverse()
+      .filter(
+        portfolio =>
+          activatedPortfolioType === 'ALL' ||
+          portfolio.type === activatedPortfolioType
+      );
+
+    // Filter by initial amount
+    const displayedPortfolioItems = shouldShowMore
+      ? filteredPortfolioItems
+      : filteredPortfolioItems.slice(0, initialItemAmount);
+
+    return (
+      <List>
+        {displayedPortfolioItems.map(portfolioItem => (
+          <div>{portfolioItem.title},</div>
+        ))}
+      </List>
+    );
+  }
+}
+
+export default PortfolioList;
