@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
-import Section from '../shared/Section';
-import Button from '../shared/Button';
+import Section from 'shared/Section';
+import Button from 'shared/Button';
 import InputText from './InputText';
 import Textarea from './Textarea';
 

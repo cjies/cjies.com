@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { animArrowBounce } from '../shared/keyframes';
+import { animArrowBounce } from 'shared/keyframes';
 
 const Icon = styled.i`
   animation: 2s ${animArrowBounce} 2 ease-out;

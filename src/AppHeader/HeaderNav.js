@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import SECTIONS from 'data/sections';
 
-import { animSlidesUp } from '../shared/keyframes';
+import { animSlidesUp } from 'shared/keyframes';
 
 const NavLink = styled.a`
   flex: 1;
