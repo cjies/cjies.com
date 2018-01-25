@@ -13,6 +13,8 @@ const SectionContainer = styled.div`
 `;
 
 const SectionTitle = styled.h1`
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   padding: 30px 0;
   margin-bottom: 10px;
@@ -31,7 +33,7 @@ const SectionTitle = styled.h1`
   }
 
   @media (max-width: 639px) {
-    text-align: center;
+    justify-content: center;
 
     &::before {
       left: 50%;
