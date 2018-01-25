@@ -5,7 +5,6 @@ import HeaderLogoLink from './HeaderLogoLink';
 import HeaderNav from './HeaderNav';
 
 import { HOME_SECTION } from 'data/sections';
-import Logo from 'images/logo.png';
 
 const Header = styled.header`
   position: fixed;
@@ -32,10 +31,6 @@ const HeaderContainer = styled.div`
   max-width: 980px;
   height: 100%;
   margin: 0 auto;
-
-  @media (max-width: 639px) {
-    justify-content: center;
-  }
 `;
 
 class AppHeader extends Component {
@@ -60,14 +55,56 @@ class AppHeader extends Component {
     }
   };
 
+  /**
+   * Prevent body scroll when mobile navigation is activated
+   *
+   * @param {Boolean} isScrollable
+   */
+  handleBodyScroll = isScrollable => {
+    if (window.innerWidth < 640) {
+      document.body.style.overflow = isScrollable ? '' : 'hidden';
+    }
+  };
+
+  /**
+   * Deactivate mobile nav
+   */
+  handleMobileNavClose = () => {
+    this.handleBodyScroll(true);
+    this.setState({ isNavActivated: false });
+  };
+
+  /**
+   * Toggle activated state of mobile nav
+   */
+  handleLogoClick = event => {
+    if (window.innerWidth < 640) {
+      event.preventDefault();
+    }
+
+    this.setState(({ isNavActivated }) => {
+      this.handleBodyScroll(isNavActivated);
+
+      return {
+        isNavActivated: !isNavActivated,
+      };
+    });
+  };
+
   render() {
-    const { isSticky } = this.state;
+    const { isSticky, isNavActivated } = this.state;
 
     return (
       <Header isSticky={isSticky}>
         <HeaderContainer>
-          <HeaderLogoLink imgSrc={Logo} href={`#${HOME_SECTION.id}`} />
-          <HeaderNav />
+          <HeaderLogoLink
+            href={`#${HOME_SECTION.id}`}
+            onClick={this.handleLogoClick}
+          />
+          <HeaderNav
+            isActivated={isNavActivated}
+            onClose={this.handleMobileNavClose}
+          />
         </HeaderContainer>
       </Header>
     );
