@@ -16,7 +16,7 @@ export default styled(Button)`
   display: inline-block;
   background-color: transparent;
   border-radius: 0;
-  border: 0;
+  border: 1px solid transparent;
   outline: 0;
   user-select: none;
   cursor: pointer;
@@ -57,10 +57,11 @@ export default styled(Button)`
           ? css`
               color: #fff;
               background-color: #171933;
+              border-color: #171933;
             `
           : css`
               color: #171933;
-              border: 1px solid #171933;
+              border-color: #171933;
 
               &:hover {
                 color: #fff;
@@ -72,10 +73,11 @@ export default styled(Button)`
           ? css`
               color: #fff;
               background-color: #343442;
+              border-color: #343442;
             `
           : css`
               color: #343442;
-              border: 1px solid #343442;
+              border-color: #343442;
 
               &:hover {
                 color: #fff;
@@ -87,10 +89,11 @@ export default styled(Button)`
           ? css`
               color: #fff;
               background-color: #b0b0b0;
+              border-color: #b0b0b0;
             `
           : css`
-              color: ##b0b0b0;
-              border: 1px solid #b0b0b0;
+              color: #b0b0b0;
+              border-color: #b0b0b0;
 
               &:hover {
                 color: #fff;
@@ -105,6 +108,6 @@ export default styled(Button)`
     isSmall &&
     css`
       font-size: 0.78rem;
-      padding: 5px 10px;
+      padding: 7px 10px 5px;
     `};
 `;
