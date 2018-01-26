@@ -23,6 +23,7 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
+    "detect-inapp": "^1.3.0",
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
