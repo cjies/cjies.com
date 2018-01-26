@@ -1,11 +1,17 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
+import PortfolioItem from './PortfolioItem';
+
 import PORTFOLIOS from 'data/portfolios';
 
 const List = styled.ul`
   display: flex;
   flex-flow: row wrap;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
 class PortfolioList extends PureComponent {
@@ -58,7 +64,12 @@ class PortfolioList extends PureComponent {
     return (
       <List>
         {displayedPortfolioItems.map(portfolioItem => (
-          <div>{portfolioItem.title},</div>
+          <PortfolioItem
+            key={portfolioItem.title}
+            title={portfolioItem.title}
+            description={portfolioItem.description}
+            coverImage={portfolioItem.coverImage}
+          />
         ))}
       </List>
     );
