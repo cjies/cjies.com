@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Section from './shared/Section';
+import Section from 'shared/Section';
 
 import { RESUME_SECTION } from 'data/sections';
 import RESUMES from 'data/resumes';

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SocialLinks from './shared/SocialLinks';
+import SocialLinks from 'shared/SocialLinks';
 
 // Get current year
 const currentYear = new Date().getFullYear();

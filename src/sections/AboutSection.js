@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Section from './shared/Section';
-import SocialLinks from './shared/SocialLinks';
+import Section from 'shared/Section';
+import SocialLinks from 'shared/SocialLinks';
 
-import { animFlipCoin } from './shared/keyframes';
+import { animFlipCoin } from 'shared/keyframes';
 
 import { ABOUT_SECTION } from 'data/sections';
 import { AVATAR, PARAGRAPH } from 'data/about_me';

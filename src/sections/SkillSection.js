@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Section from './shared/Section';
+import Section from 'shared/Section';
 
-import { animFlipCoin } from './shared/keyframes';
+import { animFlipCoin } from 'shared/keyframes';
 
 import { SKILL_SECTION } from 'data/sections';
 import SKILLS from 'data/skills';
