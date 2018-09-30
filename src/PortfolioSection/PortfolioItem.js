@@ -149,7 +149,7 @@ class PortfolioItem extends PureComponent {
 
     return (
       <Item>
-        <ItemContainer isHoverable={!inapp.isMobile()}>
+        <ItemContainer isHoverable={!inapp.isMobile}>
           <CoverImage src={coverImage} />
           <ItemTitle>
             <h2>{title}</h2>

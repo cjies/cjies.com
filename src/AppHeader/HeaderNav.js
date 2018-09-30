@@ -29,7 +29,7 @@ const NavLink = styled.a`
   }
 `;
 
-const CloseLink = NavLink.extend`
+const CloseLink = styled(NavLink)`
   height: auto;
   display: none;
 
