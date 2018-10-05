@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import GlobalStyle from './GlobalStyle';
 import AppHeader from './AppHeader';
@@ -17,7 +17,7 @@ import 'normalize.css/normalize.css';
 
 function App() {
   return (
-    <Fragment>
+    <>
       <GlobalStyle />
 
       <AppHeader />
@@ -28,7 +28,7 @@ function App() {
       <SkillSection />
       <ContactSection />
       <AppFooter />
-    </Fragment>
+    </>
   );
 }
 export default App;

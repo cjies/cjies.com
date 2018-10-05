@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 
 import Section from 'shared/Section';
 import Button from 'shared/Button';
@@ -38,13 +38,13 @@ class PortfolioSection extends PureComponent {
     const { activatedPortfolioType } = this.state;
 
     return (
-      <Fragment>
+      <>
         {PORTFOLIO_SECTION.title}
         <PortfolioTypeButtons
           activatedType={activatedPortfolioType}
           onTypeChange={this.handlePortfolioTypeChange}
         />
-      </Fragment>
+      </>
     );
   }
 
