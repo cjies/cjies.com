@@ -116,12 +116,7 @@ class ContactSection extends PureComponent {
 
     return (
       <Section id={CONTACT_SECTION.id} title={CONTACT_SECTION.title}>
-        <Form
-          innerRef={ref => {
-            this.formNode = ref;
-          }}
-          onSubmit={this.handleFormSubmit}
-        >
+        <Form onSubmit={this.handleFormSubmit}>
           <InputText
             required
             name="name"

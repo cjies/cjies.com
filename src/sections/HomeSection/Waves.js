@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import styled from 'styled-components';
 import SineWaves from 'sine-waves';
 
@@ -17,8 +17,10 @@ class Waves extends PureComponent {
     isWavesPaused: false,
   };
 
+  canvasRef = createRef();
+
   componentDidMount() {
-    this.wavesInst = this.initialWaves(this.canvasNode);
+    this.wavesInst = this.initialWaves(this.canvasRef.current);
   }
 
   componentDidUpdate() {
@@ -74,13 +76,7 @@ class Waves extends PureComponent {
   };
 
   render() {
-    return (
-      <Canvas
-        innerRef={ref => {
-          this.canvasNode = ref;
-        }}
-      />
-    );
+    return <Canvas ref={this.canvasRef} />;
   }
 }
 
