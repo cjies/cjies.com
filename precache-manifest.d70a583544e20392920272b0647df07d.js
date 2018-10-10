@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/cover-mybook.556fdb8e.png"
   },
   {
-    "revision": "c51e6a57614ad1e78bc8",
-    "url": "/static/js/main.c51e6a57.chunk.js"
+    "revision": "9594e3825a5b36bd6f9b",
+    "url": "/static/js/main.9594e382.chunk.js"
   },
   {
     "revision": "7941f5f8f42674fc84adc81c963ec54f",
@@ -132,15 +132,15 @@ self.__precacheManifest = [
     "url": "/static/media/cover-esmodule.a0f2e249.png"
   },
   {
-    "revision": "bc0e20844bdd80dc3d20",
-    "url": "/static/js/1.bc0e2084.chunk.js"
+    "revision": "fcf6d90db6bf716f7039",
+    "url": "/static/js/1.fcf6d90d.chunk.js"
   },
   {
-    "revision": "bc0e20844bdd80dc3d20",
+    "revision": "fcf6d90db6bf716f7039",
     "url": "/static/css/1.647e9f01.chunk.css"
   },
   {
-    "revision": "be2a2550ee8ca8f3e89530ac5791a341",
+    "revision": "7980244eeeba0d75c8e801ba38fe5043",
     "url": "/index.html"
   }
 ];

@@ -1,9 +1,9 @@
 {
-  "main.js": "/static/js/main.c51e6a57.chunk.js",
-  "main.js.map": "/static/js/main.c51e6a57.chunk.js.map",
+  "main.js": "/static/js/main.9594e382.chunk.js",
+  "main.js.map": "/static/js/main.9594e382.chunk.js.map",
   "static/css/1.647e9f01.chunk.css": "/static/css/1.647e9f01.chunk.css",
-  "static/js/1.bc0e2084.chunk.js": "/static/js/1.bc0e2084.chunk.js",
-  "static/js/1.bc0e2084.chunk.js.map": "/static/js/1.bc0e2084.chunk.js.map",
+  "static/js/1.fcf6d90d.chunk.js": "/static/js/1.fcf6d90d.chunk.js",
+  "static/js/1.fcf6d90d.chunk.js.map": "/static/js/1.fcf6d90d.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/detail-knoew.png": "/static/media/detail-knoew.10a41412.png",
@@ -39,6 +39,6 @@
   "static/media/detail-artcenter.png": "/static/media/detail-artcenter.7941f5f8.png",
   "static/css/1.647e9f01.chunk.css.map": "/static/css/1.647e9f01.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.65448c269b8ccfb35748829b0e9e5b3c.js": "/precache-manifest.65448c269b8ccfb35748829b0e9e5b3c.js",
+  "precache-manifest.d70a583544e20392920272b0647df07d.js": "/precache-manifest.d70a583544e20392920272b0647df07d.js",
   "service-worker.js": "/service-worker.js"
 }
