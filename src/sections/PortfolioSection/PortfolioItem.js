@@ -142,13 +142,14 @@ class PortfolioItem extends PureComponent {
     title: '',
     description: '',
     coverImage: '',
+    onClick: () => {},
   };
 
   render() {
-    const { title, description, coverImage } = this.props;
+    const { title, description, coverImage, onClick } = this.props;
 
     return (
-      <Item>
+      <Item onClick={onClick}>
         <ItemContainer isHoverable={!inapp.isMobile}>
           <CoverImage src={coverImage} />
           <ItemTitle>

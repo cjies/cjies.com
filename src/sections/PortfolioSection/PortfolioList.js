@@ -18,6 +18,7 @@ class PortfolioList extends PureComponent {
   static defaultProps = {
     activatedPortfolioType: '',
     shouldShowMore: false,
+    onItemClick: () => () => {},
   };
 
   state = {
@@ -44,7 +45,7 @@ class PortfolioList extends PureComponent {
   };
 
   render() {
-    const { activatedPortfolioType, shouldShowMore } = this.props;
+    const { activatedPortfolioType, shouldShowMore, onItemClick } = this.props;
     const { initialItemAmount } = this.state;
 
     // Reverse and filter by activated type
@@ -69,6 +70,7 @@ class PortfolioList extends PureComponent {
             title={portfolioItem.title}
             description={portfolioItem.description}
             coverImage={portfolioItem.coverImage}
+            onClick={onItemClick(portfolioItem)}
           />
         ))}
       </List>
