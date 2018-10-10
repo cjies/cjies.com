@@ -1,31 +1,20 @@
-/* eslint no-console: 0 */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'containers/App';
 
-// Redux
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducers from 'reducers';
-
-const store = createStore(reducers);
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
 // Behind the Scenes
 import { repository, author, version } from '../package.json';
-import banner from 'static/data/banner.txt';
+import CONSOLE_BANNER from './data/console_banner';
 
 console.info(`
-  ${banner}
+  ${CONSOLE_BANNER}
   I <3 React~~~ Ｏ(≧▽≦)Ｏ
   Page version: v${version}
   Behind the scenes: ${repository.url}
   Hiring me? ${author.email}
 `);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();

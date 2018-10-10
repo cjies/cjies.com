@@ -1,14 +1,21 @@
 language: node_js
-node_js:
-- '5.1'
-install:
-- npm install
+
 branches:
   only:
-    - master
+  - master
+
+install:
+    - yarn
+
+cache: yarn
+
 script:
-- test $TRAVIS_PULL_REQUEST == "false" && bash deploy-ghpages.sh
-env:
-  global:
-  - GH_REF: github.com/cjies/cjies.com.git
-  - secure: gW2SAfjjvXOyB9kSacGKyHfmxsyo9q4XO0FnNcWlF14InUJMIRJM3xXSJ+e3ayaqtJpSlVD6inn1w1YK5p9twDKxsOn/ZBW8/rujnHDCcCuK2rRcJJnI66+hYD22zrhm2aJ1hPEI/dE8kk7SiyIzy8LAMmtBgQdvh3+0VljsWj+MAMmJw1fQMg424UZ1c9MBl6/zXmen/XONSII0fA4pzIOvAeEI4TUebddOh97GUF4hQbJL1HmYPfuFu8QpNNU61p3SzMCY663qyXmasnSuZ2QixUkij+THRnNI2lVfNzC69FVQaAPJiuOTFj6yUHZOCLdVmaPtnwmKZVRVQ9ISemPSHXg0f6EZjBiiHKpFnMQwv9T3IuX+Ylg9+usvs8Bd7gq/hJEPX9kTAWmxo8kcuRz+LCXOpNQxfVQGyjbCE1S7MCrSYfL87IRl1DLMlwbKX7TJzMu5eRcNEt9WXPeqH8YOHbfzaDD4TKV6Ub3bDRyez9S+9+hwoHbwiyFdiDqGTxR6jIFt+NGxUZ8b6TdP1CrUAsi7HFXvtIW/BU1wNWYToR9f88IDZ9L1KS6xg5WMG2z5Asd3icgkGTC6s6TBKx+L3ICazFGfifLOqqckR6KOpFq2h+omqwL3dAbq3WW4GKMOZpECqrvv4e5+MufDi4tO8IU1H97oIjQBD1C1s2E=
+    - yarn build
+
+deploy:
+  provider: pages
+  github-token: $GITHUB_TOKEN
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: master

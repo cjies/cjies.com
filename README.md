@@ -1,7 +1,7 @@
 # CJies Website 
 
 Please visit: [http://www.cjies.com](http://cjies.com)
-> 2016 CJies website created in React. 
+> 2018 CJies website created in React. 
 
 [![Build Status](https://travis-ci.org/cjies/cjies.com.svg?branch=master)](https://travis-ci.org/cjies/cjies.com)
 [![Dependency Status](https://david-dm.org/cjies/cjies.com.svg)](https://david-dm.org/cjies/cjies.com)
@@ -36,13 +36,12 @@ Please visit: [http://www.cjies.com](http://cjies.com)
 - [iPhone-6-Scalable-Mockups](https://dribbble.com/shots/1717398-iPhone-6-Scalable-Mockups-4-7) by JustD
 
 
-## Install
+## Development
 
 Just in case you wanna clone it... ~ヾ(＾∇＾)
 
 ```
-npm install
-npm start
+yarn && yarn start
 ```
 
 
@@ -50,7 +49,7 @@ npm start
 
 The MIT License (MIT)
 
-Copyright (c) 2016 CJies
+Copyright (c) 2018 CJies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
