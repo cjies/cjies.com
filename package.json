@@ -1,6 +1,6 @@
 {
   "name": "cjies.com",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "CJies Website in React",
   "keywords": [
     "cjies"
@@ -34,6 +34,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",
+    "flow-bin": "^0.82.0",
     "prettier": "^1.14.3",
     "react-scripts": "2.0.4"
   },

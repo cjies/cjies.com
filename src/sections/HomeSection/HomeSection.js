@@ -1,3 +1,4 @@
+// @flow
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
@@ -24,7 +25,11 @@ const HeroTitle = styled.h1`
   margin-bottom: 10px;
 `;
 
-class HomeSection extends PureComponent {
+type State = {
+  isWavesPaused: boolean,
+};
+
+class HomeSection extends PureComponent<{}, State> {
   state = {
     isWavesPaused: false,
   };
@@ -53,7 +58,7 @@ class HomeSection extends PureComponent {
         <HeroTitle>MAKE SIMPLE.</HeroTitle>
         <p>Front End Developer</p>
 
-        <Waves isWavesPaused={isWavesPaused} />
+        <Waves pause={isWavesPaused} />
         <ScrollMore href={`#${ABOUT_SECTION.id}`} />
       </Section>
     );

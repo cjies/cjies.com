@@ -1,18 +1,13 @@
-import React from 'react';
+// @flow
 import styled, { css } from 'styled-components';
 
-function Button({ tag: ButtonTag, color, isSmall, isSolid, ...props }) {
-  return <ButtonTag {...props} />;
-}
-
-Button.defaultProps = {
-  tag: 'button',
-  color: 'gray', // ['primary', 'secondary', 'gray']
-  isSmall: false,
-  isSolid: false,
+type Props = {
+  color?: 'primary' | 'secondary',
+  small?: boolean,
+  solid?: boolean,
 };
 
-export default styled(Button)`
+export default styled.button`
   display: inline-block;
   background-color: transparent;
   border-radius: 0;
@@ -50,10 +45,10 @@ export default styled(Button)`
   }
 
   /* Colors */
-  ${({ color, isSolid }) => {
+  ${({ color, solid }: Props) => {
     switch (color) {
       case 'primary':
-        return isSolid
+        return solid
           ? css`
               color: #fff;
               background-color: #171933;
@@ -69,7 +64,7 @@ export default styled(Button)`
               }
             `;
       case 'secondary':
-        return isSolid
+        return solid
           ? css`
               color: #fff;
               background-color: #343442;
@@ -85,7 +80,7 @@ export default styled(Button)`
               }
             `;
       default:
-        return isSolid
+        return solid
           ? css`
               color: #fff;
               background-color: #b0b0b0;
@@ -104,8 +99,8 @@ export default styled(Button)`
   }};
 
   /* Small size */
-  ${({ isSmall }) =>
-    isSmall &&
+  ${({ small }: Props) =>
+    small &&
     css`
       font-size: 0.78rem;
       padding: 7px 10px 5px;

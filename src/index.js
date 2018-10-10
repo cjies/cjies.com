@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -16,5 +17,9 @@ console.info(`
   Hiring me? ${author.email}
 `);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootElem = document.getElementById('root');
+if (rootElem) {
+  ReactDOM.render(<App />, rootElem);
+}
+
 registerServiceWorker();

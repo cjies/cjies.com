@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -35,7 +36,7 @@ const Footer = styled.footer`
   }
 `;
 
-function AppFooter({ ...props }) {
+function AppFooter({ ...props }: {}) {
   return (
     <Footer {...props}>
       <FooterContainer>

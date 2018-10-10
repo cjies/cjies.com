@@ -1,8 +1,16 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
+type Props = {
+  id: string,
+  title: React$Node,
+  children: React$Node,
+  isDimmedBackground?: boolean,
+};
+
 const StyledSection = styled.section`
-  background-color: ${({ isDimmedBackground }) =>
+  background-color: ${({ isDimmedBackground }: Props) =>
     isDimmedBackground ? '#f5f5f5' : '#fff'};
 `;
 
@@ -42,7 +50,7 @@ const SectionTitle = styled.h1`
   }
 `;
 
-function Section({ id, title, children, ...props }) {
+function Section({ id, title, children, ...props }: Props) {
   return (
     <StyledSection id={id} {...props}>
       <SectionContainer>

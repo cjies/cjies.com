@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -25,7 +26,7 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
-function Textarea({ ...textareaProps }) {
+function Textarea(textareaProps: {}) {
   return (
     <Label>
       <StyledTextarea {...textareaProps} />
