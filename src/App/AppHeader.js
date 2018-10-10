@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+// @flow
+import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 
 import HeaderLogoLink from './HeaderLogoLink';
@@ -33,7 +34,12 @@ const HeaderContainer = styled.div`
   margin: 0 auto;
 `;
 
-class AppHeader extends Component {
+type State = {
+  isSticky: boolean,
+  isNavActivated: boolean,
+};
+
+class AppHeader extends PureComponent<{}, State> {
   state = {
     isSticky: false,
     isNavActivated: false,
@@ -57,11 +63,9 @@ class AppHeader extends Component {
 
   /**
    * Prevent body scroll when mobile navigation is activated
-   *
-   * @param {Boolean} isScrollable
    */
-  handleBodyScroll = isScrollable => {
-    if (window.innerWidth < 640) {
+  handleBodyScroll = (isScrollable: boolean) => {
+    if (window.innerWidth < 640 && document.body) {
       document.body.style.overflow = isScrollable ? '' : 'hidden';
     }
   };
@@ -77,9 +81,9 @@ class AppHeader extends Component {
   /**
    * Toggle activated state of mobile nav
    */
-  handleLogoClick = event => {
+  handleLogoClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
     if (window.innerWidth < 640) {
-      event.preventDefault();
+      e.preventDefault();
     }
 
     this.setState(({ isNavActivated }) => {
@@ -102,7 +106,7 @@ class AppHeader extends Component {
             onClick={this.handleLogoClick}
           />
           <HeaderNav
-            isActivated={isNavActivated}
+            active={isNavActivated}
             onClose={this.handleMobileNavClose}
           />
         </HeaderContainer>

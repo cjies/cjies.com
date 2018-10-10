@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -28,7 +29,7 @@ const LogoImg = styled.img`
   width: auto;
 `;
 
-function HeaderLogoLink(props) {
+function HeaderLogoLink(props: {}) {
   return (
     <LogoLink {...props}>
       <LogoImg src={Logo} alt="logo" />

@@ -1,3 +1,4 @@
+// @flow
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
@@ -11,9 +12,6 @@ import { MY_EMAIL } from 'data/about_me';
 
 /**
  * Serialize object into URI string
- *
- * @param   {Object} obj
- * @returns {String}
  */
 function serializeParam(obj) {
   return Object.keys(obj)
@@ -38,42 +36,52 @@ const FormControl = styled.div`
   justify-content: flex-end;
 `;
 
-class ContactSection extends PureComponent {
+type State = {
+  name: string,
+  email: string,
+  message: string,
+  // Form submission
+  isSubmitting: boolean,
+  respondMsg?: string,
+};
+
+class ContactSection extends PureComponent<{}, State> {
   state = {
     name: '',
     email: '',
     message: '',
-
-    // Form submit
     isSubmitting: false,
-    respondMsg: '',
+    respondMsg: undefined,
   };
 
-  handleInputChange = event => {
-    const { name: inputName, value: inputValue } = event.target;
+  respondMsgTimeout: TimeoutID | null = null;
+
+  handleInputChange = (
+    e: SyntheticKeyboardEvent<HTMLInputElement | HTMLAreaElement>
+  ) => {
+    const eventTarget: any = e.currentTarget;
+    const { name: inputName, value: inputValue } = eventTarget;
 
     this.setState({ [inputName]: inputValue });
   };
 
   /**
    * Show respond message and clear it with timeout
-   *
-   * @param {String}  respondMsg
    */
-  handleRespondMsgShow = respondMsg => {
+  handleRespondMsgShow = (respondMsg: string) => {
     this.setState({ respondMsg }, () => {
       if (this.respondMsgTimeout) {
-        window.clearTimeout(this.respondMsgTimeout);
+        clearTimeout(this.respondMsgTimeout);
       }
 
-      this.respondMsgTimeout = window.setTimeout(() => {
+      this.respondMsgTimeout = setTimeout(() => {
         this.setState({ respondMsg: '' });
       }, 3000);
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     const { name, email, message } = this.state;
 
@@ -143,7 +151,7 @@ class ContactSection extends PureComponent {
           <FormControl>
             {respondMsg && <RespondMsg>{respondMsg}</RespondMsg>}
             <Button
-              isSolid
+              solid
               type="submit"
               color="primary"
               disabled={isFormInvalid || isSubmitting}

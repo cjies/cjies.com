@@ -1,3 +1,4 @@
+// @flow
 import React, { PureComponent } from 'react';
 
 import Section from 'shared/Section';
@@ -7,9 +8,22 @@ import PortfolioList from './PortfolioList';
 import PortfolioModal from './PortfolioModal';
 
 import { PORTFOLIO_SECTION } from 'data/sections';
-import { PORTFOLIO_TYPES } from 'data/portfolios';
+import {
+  PORTFOLIO_TYPES,
+  type PortfolioType,
+  type PortfolioItemType,
+} from 'data/portfolios';
 
-class PortfolioSection extends PureComponent {
+type State = {
+  activatedPortfolioType: PortfolioType,
+  modalPortolioItem?: PortfolioItemType,
+  modalBackdropX?: number,
+  modalBackdropY?: number,
+  isModalOpen: boolean,
+  shouldShowMore: boolean,
+};
+
+class PortfolioSection extends PureComponent<{}, State> {
   state = {
     activatedPortfolioType: PORTFOLIO_TYPES[0],
     modalPortolioItem: undefined,
@@ -18,6 +32,9 @@ class PortfolioSection extends PureComponent {
     isModalOpen: false,
     shouldShowMore: false,
   };
+
+  modalOpenTimeout: TimeoutID | null = null;
+  modalCloseTimeout: TimeoutID | null = null;
 
   componentWillUnmount() {
     this.clearModalTimeouts();
@@ -45,10 +62,8 @@ class PortfolioSection extends PureComponent {
 
   /**
    * Handle activated portfolio type change
-   *
-   * @param {String} activatedPortfolioType - one of PORTFOLIO_TYPES
    */
-  handlePortfolioTypeChange = activatedPortfolioType => {
+  handlePortfolioTypeChange = (activatedPortfolioType: PortfolioType) => {
     this.handleMoreItemsShow();
     this.setState({ activatedPortfolioType });
   };
@@ -56,7 +71,9 @@ class PortfolioSection extends PureComponent {
   /**
    * Handle portfolio click then show details in modal
    */
-  handleItemClick = portfolioItem => e => {
+  handleItemClick = (portfolioItem: PortfolioItemType) => (
+    e: SyntheticMouseEvent<HTMLLIElement>
+  ) => {
     this.clearModalTimeouts();
 
     this.setState({
@@ -71,10 +88,12 @@ class PortfolioSection extends PureComponent {
     }, 10);
 
     // Lock body scrolling
-    document.body.style.overflow = 'hidden';
+    if (document.body) {
+      document.body.style.overflow = 'hidden';
+    }
   };
 
-  handleModalClose = e => {
+  handleModalClose = (e: SyntheticMouseEvent<HTMLElement>) => {
     this.clearModalTimeouts();
 
     this.setState({
@@ -93,7 +112,9 @@ class PortfolioSection extends PureComponent {
     }, 500);
 
     // Lock body scrolling
-    document.body.style.overflow = '';
+    if (document.body) {
+      document.body.style.overflow = '';
+    }
   };
 
   /**
@@ -139,8 +160,8 @@ class PortfolioSection extends PureComponent {
 
         {!!modalPortolioItem && (
           <PortfolioModal
-            {...modalPortolioItem}
-            isOpen={isModalOpen}
+            open={isModalOpen}
+            portfolioItem={modalPortolioItem}
             modalBackdropX={modalBackdropX}
             modalBackdropY={modalBackdropY}
             onClose={this.handleModalClose}

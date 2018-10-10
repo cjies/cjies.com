@@ -1,9 +1,12 @@
-import React, { Component, createRef } from 'react';
+// @flow
+import React, { PureComponent, createRef } from 'react';
 import styled, { css } from 'styled-components';
 import { lory } from 'lory.js';
 
 import Portal from 'shared/Portal';
 import Button from 'shared/Button';
+
+import { type PortfolioItemType } from 'data/portfolios';
 
 const ModalBackdrop = styled.div`
   position: absolute;
@@ -162,8 +165,8 @@ const ModalWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ open }: { open?: boolean }) =>
+    open &&
     css`
       pointer-events: auto;
 
@@ -192,28 +195,25 @@ const ModalWrapper = styled.div`
     `};
 `;
 
-class PortfolioModal extends Component {
-  static defaultProps = {
-    isOpen: false,
-    modalBackdropX: undefined,
-    modalBackdropY: undefined,
-    title: '',
-    description: '',
-    link: '',
-    iframe: '',
-    detailImages: [],
-    onClose: () => {},
-  };
+type Props = {
+  open?: boolean,
+  portfolioItem: PortfolioItemType,
+  modalBackdropX?: number,
+  modalBackdropY?: number,
+  onClose: (event: SyntheticMouseEvent<HTMLElement>) => void,
+};
 
+class PortfolioModal extends PureComponent<Props> {
   sliderRef = createRef();
-  lorySlider = null;
+  lorySlider: any | null = null;
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     // Initial lory slider
     if (
       this.sliderRef.current &&
-      (this.props.isOpen && !prevProps.isOpen) &&
-      (this.props.detailImages && this.props.detailImages.length > 1)
+      (this.props.open && !prevProps.open) &&
+      (this.props.portfolioItem.detailImages &&
+        this.props.portfolioItem.detailImages.length > 1)
     ) {
       setTimeout(() => {
         this.lorySlider = lory(this.sliderRef.current, {
@@ -232,13 +232,13 @@ class PortfolioModal extends Component {
   }
 
   renderPresentationIframe() {
-    const { iframe } = this.props;
+    const { iframe } = this.props.portfolioItem;
 
     return <IframeContainer dangerouslySetInnerHTML={{ __html: iframe }} />;
   }
 
   renderImageSlider() {
-    const { detailImages } = this.props;
+    const { detailImages } = this.props.portfolioItem;
 
     if (!detailImages || detailImages.length === 0) {
       return null;
@@ -275,19 +275,16 @@ class PortfolioModal extends Component {
 
   render() {
     const {
-      isOpen,
+      open,
+      portfolioItem,
       modalBackdropX,
       modalBackdropY,
-      title,
-      description,
-      link,
-      iframe,
       onClose,
     } = this.props;
 
     return (
       <Portal>
-        <ModalWrapper isOpen={isOpen}>
+        <ModalWrapper open={open}>
           <ModalBackdrop
             onClick={onClose}
             style={{ left: modalBackdropX, top: modalBackdropY }}
@@ -296,17 +293,17 @@ class PortfolioModal extends Component {
             <i className="fa fa-close fa-2x" />
           </ModalCloseButton>
           <ModalContainer>
-            {iframe
+            {portfolioItem.iframe
               ? this.renderPresentationIframe()
               : this.renderImageSlider()}
 
             <DescContainer>
               <DescText>
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <h1>{portfolioItem.title}</h1>
+                <p>{portfolioItem.description}</p>
               </DescText>
-              {!!link && (
-                <Button as="a" href={link} target="_blank">
+              {!!portfolioItem.link && (
+                <Button as="a" href={portfolioItem.link} target="_blank">
                   Visit
                 </Button>
               )}

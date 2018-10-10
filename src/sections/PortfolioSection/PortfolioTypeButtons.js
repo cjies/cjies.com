@@ -1,9 +1,10 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
 import Button from 'shared/Button';
 
-import { PORTFOLIO_TYPES } from 'data/portfolios';
+import { PORTFOLIO_TYPES, type PortfolioType } from 'data/portfolios';
 
 const ButtonsGroup = styled.div`
   display: flex;
@@ -22,15 +23,24 @@ const ButtonsGroup = styled.div`
   }
 `;
 
-function PortfolioTypeButtons({ activatedType, onTypeChange, ...props }) {
+type Props = {
+  activatedType: string,
+  onTypeChange: (portfolioType: PortfolioType) => void,
+};
+
+function PortfolioTypeButtons({
+  activatedType,
+  onTypeChange,
+  ...props
+}: Props) {
   return (
     <ButtonsGroup>
-      {PORTFOLIO_TYPES.map(portfolioType => (
+      {PORTFOLIO_TYPES.map((portfolioType: PortfolioType) => (
         <Button
+          small
           key={portfolioType}
           color="secondary"
-          isSmall
-          isSolid={activatedType === portfolioType}
+          solid={activatedType === portfolioType}
           onClick={() => onTypeChange(portfolioType)}
         >
           {portfolioType}
@@ -39,10 +49,5 @@ function PortfolioTypeButtons({ activatedType, onTypeChange, ...props }) {
     </ButtonsGroup>
   );
 }
-
-PortfolioTypeButtons.defaultProps = {
-  activatedType: '',
-  onTypeChange: () => {},
-};
 
 export default PortfolioTypeButtons;

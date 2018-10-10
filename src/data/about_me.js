@@ -1,3 +1,4 @@
+// @flow
 export const AVATAR = '//avatars1.githubusercontent.com/u/5558360?s=460';
 
 export const PARAGRAPH = `

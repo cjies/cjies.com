@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+// @flow
+import React from 'react';
 import styled, { css } from 'styled-components';
 import InApp from 'detect-inapp';
 
@@ -81,7 +82,7 @@ const ItemContainer = styled.div`
   overflow: hidden;
 
   /* Hoverable state */
-  ${({ isHoverable }) =>
+  ${({ isHoverable }: { isHoverable: boolean }) =>
     isHoverable &&
     css`
       transition: transform 0.3s ease-out, background 0.5s ease-out;
@@ -137,32 +138,26 @@ const Item = styled.li`
   }
 `;
 
-class PortfolioItem extends PureComponent {
-  static defaultProps = {
-    title: '',
-    description: '',
-    coverImage: '',
-    onClick: () => {},
-  };
+type Props = {
+  title: string,
+  description: string,
+  coverImage: string,
+  onClick: (event: SyntheticMouseEvent<HTMLLIElement>) => void,
+};
 
-  render() {
-    const { title, description, coverImage, onClick } = this.props;
-
-    return (
-      <Item onClick={onClick}>
-        <ItemContainer isHoverable={!inapp.isMobile}>
-          <CoverImage src={coverImage} />
-          <ItemTitle>
-            <h2>{title}</h2>
-            <p>{description}</p>
-          </ItemTitle>
-          <ExpandButton>
-            <i className="fa fa-expand fa-lg" />
-          </ExpandButton>
-        </ItemContainer>
-      </Item>
-    );
-  }
-}
+const PortfolioItem = ({ title, description, coverImage, onClick }: Props) => (
+  <Item onClick={onClick}>
+    <ItemContainer isHoverable={!inapp.isMobile}>
+      <CoverImage src={coverImage} />
+      <ItemTitle>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </ItemTitle>
+      <ExpandButton>
+        <i className="fa fa-expand fa-lg" />
+      </ExpandButton>
+    </ItemContainer>
+  </Item>
+);
 
 export default PortfolioItem;

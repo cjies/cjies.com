@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -26,7 +27,7 @@ const Link = styled.a`
   }
 `;
 
-function ScrollMore({ ...props }) {
+function ScrollMore(props: {}) {
   return (
     <Link {...props}>
       <Icon className="fa fa-angle-down fa-2x" />

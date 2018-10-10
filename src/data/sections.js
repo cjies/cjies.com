@@ -1,3 +1,4 @@
+// @flow
 export const HOME_SECTION = {
   id: 'home',
   title: '',

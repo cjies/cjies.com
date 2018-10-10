@@ -1,16 +1,25 @@
+// @flow
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-class Portal extends Component {
+type Props = {
+  children: React$Node,
+};
+
+class Portal extends Component<Props> {
   appRoot = document.getElementById('root');
   portalEl = document.createElement('div');
 
   componentDidMount() {
-    this.appRoot.appendChild(this.portalEl);
+    if (this.appRoot) {
+      this.appRoot.appendChild(this.portalEl);
+    }
   }
 
   componentWillUnmount() {
-    this.appRoot.removeChild(this.portalEl);
+    if (this.appRoot) {
+      this.appRoot.removeChild(this.portalEl);
+    }
   }
 
   render() {

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -72,8 +73,8 @@ const Nav = styled.nav`
     transition: opacity 0.2s ease-out;
 
     /* Activated state */
-    ${({ isActivated }) =>
-      isActivated &&
+    ${({ active }: { active: boolean }) =>
+      active &&
       css`
         opacity: 1;
         pointer-events: auto;
@@ -91,12 +92,17 @@ const Nav = styled.nav`
   }
 `;
 
-function HeaderNav({ isActivated, onClose, ...props }) {
+type Props = {
+  active: boolean,
+  onClose: () => void,
+};
+
+function HeaderNav({ active, onClose, ...props }: Props) {
   const transitionTime = 0.1;
   let animationDelay = 0.02;
 
   return (
-    <Nav isActivated={isActivated} {...props}>
+    <Nav active={active} {...props}>
       {SECTIONS.map((item, i) => {
         if (i > 0) {
           animationDelay += transitionTime;
@@ -122,10 +128,5 @@ function HeaderNav({ isActivated, onClose, ...props }) {
     </Nav>
   );
 }
-
-HeaderNav.defaultProps = {
-  isActivated: false,
-  onClose: () => {},
-};
 
 export default HeaderNav;

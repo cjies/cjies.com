@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -22,7 +23,7 @@ const Link = styled.a`
   }
 `;
 
-function SocialLinks({ ...props }) {
+function SocialLinks({ ...props }: {}) {
   return (
     <div {...props}>
       {SOCIAL_LINKS.map(item => (

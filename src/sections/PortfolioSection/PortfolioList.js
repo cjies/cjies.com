@@ -1,9 +1,13 @@
+// @flow
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
 import PortfolioItem from './PortfolioItem';
 
-import PORTFOLIOS from 'data/portfolios';
+import PORTFOLIOS, {
+  type PortfolioType,
+  type PortfolioItemType,
+} from 'data/portfolios';
 
 const List = styled.ul`
   display: flex;
@@ -14,13 +18,19 @@ const List = styled.ul`
   margin: 0;
 `;
 
-class PortfolioList extends PureComponent {
-  static defaultProps = {
-    activatedPortfolioType: '',
-    shouldShowMore: false,
-    onItemClick: () => () => {},
-  };
+type Props = {
+  activatedPortfolioType: PortfolioType,
+  shouldShowMore: boolean,
+  onItemClick: (
+    portfolioItem: PortfolioItemType
+  ) => (event: SyntheticMouseEvent<HTMLLIElement>) => void,
+};
 
+type State = {
+  initialItemAmount: number,
+};
+
+class PortfolioList extends PureComponent<Props, State> {
   state = {
     initialItemAmount: 3,
   };
