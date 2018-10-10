@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/styled-components/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+# Resolve sources in app/ folder
+module.name_mapper='^\(.*\)' -> '<PROJECT_ROOT>/src/\1'
+
+[strict]
