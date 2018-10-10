@@ -110,6 +110,8 @@ export default [
     link: 'https://www.youtube.com/watch?v=1_kf4KP_rV0',
     coverImage: require('images/cover-oldhouse.png'),
     detailImages: [],
+    iframe:
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/1_kf4KP_rV0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>',
   },
   {
     title: 'vital Payroll',

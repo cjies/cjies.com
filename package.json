@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "detect-inapp": "^1.4.0",
+    "lory.js": "^2.5.1",
     "normalize.css": "^8.0.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
