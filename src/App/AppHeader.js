@@ -7,6 +7,7 @@ import HeaderNav from './HeaderNav';
 
 import { HOME_SECTION } from 'data/sections';
 
+// $FlowFixMe - ignore custom props error
 const Header = styled.header`
   position: fixed;
   top: 0;
@@ -19,7 +20,7 @@ const Header = styled.header`
   z-index: 100;
   transition: opacity 0.3s ease-out;
 
-  ${({ isSticky }) =>
+  ${({ isSticky }: { isSticky: boolean }) =>
     !isSticky &&
     css`
       opacity: 0;

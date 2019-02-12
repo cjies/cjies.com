@@ -151,6 +151,7 @@ const DescText = styled.div`
   }
 `;
 
+// $FlowFixMe - ignore custom props error
 const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -204,7 +205,7 @@ type Props = {
 };
 
 class PortfolioModal extends PureComponent<Props> {
-  sliderRef = createRef();
+  sliderRef = createRef<HTMLDivElement>();
   lorySlider: any | null = null;
 
   componentDidUpdate(prevProps: Props) {

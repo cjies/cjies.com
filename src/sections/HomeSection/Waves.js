@@ -19,7 +19,7 @@ type Props = {
 
 class Waves extends PureComponent<Props> {
   wavesInst: any | typeof undefined;
-  canvasRef = createRef();
+  canvasRef = createRef<HTMLCanvasElement>();
 
   componentDidMount() {
     if (this.canvasRef.current) {

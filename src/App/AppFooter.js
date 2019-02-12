@@ -7,8 +7,17 @@ import SocialLinks from 'shared/SocialLinks';
 // Get current year
 const currentYear = new Date().getFullYear();
 
+const Footer = styled.footer`
+  background-color: #f5f5f5;
+  border-top: 1px solid #ededed;
+`;
+
 const StyledSocialLinks = styled(SocialLinks)`
   margin-left: auto;
+
+  @media (max-width: 639px) {
+    margin-top: 20px;
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -18,21 +27,10 @@ const FooterContainer = styled.div`
 
   display: flex;
   align-items: center;
-`;
-
-const Footer = styled.footer`
-  background-color: #f5f5f5;
-  border-top: 1px solid #ededed;
 
   @media (max-width: 639px) {
-    ${StyledSocialLinks} {
-      margin-top: 20px;
-    }
-
-    ${FooterContainer} {
-      display: block;
-      text-align: center;
-    }
+    display: block;
+    text-align: center;
   }
 `;
 

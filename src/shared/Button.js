@@ -7,6 +7,7 @@ type Props = {
   solid?: boolean,
 };
 
+// $FlowFixMe - ignore custom props error
 export default styled.button`
   display: inline-block;
   background-color: transparent;

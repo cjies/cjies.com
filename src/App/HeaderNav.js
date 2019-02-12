@@ -46,6 +46,7 @@ const CloseLink = styled(NavLink)`
   }
 `;
 
+// $FlowFixMe - ignore custom props error
 const Nav = styled.nav`
   margin-left: auto;
   height: 100%;
