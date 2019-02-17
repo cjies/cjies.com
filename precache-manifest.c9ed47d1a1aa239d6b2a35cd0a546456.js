@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/static/media/cover-mybook.556fdb8e.png"
   },
   {
-    "revision": "9594e3825a5b36bd6f9b",
-    "url": "/static/js/main.9594e382.chunk.js"
+    "revision": "42b5066ed11fc2e8e47b",
+    "url": "/static/js/main.42b5066e.chunk.js"
   },
   {
     "revision": "7941f5f8f42674fc84adc81c963ec54f",
     "url": "/static/media/detail-artcenter.7941f5f8.png"
   },
   {
-    "revision": "229c360febb4351a89df",
-    "url": "/static/js/runtime~main.229c360f.js"
+    "revision": "c0ac541d800a8d4312af9e67e417fa67",
+    "url": "/static/media/cover-artcenter.c0ac541d.png"
   },
   {
     "revision": "feb2e3c66bac7490329708e4645d6b65",
@@ -72,8 +72,8 @@ self.__precacheManifest = [
     "url": "/static/media/cover-gitflow.ac615c08.png"
   },
   {
-    "revision": "c0ac541d800a8d4312af9e67e417fa67",
-    "url": "/static/media/cover-artcenter.c0ac541d.png"
+    "revision": "fdfcfda2d9b1bf31db52",
+    "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
     "revision": "ade0a341a38453d098e916c0c8561d05",
@@ -132,15 +132,15 @@ self.__precacheManifest = [
     "url": "/static/media/cover-esmodule.a0f2e249.png"
   },
   {
-    "revision": "fcf6d90db6bf716f7039",
-    "url": "/static/js/1.fcf6d90d.chunk.js"
+    "revision": "854a0585cf1ca8400ad5",
+    "url": "/static/js/2.854a0585.chunk.js"
   },
   {
-    "revision": "fcf6d90db6bf716f7039",
-    "url": "/static/css/1.647e9f01.chunk.css"
+    "revision": "854a0585cf1ca8400ad5",
+    "url": "/static/css/2.9074ba19.chunk.css"
   },
   {
-    "revision": "7980244eeeba0d75c8e801ba38fe5043",
+    "revision": "fa7e95b53d2bfc767f1949c5a45d2f5e",
     "url": "/index.html"
   }
 ];
