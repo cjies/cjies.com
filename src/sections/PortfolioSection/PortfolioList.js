@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import PortfolioItem from './PortfolioItem';
@@ -26,66 +26,58 @@ type Props = {
   ) => (event: SyntheticMouseEvent<HTMLLIElement>) => void,
 };
 
-type State = {
-  initialItemAmount: number,
-};
-
-class PortfolioList extends PureComponent<Props, State> {
-  state = {
-    initialItemAmount: 3,
-  };
-
-  componentWillMount() {
-    this.calculateInitialItemAmount(); // Initialize item amount
-    window.addEventListener('resize', this.calculateInitialItemAmount);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.calculateInitialItemAmount);
-  }
+function PortfolioList({
+  activatedPortfolioType,
+  shouldShowMore,
+  onItemClick,
+}: Props) {
+  const [defaultItemAmount, setDefaultItemAmount] = useState(3);
 
   /**
    * Calculate the initial porfolio item amount,
    * show less in small device
    */
-  calculateInitialItemAmount = () => {
-    this.setState({
-      initialItemAmount: window.innerWidth < 640 ? 3 : 6,
-    });
+  const handleItemAmountCalculate = () => {
+    const itemAmount = window.innerWidth < 640 ? 3 : 6;
+    setDefaultItemAmount(itemAmount);
   };
 
-  render() {
-    const { activatedPortfolioType, shouldShowMore, onItemClick } = this.props;
-    const { initialItemAmount } = this.state;
+  useEffect(() => {
+    handleItemAmountCalculate(); // Initialize item amount
+    window.addEventListener('resize', handleItemAmountCalculate);
 
-    // Reverse and filter by activated type
-    const filteredPortfolioItems = [...PORTFOLIOS]
-      .reverse()
-      .filter(
-        portfolio =>
-          activatedPortfolioType === 'ALL' ||
-          portfolio.type === activatedPortfolioType
-      );
+    return () => {
+      window.removeEventListener('resize', handleItemAmountCalculate);
+    };
+  }, [null]);
 
-    // Filter by initial amount
-    const displayedPortfolioItems = shouldShowMore
-      ? filteredPortfolioItems
-      : filteredPortfolioItems.slice(0, initialItemAmount);
-
-    return (
-      <List>
-        {displayedPortfolioItems.map(portfolioItem => (
-          <PortfolioItem
-            key={portfolioItem.title}
-            title={portfolioItem.title}
-            description={portfolioItem.description}
-            coverImage={portfolioItem.coverImage}
-            onClick={onItemClick(portfolioItem)}
-          />
-        ))}
-      </List>
+  // Reverse and filter by activated type
+  const filteredPortfolioItems = [...PORTFOLIOS]
+    .reverse()
+    .filter(
+      portfolio =>
+        activatedPortfolioType === 'ALL' ||
+        portfolio.type === activatedPortfolioType
     );
-  }
+
+  // Filter by item amount
+  const displayedPortfolioItems = shouldShowMore
+    ? filteredPortfolioItems
+    : filteredPortfolioItems.slice(0, defaultItemAmount);
+
+  return (
+    <List>
+      {displayedPortfolioItems.map(portfolioItem => (
+        <PortfolioItem
+          key={portfolioItem.title}
+          title={portfolioItem.title}
+          description={portfolioItem.description}
+          coverImage={portfolioItem.coverImage}
+          onClick={onItemClick(portfolioItem)}
+        />
+      ))}
+    </List>
+  );
 }
 
 export default PortfolioList;

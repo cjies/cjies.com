@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Waves from './Waves';
@@ -25,44 +25,33 @@ const HeroTitle = styled.h1`
   margin-bottom: 10px;
 `;
 
-type State = {
-  isWavesPaused: boolean,
-};
+function HomeSection() {
+  const [isWavesPaused, setIsWavesPaused] = useState(false);
 
-class HomeSection extends PureComponent<{}, State> {
-  state = {
-    isWavesPaused: false,
+  /**
+   * Stop wave animation after scrolled to certain position
+   */
+  const handleWindowScroll = () => {
+    setIsWavesPaused(window.scrollY > 30);
   };
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleWindowScroll);
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleWindowScroll);
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
-  }
+    return () => {
+      window.removeEventListener('scroll', handleWindowScroll);
+    };
+  }, [null]);
 
-  handleWindowScroll = () => {
-    if (window.scrollY > 30) {
-      this.setState({ isWavesPaused: true });
-    } else {
-      this.setState({ isWavesPaused: false });
-    }
-  };
+  return (
+    <Section id={HOME_SECTION.id}>
+      <HeroTitle>MAKE SIMPLE.</HeroTitle>
+      <p>Front End Developer</p>
 
-  render() {
-    const { isWavesPaused } = this.state;
-
-    return (
-      <Section id={HOME_SECTION.id}>
-        <HeroTitle>MAKE SIMPLE.</HeroTitle>
-        <p>Front End Developer</p>
-
-        <Waves pause={isWavesPaused} />
-        <ScrollMore href={`#${ABOUT_SECTION.id}`} />
-      </Section>
-    );
-  }
+      <Waves pause={isWavesPaused} />
+      <ScrollMore href={`#${ABOUT_SECTION.id}`} />
+    </Section>
+  );
 }
 
 export default HomeSection;

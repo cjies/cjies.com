@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent, createRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SineWaves from 'sine-waves';
 
@@ -17,26 +17,14 @@ type Props = {
   pause: boolean,
 };
 
-class Waves extends PureComponent<Props> {
-  wavesInst: any | typeof undefined;
-  canvasRef = createRef<HTMLCanvasElement>();
-
-  componentDidMount() {
-    if (this.canvasRef.current) {
-      this.wavesInst = this.initialWaves(this.canvasRef.current);
-    }
-  }
-
-  componentDidUpdate() {
-    if (this.wavesInst) {
-      this.wavesInst.running = !this.props.pause;
-    }
-  }
+function Waves({ pause }: Props) {
+  const [wavesInst, setWavesInst] = useState(null);
+  const canvasEl = useRef(null);
 
   /**
    * Initial waves
    */
-  initialWaves = (canvasElem: HTMLCanvasElement) => {
+  const initialWaves = (canvasElem: HTMLCanvasElement) => {
     return new SineWaves({
       el: canvasElem,
       speed: 1.2,
@@ -77,9 +65,17 @@ class Waves extends PureComponent<Props> {
     });
   };
 
-  render() {
-    return <Canvas ref={this.canvasRef} />;
-  }
+  useEffect(() => {
+    if (canvasEl.current && !wavesInst) {
+      setWavesInst(initialWaves(canvasEl.current));
+    }
+
+    if (wavesInst) {
+      wavesInst.running = !pause;
+    }
+  }, [pause]);
+
+  return <Canvas ref={canvasEl} />;
 }
 
 export default Waves;
