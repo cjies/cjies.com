@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
 import HeaderLogoLink from './HeaderLogoLink';
@@ -7,6 +7,7 @@ import HeaderNav from './HeaderNav';
 
 import { HOME_SECTION } from 'data/sections';
 
+// $FlowFixMe - ignore custom props error
 const Header = styled.header`
   position: fixed;
   top: 0;
@@ -19,7 +20,7 @@ const Header = styled.header`
   z-index: 100;
   transition: opacity 0.3s ease-out;
 
-  ${({ isSticky }) =>
+  ${({ isSticky }: { isSticky: boolean }) =>
     !isSticky &&
     css`
       opacity: 0;
@@ -34,37 +35,26 @@ const HeaderContainer = styled.div`
   margin: 0 auto;
 `;
 
-type State = {
-  isSticky: boolean,
-  isNavActivated: boolean,
-};
+function AppHeader() {
+  const [isSticky, setIsSticky] = useState(false);
+  const [isNavActivated, setIsNavActivated] = useState(false);
 
-class AppHeader extends PureComponent<{}, State> {
-  state = {
-    isSticky: false,
-    isNavActivated: false,
+  const handleWindowScroll = () => {
+    setIsSticky(window.scrollY > 30);
   };
 
-  componentWillMount() {
-    window.addEventListener('scroll', this.handleWindowScroll);
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleWindowScroll);
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
-  }
-
-  handleWindowScroll = () => {
-    if (window.scrollY > 30) {
-      this.setState({ isSticky: true });
-    } else {
-      this.setState({ isSticky: false });
-    }
-  };
+    return () => {
+      window.removeEventListener('scroll', handleWindowScroll);
+    };
+  }, [null]);
 
   /**
    * Prevent body scroll when mobile navigation is activated
    */
-  handleBodyScroll = (isScrollable: boolean) => {
+  const handleBodyScroll = (isScrollable: boolean) => {
     if (window.innerWidth < 640 && document.body) {
       document.body.style.overflow = isScrollable ? '' : 'hidden';
     }
@@ -73,46 +63,34 @@ class AppHeader extends PureComponent<{}, State> {
   /**
    * Deactivate mobile nav
    */
-  handleMobileNavClose = () => {
-    this.handleBodyScroll(true);
-    this.setState({ isNavActivated: false });
+  const handleMobileNavClose = () => {
+    handleBodyScroll(true);
+    setIsNavActivated(false);
   };
 
   /**
    * Toggle activated state of mobile nav
    */
-  handleLogoClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
+  const handleLogoClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
     if (window.innerWidth < 640) {
       e.preventDefault();
     }
 
-    this.setState(({ isNavActivated }) => {
-      this.handleBodyScroll(isNavActivated);
-
-      return {
-        isNavActivated: !isNavActivated,
-      };
-    });
+    handleBodyScroll(isNavActivated);
+    setIsNavActivated(!isNavActivated);
   };
 
-  render() {
-    const { isSticky, isNavActivated } = this.state;
-
-    return (
-      <Header isSticky={isSticky}>
-        <HeaderContainer>
-          <HeaderLogoLink
-            href={`#${HOME_SECTION.id}`}
-            onClick={this.handleLogoClick}
-          />
-          <HeaderNav
-            active={isNavActivated}
-            onClose={this.handleMobileNavClose}
-          />
-        </HeaderContainer>
-      </Header>
-    );
-  }
+  return (
+    <Header isSticky={isSticky}>
+      <HeaderContainer>
+        <HeaderLogoLink
+          href={`#${HOME_SECTION.id}`}
+          onClick={handleLogoClick}
+        />
+        <HeaderNav active={isNavActivated} onClose={handleMobileNavClose} />
+      </HeaderContainer>
+    </Header>
+  );
 }
 
 export default AppHeader;

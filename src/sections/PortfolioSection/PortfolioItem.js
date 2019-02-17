@@ -73,6 +73,7 @@ const ExpandButton = styled.span`
   transition: opacity 0.3s ease-out;
 `;
 
+// $FlowFixMe - ignore custom props error
 const ItemContainer = styled.div`
   position: relative;
   height: 100%;

@@ -9,6 +9,7 @@ type Props = {
   isDimmedBackground?: boolean,
 };
 
+// $FlowFixMe - ignore custom props error
 const StyledSection = styled.section`
   background-color: ${({ isDimmedBackground }: Props) =>
     isDimmedBackground ? '#f5f5f5' : '#fff'};

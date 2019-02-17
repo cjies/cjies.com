@@ -7,7 +7,7 @@ import Logo from 'images/logo.png';
 const LogoLink = styled.a`
   display: inline-block;
   height: 100%;
-  padding: 10px;
+  padding: 13px;
   cursor: pointer;
 
   &:hover {
