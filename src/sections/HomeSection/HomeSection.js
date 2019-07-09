@@ -41,7 +41,7 @@ function HomeSection() {
     return () => {
       window.removeEventListener('scroll', handleWindowScroll);
     };
-  }, [null]);
+  }, []);
 
   return (
     <Section id={HOME_SECTION.id}>

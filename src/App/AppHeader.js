@@ -49,7 +49,7 @@ function AppHeader() {
     return () => {
       window.removeEventListener('scroll', handleWindowScroll);
     };
-  }, [null]);
+  }, []);
 
   /**
    * Prevent body scroll when mobile navigation is activated

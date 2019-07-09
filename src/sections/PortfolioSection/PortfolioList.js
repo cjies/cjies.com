@@ -49,7 +49,7 @@ function PortfolioList({
     return () => {
       window.removeEventListener('resize', handleItemAmountCalculate);
     };
-  }, [null]);
+  }, []);
 
   // Reverse and filter by activated type
   const filteredPortfolioItems = [...PORTFOLIOS]

@@ -73,7 +73,7 @@ function Waves({ pause }: Props) {
     if (wavesInst) {
       wavesInst.running = !pause;
     }
-  }, [pause]);
+  }, [wavesInst, pause]);
 
   return <Canvas ref={canvasEl} />;
 }
