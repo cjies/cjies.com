@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Section from 'shared/Section';
 
 import { RESUME_SECTION } from 'data/sections';
-import RESUMES from 'data/resumes';
+import EXPERIENCES from 'data/experiences';
 
 const List = styled.ul`
   display: flex;
@@ -30,14 +30,14 @@ const ListItem = styled.li`
   }
 `;
 
-const ResumeLabel = styled.div`
+const ExperienceLabel = styled.div`
   min-width: 100px;
   width: 100px;
   padding: 0 20px;
   text-align: center;
 `;
 
-const ResumeText = styled.div`
+const ExperienceText = styled.div`
   padding-left: 20px;
   border-left: 1px solid #ccc;
 
@@ -52,7 +52,7 @@ const ResumeText = styled.div`
   }
 `;
 
-function ResumeSection() {
+function ExperienceSection() {
   return (
     <Section
       isDimmedBackground
@@ -60,14 +60,14 @@ function ResumeSection() {
       title={RESUME_SECTION.title}
     >
       <List>
-        {RESUMES.map((item, i) => (
+        {EXPERIENCES.map((item, i) => (
           <ListItem key={`resume-${i}`}>
-            <ResumeLabel>{item.duration}</ResumeLabel>
-            <ResumeText>
+            <ExperienceLabel>{item.duration}</ExperienceLabel>
+            <ExperienceText>
               <h2>{item.title}</h2>
               <h4>{item.unit}</h4>
               <p>{item.description}</p>
-            </ResumeText>
+            </ExperienceText>
           </ListItem>
         ))}
       </List>
@@ -75,4 +75,4 @@ function ResumeSection() {
   );
 }
 
-export default ResumeSection;
+export default ExperienceSection;

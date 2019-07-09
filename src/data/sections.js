@@ -13,8 +13,8 @@ export const ABOUT_SECTION = {
 
 export const RESUME_SECTION = {
   id: 'resume',
-  title: 'Resume',
-  nav: 'Resume',
+  title: 'Work Experience',
+  nav: 'Experience',
 };
 
 export const PORTFOLIO_SECTION = {

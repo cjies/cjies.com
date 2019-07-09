@@ -8,7 +8,7 @@ import AppFooter from './AppFooter';
 // Sections
 import HomeSection from 'sections/HomeSection';
 import AboutSection from 'sections/AboutSection';
-import ResumeSection from 'sections/ResumeSection';
+import ExperienceSection from 'sections/ExperienceSection';
 import PortfolioSection from 'sections/PortfolioSection';
 import SkillSection from 'sections/SkillSection';
 import ContactSection from 'sections/ContactSection';
@@ -24,7 +24,7 @@ function App() {
       <AppHeader />
       <HomeSection />
       <AboutSection />
-      <ResumeSection />
+      <ExperienceSection />
       <PortfolioSection />
       <SkillSection />
       <ContactSection />
