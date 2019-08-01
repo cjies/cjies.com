@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script>
+  // Check the request comes from *.maindomain.com
+  var hostNameRegex = /^https:\/\/([^.]+\.)cjies\.com/;
+  
+  function processMessage(event) {
+    if (!hostnameRegex.test(event.origin)) {
+      return;
+    }
+    
+    // If request is to get the clientId, send it as a message back to the source page
+    // or send 'null' if no Client ID is found.
+    if (event.data === 'get') {
+      event.source.postMessage(window.localStorage.getItem('cj_id') || 'null', event.origin);
+      return;
+    }
+    
+    // Otherwise, set the Client ID in localStorage using the message content
+    window.localStorage.setItem('cj_id', event.data);
+    return;
+  }
+  
+  // Add a listener to listen for postMessage messages
+  window.addEventListener('message', processMessage);
+</script>
+</head>
+<body>
+</body>
+</html>
