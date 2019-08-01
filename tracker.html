@@ -6,6 +6,7 @@
   var hostNameRegex = /^https:\/\/([^.]+\.)cjies\.com/;
   
   function processMessage(event) {
+    console.log(event);
     if (!hostnameRegex.test(event.origin)) {
       return;
     }
@@ -13,7 +14,7 @@
     // If request is to get the clientId, send it as a message back to the source page
     // or send 'null' if no Client ID is found.
     if (event.data === 'get') {
-      event.source.postMessage(window.localStorage.getItem('cj_id') || 'null', event.origin);
+      event.source.postMessage(window.localStorage.getItem('cj_id') || 'null', '*');
       return;
     }
     
