@@ -1,28 +1,11 @@
 # CJies Website 
 
 Please visit: [http://www.cjies.com](http://cjies.com)
-> 2018 CJies website created in React. 
+> CJies website created in React. 
 
 [![Build Status](https://travis-ci.org/cjies/cjies.com.svg?branch=master)](https://travis-ci.org/cjies/cjies.com)
 [![Dependency Status](https://david-dm.org/cjies/cjies.com.svg)](https://david-dm.org/cjies/cjies.com)
 [![devDependency Status](https://david-dm.org/cjies/cjies.com/dev-status.svg)](https://david-dm.org/cjies/cjies.com#info=devDependencies)
-
-## All I used
-
-- ***[React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example)*** - For the base
-- ***[React Parallax](https://github.com/RRutsche/react-parallax)*** - Parallax Effect
-- ***[React Scroll](https://github.com/fisshy/react-scroll)*** - Anchor Scrolling
-- ***[React Sticky](https://github.com/captivationsoftware/react-sticky)*** - Sticky Header
-- ***[React CSS Modules](https://github.com/gajus/react-css-modules)*** - CSS Modules for React
-- ***[PostCSS](https://github.com/postcss/postcss)*** - PostCSS with autoprefixer
-- ***[Redux Form](https://github.com/erikras/redux-form)*** - Redux Form with validation
-- ***[classNames](https://github.com/JedWatson/classnames)*** - Conditionally joining classNames together
-- ***[Mobile Detect](https://github.com/hgoebl/mobile-detect.js)*** - Mobile Detect for Javascript
-- ***[Lory JS](https://github.com/meandmax/lory)*** - Touch enabled minimalistic slider written in vanilla JavaScript.
-- ***[Fetch](https://github.com/github/fetch)*** - window.fetch JavaScript polyfill
-- ***[Sine Waves](https://github.com/isuttell/sine-waves)*** - Generate multiple configurable sine waves (CJies modified)
-- ***[normalize.css](https://github.com/necolas/normalize.css/)*** - CSS Normalize
-- ***[Font Awesome Webpack](https://github.com/gowravshekar/font-awesome-webpack)*** - Font awesome configuration for webpack
 
 
 ## Mockups
@@ -49,7 +32,7 @@ yarn && yarn start
 
 The MIT License (MIT)
 
-Copyright (c) 2018 CJies
+Copyright (c) 2020 CJies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -68,4 +51,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
