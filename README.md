@@ -1,44 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CJies Website 
 
-## Available Scripts
+Please visit: [http://www.cjies.com](http://cjies.com)
+> CJies website created in React. 
 
-In the project directory, you can run:
+[![Build Status](https://travis-ci.org/cjies/cjies.com.svg?branch=master)](https://travis-ci.org/cjies/cjies.com)
+[![Dependency Status](https://david-dm.org/cjies/cjies.com.svg)](https://david-dm.org/cjies/cjies.com)
+[![devDependency Status](https://david-dm.org/cjies/cjies.com/dev-status.svg)](https://david-dm.org/cjies/cjies.com#info=devDependencies)
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Mockups
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [FREE-6-MacBooks-Phones-Mockups](https://www.behance.net/gallery/26949691/FREE-6-MacBooks-Phones-Mockups) by Mahmoud Wally
+- [Free-Macbook-Pro-Mockup-2](https://www.behance.net/gallery/31543983/Free-Macbook-Pro-Mockup-2) by Hazem Tawfik
+- [3-in-1-Mockup](http://www.leapwisemedia.com/resources/) by leapwisemedia
+- [Free-Photographic-iPhone-6-Mockup](https://dribbble.com/shots/2427413-Free-Photographic-iPhone-6-Mockup) by Irina Medyantseva
+- [TV-Mockup](https://dribbble.com/shots/2254739-TV-Mockups-PSD-Download) by Oliur
+- [5k-iMac-Mockup](http://www.mockupdeals.com/free-container-5k-imac-mockup/) by mockupdeals
+- [iPhone-6-Scalable-Mockups](https://dribbble.com/shots/1717398-iPhone-6-Scalable-Mockups-4-7) by JustD
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development
 
-### `yarn build`
+Just in case you wanna clone it... ~ヾ(＾∇＾)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+yarn && yarn start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `yarn eject`
+The MIT License (MIT)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Copyright (c) 2020 CJies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
