@@ -1,71 +1,44 @@
-# CJies Website 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Please visit: [http://www.cjies.com](http://cjies.com)
-> 2018 CJies website created in React. 
+## Available Scripts
 
-[![Build Status](https://travis-ci.org/cjies/cjies.com.svg?branch=master)](https://travis-ci.org/cjies/cjies.com)
-[![Dependency Status](https://david-dm.org/cjies/cjies.com.svg)](https://david-dm.org/cjies/cjies.com)
-[![devDependency Status](https://david-dm.org/cjies/cjies.com/dev-status.svg)](https://david-dm.org/cjies/cjies.com#info=devDependencies)
+In the project directory, you can run:
 
-## All I used
+### `yarn start`
 
-- ***[React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example)*** - For the base
-- ***[React Parallax](https://github.com/RRutsche/react-parallax)*** - Parallax Effect
-- ***[React Scroll](https://github.com/fisshy/react-scroll)*** - Anchor Scrolling
-- ***[React Sticky](https://github.com/captivationsoftware/react-sticky)*** - Sticky Header
-- ***[React CSS Modules](https://github.com/gajus/react-css-modules)*** - CSS Modules for React
-- ***[PostCSS](https://github.com/postcss/postcss)*** - PostCSS with autoprefixer
-- ***[Redux Form](https://github.com/erikras/redux-form)*** - Redux Form with validation
-- ***[classNames](https://github.com/JedWatson/classnames)*** - Conditionally joining classNames together
-- ***[Mobile Detect](https://github.com/hgoebl/mobile-detect.js)*** - Mobile Detect for Javascript
-- ***[Lory JS](https://github.com/meandmax/lory)*** - Touch enabled minimalistic slider written in vanilla JavaScript.
-- ***[Fetch](https://github.com/github/fetch)*** - window.fetch JavaScript polyfill
-- ***[Sine Waves](https://github.com/isuttell/sine-waves)*** - Generate multiple configurable sine waves (CJies modified)
-- ***[normalize.css](https://github.com/necolas/normalize.css/)*** - CSS Normalize
-- ***[Font Awesome Webpack](https://github.com/gowravshekar/font-awesome-webpack)*** - Font awesome configuration for webpack
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Mockups
+### `yarn test`
 
-- [FREE-6-MacBooks-Phones-Mockups](https://www.behance.net/gallery/26949691/FREE-6-MacBooks-Phones-Mockups) by Mahmoud Wally
-- [Free-Macbook-Pro-Mockup-2](https://www.behance.net/gallery/31543983/Free-Macbook-Pro-Mockup-2) by Hazem Tawfik
-- [3-in-1-Mockup](http://www.leapwisemedia.com/resources/) by leapwisemedia
-- [Free-Photographic-iPhone-6-Mockup](https://dribbble.com/shots/2427413-Free-Photographic-iPhone-6-Mockup) by Irina Medyantseva
-- [TV-Mockup](https://dribbble.com/shots/2254739-TV-Mockups-PSD-Download) by Oliur
-- [5k-iMac-Mockup](http://www.mockupdeals.com/free-container-5k-imac-mockup/) by mockupdeals
-- [iPhone-6-Scalable-Mockups](https://dribbble.com/shots/1717398-iPhone-6-Scalable-Mockups-4-7) by JustD
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn build`
 
-## Development
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Just in case you wanna clone it... ~ヾ(＾∇＾)
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-```
-yarn && yarn start
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `yarn eject`
 
-## License
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-The MIT License (MIT)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Copyright (c) 2018 CJies
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Learn More
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).

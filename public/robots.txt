@@ -1,4 +1,5 @@
 # www.cjies.com
+# https://www.robotstxt.org/robotstxt.html
 
 # Allow crawling of all content
 User-agent: *
