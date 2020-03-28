@@ -10,7 +10,7 @@ export default [
     title: 'F2E&RGBA Meetup',
     unit: 'Co-organizer',
     location: 'Taipei, Taiwan',
-    duration: '2016 - Present',
+    duration: '2016 - 2019',
     description: 'f2e.tw Community',
   },
   {
