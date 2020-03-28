@@ -1363,6 +1363,11 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
 
+"@types/lory.js@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@types/lory.js/-/lory.js-2.5.0.tgz#6e1f7dc84e30f665a6d3d7043c84a6b52502821b"
+  integrity sha512-OXMTwKwQDrpViqNwsKVcjRoc/R9NO+q8LMk0YriTs9HcIO/oyCEyJwMWBury7C+3fmH8Y9/GNLAkrM3BmG8Nhw==
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
