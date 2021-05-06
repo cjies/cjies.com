@@ -1,9 +1,16 @@
 export default [
   {
     title: 'Senior Front End Engineer',
+    unit: 'OneDegree Global',
+    location: 'Taipei / HongKong',
+    duration: '2020 - Present',
+    description: 'Insurance Tech',
+  },
+  {
+    title: 'Senior Front End Engineer',
     unit: 'Appier',
     location: 'Taipei, Taiwan',
-    duration: '2017 - Present',
+    duration: '2017 - 2020',
     description: 'Enterprise Solution Department',
   },
   {
