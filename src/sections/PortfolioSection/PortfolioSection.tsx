@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import Section from 'shared/Section';
 import Button from 'shared/Button';
@@ -38,8 +38,8 @@ class PortfolioSection extends React.PureComponent<Props, State> {
     };
   }
 
-  modalOpenTimeout: number | null = null;
-  modalCloseTimeout: number | null = null;
+  modalOpenTimeout: ReturnType<typeof setTimeout> | null = null;
+  modalCloseTimeout: ReturnType<typeof setTimeout> | null = null;
 
   componentWillUnmount() {
     this.clearModalTimeouts();

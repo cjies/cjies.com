@@ -1,4 +1,4 @@
-export default [
+const EXPERIENCES = [
   {
     title: 'Senior Front End Engineer',
     unit: 'OneDegree Global',
@@ -35,3 +35,5 @@ export default [
     description: 'Uwillx Team',
   },
 ];
+
+export default EXPERIENCES;

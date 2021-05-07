@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Section from 'shared/Section';
@@ -43,7 +43,7 @@ function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [respondMsg, setRespondMsg] = React.useState('');
-  let respondMsgTimeout: number | null = null;
+  let respondMsgTimeout: ReturnType<typeof setTimeout> | null = null;
 
   const handleInputChange = (
     e:

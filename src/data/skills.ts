@@ -1,4 +1,4 @@
-export default [
+const SKILLS = [
   {
     title: 'Development',
     description: 'React, GraphQL, ionic, sass, PHP',
@@ -20,3 +20,5 @@ export default [
     icon: 'fa fa-globe',
   },
 ];
+
+export default SKILLS;

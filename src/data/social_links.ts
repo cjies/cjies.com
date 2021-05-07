@@ -1,4 +1,4 @@
-export default [
+const SOCIAL_LINKS = [
   {
     name: 'Linkedin',
     href: '//www.linkedin.com/in/cjies',
@@ -20,3 +20,5 @@ export default [
     icon: 'fa fa-twitter',
   },
 ];
+
+export default SOCIAL_LINKS;

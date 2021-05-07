@@ -34,7 +34,7 @@ export const CONTACT_SECTION = {
   nav: 'Contact',
 };
 
-export default [
+const SECTIONS = [
   HOME_SECTION,
   ABOUT_SECTION,
   RESUME_SECTION,
@@ -42,3 +42,5 @@ export default [
   SKILL_SECTION,
   CONTACT_SECTION,
 ];
+
+export default SECTIONS;

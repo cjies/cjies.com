@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import GlobalStyle from './GlobalStyle';
 import AppHeader from './AppHeader';
