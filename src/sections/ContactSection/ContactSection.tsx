@@ -132,7 +132,7 @@ function ContactSection() {
           required
           name="message"
           value={formData.message}
-          placeholder="The person you call is unavailable now, please leave down the message I will reply you later :D"
+          placeholder="Please leave down the message I will reply you as fast as possible :)"
           onChange={handleInputChange}
         />
 

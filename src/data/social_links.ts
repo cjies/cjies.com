@@ -14,11 +14,6 @@ const SOCIAL_LINKS = [
     href: '//speakerdeck.com/cjies',
     icon: 'fa fa-share-alt',
   },
-  {
-    name: 'Twitter',
-    href: '//www.twitter.com/cjies',
-    icon: 'fa fa-twitter',
-  },
 ];
 
 export default SOCIAL_LINKS;

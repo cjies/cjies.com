@@ -1,7 +1,7 @@
 const SKILLS = [
   {
     title: 'Development',
-    description: 'React, GraphQL, ionic, sass, PHP',
+    description: 'React, angularJS, Typescript, GraphQL',
     icon: 'fa fa-code',
   },
   {
@@ -10,13 +10,13 @@ const SKILLS = [
     icon: 'fa fa-tint',
   },
   {
-    title: 'Photography',
-    description: 'Canon EOS, Lightroom, Premiere',
-    icon: 'fa fa-camera-retro',
+    title: 'System Design',
+    description: 'FE Microservices, Multi-Tenancy Platform',
+    icon: 'fa fa-network-wired',
   },
   {
     title: 'Languages',
-    description: 'Chinese, English, Japanese, Cantonese',
+    description: 'Chinese, English, Cantonese, Japanese',
     icon: 'fa fa-globe',
   },
 ];
