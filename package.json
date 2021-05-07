@@ -20,33 +20,31 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint './src/**/*.{ts,tsx}'"
+    "lint:eslint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:types": "tsc",
+    "lint": "yarn lint:eslint && yarn lint:types"
   },
   "dependencies": {
     "detect-inapp": "^1.4.0",
     "lory.js": "^2.5.3",
     "normalize.css": "^8.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
     "sine-waves": "cjies/sine-waves.git",
-    "styled-components": "^5.0.1",
-    "typescript": "~3.8.3"
+    "styled-components": "^5.3.0",
+    "typescript": "~4.2.4",
+    "web-vitals": "^1.1.2"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.0",
-    "@types/lory.js": "^2.5.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.26",
-    "@types/react-dom": "^16.9.0",
-    "@types/styled-components": "^5.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-config-react": "^1.1.7",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^2.0.2"
+    "@types/lory.js": "^2.5.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.9",
+    "eslint": "^7.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1"
   },
   "browserslist": {
     "production": [
