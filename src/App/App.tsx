@@ -8,7 +8,7 @@ import AppFooter from './AppFooter';
 import HomeSection from 'sections/HomeSection';
 import AboutSection from 'sections/AboutSection';
 import ExperienceSection from 'sections/ExperienceSection';
-import PortfolioSection from 'sections/PortfolioSection';
+// import PortfolioSection from 'sections/PortfolioSection';
 import SkillSection from 'sections/SkillSection';
 import ContactSection from 'sections/ContactSection';
 
@@ -24,7 +24,7 @@ function App() {
       <HomeSection />
       <AboutSection />
       <ExperienceSection />
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
       <SkillSection />
       <ContactSection />
       <AppFooter />

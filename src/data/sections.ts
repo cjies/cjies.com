@@ -12,8 +12,8 @@ export const ABOUT_SECTION = {
 
 export const RESUME_SECTION = {
   id: 'resume',
-  title: 'Work Experience',
-  nav: 'Experience',
+  title: 'Work Experiences',
+  nav: 'Experiences',
 };
 
 export const PORTFOLIO_SECTION = {
@@ -25,7 +25,7 @@ export const PORTFOLIO_SECTION = {
 export const SKILL_SECTION = {
   id: 'skill',
   title: 'Top Skills',
-  nav: 'Skill',
+  nav: 'Skills',
 };
 
 export const CONTACT_SECTION = {
@@ -38,7 +38,7 @@ const SECTIONS = [
   HOME_SECTION,
   ABOUT_SECTION,
   RESUME_SECTION,
-  PORTFOLIO_SECTION,
+  // PORTFOLIO_SECTION,
   SKILL_SECTION,
   CONTACT_SECTION,
 ];

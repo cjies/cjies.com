@@ -55,7 +55,11 @@ const Avatar = styled.img`
 
 function AboutSection() {
   return (
-    <Section id={ABOUT_SECTION.id} title={ABOUT_SECTION.title}>
+    <Section
+      isDimmedBackground
+      id={ABOUT_SECTION.id}
+      title={ABOUT_SECTION.title}
+    >
       <AboutContainer>
         <Avatar src={AVATAR} alt="CJ" />
         <Paragraph>{PARAGRAPH}</Paragraph>

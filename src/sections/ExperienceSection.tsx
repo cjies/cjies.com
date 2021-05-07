@@ -53,11 +53,7 @@ const ExperienceText = styled.div`
 
 function ExperienceSection() {
   return (
-    <Section
-      isDimmedBackground
-      id={RESUME_SECTION.id}
-      title={RESUME_SECTION.title}
-    >
+    <Section id={RESUME_SECTION.id} title={RESUME_SECTION.title}>
       <List>
         {EXPERIENCES.map((item, i) => (
           <ListItem key={`resume-${i}`}>
