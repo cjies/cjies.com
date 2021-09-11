@@ -1,7 +1,7 @@
 # CJies Website 
 ![Build Status](https://github.com/cjies/cjies.com/actions/workflows/build-deploy.yml/badge.svg)
 
-Please visit [http://www.cjies.com](http://cjies.com)
+Please visit [cjies.com](https://cjies.com)
 
 
 ## License
