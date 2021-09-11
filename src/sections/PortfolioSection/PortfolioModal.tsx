@@ -282,13 +282,8 @@ class PortfolioModal extends React.PureComponent<PortfolioModalProps> {
   }
 
   render() {
-    const {
-      open,
-      portfolioItem,
-      modalBackdropX,
-      modalBackdropY,
-      onClose,
-    } = this.props;
+    const { open, portfolioItem, modalBackdropX, modalBackdropY, onClose } =
+      this.props;
 
     return (
       <Portal>

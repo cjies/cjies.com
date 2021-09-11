@@ -59,8 +59,7 @@ const PORTFOLIOS: PortfolioItemType[] = [
     title: 'The Silence of Senses',
     description: 'Portrait Photography',
     type: PHOTOGRAPHY_TYPE,
-    link:
-      'http://www.flickr.com/photos/cj_photographys/sets/72157629518314548/',
+    link: 'http://www.flickr.com/photos/cj_photographys/sets/72157629518314548/',
     coverImage: require('images/cover-silence.png'),
     detailImages: [require('images/detail-silence.jpg')],
   },

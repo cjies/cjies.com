@@ -76,27 +76,27 @@ class PortfolioSection extends React.PureComponent<Props, State> {
   /**
    * Handle portfolio click then show details in modal
    */
-  handleItemClick = (portfolioItem: PortfolioItemType) => (
-    e: React.MouseEvent<HTMLLIElement>
-  ) => {
-    this.clearModalTimeouts();
+  handleItemClick =
+    (portfolioItem: PortfolioItemType) =>
+    (e: React.MouseEvent<HTMLLIElement>) => {
+      this.clearModalTimeouts();
 
-    this.setState({
-      modalPortolioItem: portfolioItem,
-      modalBackdropX: e.clientX,
-      modalBackdropY: e.clientY,
-    });
+      this.setState({
+        modalPortolioItem: portfolioItem,
+        modalBackdropX: e.clientX,
+        modalBackdropY: e.clientY,
+      });
 
-    // Run modal opening animation
-    this.modalOpenTimeout = setTimeout(() => {
-      this.setState({ isModalOpen: true });
-    }, 10);
+      // Run modal opening animation
+      this.modalOpenTimeout = setTimeout(() => {
+        this.setState({ isModalOpen: true });
+      }, 10);
 
-    // Lock body scrolling
-    if (document.body) {
-      document.body.style.overflow = 'hidden';
-    }
-  };
+      // Lock body scrolling
+      if (document.body) {
+        document.body.style.overflow = 'hidden';
+      }
+    };
 
   handleModalClose = (e: React.MouseEvent<HTMLElement>) => {
     this.clearModalTimeouts();
