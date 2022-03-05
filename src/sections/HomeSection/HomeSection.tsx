@@ -45,7 +45,8 @@ function HomeSection() {
   return (
     <Section id={HOME_SECTION.id}>
       <HeroTitle>MAKE SIMPLE.</HeroTitle>
-      <p>Front End Developer</p>
+      <p>Web2 Developer,</p>
+      <p>not yet to 3 🌊</p>
 
       <Waves pause={isWavesPaused} />
       <ScrollMore href={`#${ABOUT_SECTION.id}`} />
