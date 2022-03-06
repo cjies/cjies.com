@@ -14,19 +14,15 @@
 
 /* SITE */
 
-  Title: CJies.com
+  Title: cjies.com
   Url: http://www.cjies.com
   Language: English
 
-  Last update: 2017/12/15
+  Last update: 2022/03/06
   Standards: HTML5, CSS3, ES2015
   Software: React
-  Domain: Godaddy
 
 /* TEAM */
              
   Linkedin: linkedin.com/in/cjies
-  Twitter: twitter.com/cjies
   contact: cijies@gmail.com
-                   
-  Location: Taipei, Taiwan

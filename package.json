@@ -1,13 +1,13 @@
 {
   "name": "cjies-com",
   "version": "3.0.0",
-  "description": "CJies Website in React",
+  "description": "CJ Website in React",
   "keywords": [
     "cjies"
   ],
   "homepage": "http://www.cjies.com",
   "author": {
-    "name": "CJies Tan",
+    "name": "CJ",
     "email": "cijies@gmail.com",
     "url": "http://www.cjies.com"
   },

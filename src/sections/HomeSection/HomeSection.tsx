@@ -44,8 +44,7 @@ function HomeSection() {
 
   return (
     <Section id={HOME_SECTION.id}>
-      <HeroTitle>MAKE SIMPLE.</HeroTitle>
-      <p>Web2 Developer,</p>
+      <HeroTitle>Web2 Developer</HeroTitle>
       <p>not yet to 3 🌊</p>
 
       <Waves pause={isWavesPaused} />
