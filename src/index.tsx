@@ -5,15 +5,14 @@ import App from './App/index';
 import reportWebVitals from './reportWebVitals';
 
 // Behind the Scenes
-import { repository, author, version } from '../package.json';
-import CONSOLE_BANNER from './data/console_banner';
+import { BANNER, REPO_URL } from './data/console_banner';
+import { MY_EMAIL } from './data/about_me';
 
 console.info(`
-  ${CONSOLE_BANNER}
+  ${BANNER}
   I <3 React~~~ Ｏ(≧▽≦)Ｏ
-  Page version: v${version}
-  Behind the scenes: ${repository.url}
-  Hiring me? ${author.email}
+  Behind the scenes: ${REPO_URL}
+  Hiring me? ${MY_EMAIL}
 `);
 
 ReactDOM.render(

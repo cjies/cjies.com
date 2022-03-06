@@ -37,7 +37,7 @@ function AppFooter() {
   return (
     <Footer>
       <FooterContainer>
-        <span>© 2018-{currentYear} Jies Design.</span>
+        <span>2018 - {currentYear} © Jies Design</span>
         <StyledSocialLinks />
       </FooterContainer>
     </Footer>

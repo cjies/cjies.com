@@ -1,5 +1,5 @@
 const currentYear = new Date().getFullYear();
-const BANNER = `
+export const BANNER = `
     ___________       __________
    |  _______  |     |________  |
   |  |       |__|            |  |
@@ -11,7 +11,7 @@ const BANNER = `
    |___________|   |___________|
 
            www.cjies.com
-        ${currentYear} © Jies Design
+     2018 - ${currentYear} © Jies Design
 `;
 
-export default BANNER;
+export const REPO_URL = 'https://github.com/cjies/cjies.com';
