@@ -12,9 +12,6 @@ import ExperienceSection from 'sections/ExperienceSection';
 import SkillSection from 'sections/SkillSection';
 import ContactSection from 'sections/ContactSection';
 
-// Normalize default stylesheets
-import 'normalize.css/normalize.css';
-
 function App() {
   return (
     <>
