@@ -1,10 +1,17 @@
 const EXPERIENCES = [
   {
     title: 'Senior Software Engineer',
+    unit: 'Coda Payments',
+    location: 'Remote',
+    duration: '2023 - Present',
+    description: 'B2B Publisher Portal',
+  },
+  {
+    title: 'Engineering Manager',
     unit: 'Houzz',
-    location: 'Taipei',
-    duration: '2021 - Present',
-    description: 'Marketplace Growth & Customer Support',
+    location: 'Taipei / US',
+    duration: '2021 - 2022',
+    description: 'Marketplace Growth',
   },
   {
     title: 'Senior Front End Engineer',
